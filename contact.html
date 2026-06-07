@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Venom Guitars</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    @media (max-width:800px) { .contact-grid { grid-template-columns:1fr; gap:2.5rem; } }
+
+    .contact-info-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .contact-info-item:last-child { border-bottom: none; }
+    .contact-info-icon { font-size:1.4rem; flex-shrink:0; width:36px; text-align:center; margin-top:2px; }
+    .contact-info-label { font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--grey); margin-bottom:0.25rem; }
+    .contact-info-value { font-family:var(--font-display); letter-spacing:0.06em; color:var(--cream); font-size:1rem; }
+    .contact-info-sub { font-size:0.78rem; color:var(--grey); margin-top:0.2rem; }
+
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    @media (max-width:600px) { .form-row { grid-template-columns:1fr; } }
+
+    .contact-form-wrap {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 2.5rem;
+    }
+    .form-success {
+      text-align: center;
+      padding: 3rem 2rem;
+      display: none;
+    }
+    .form-success-icon { font-size: 4rem; margin-bottom: 1rem; }
+    .form-success-title { font-family:var(--font-display); font-size:2rem; letter-spacing:0.08em; color:var(--cream); margin-bottom:0.5rem; }
+
+    .enquiry-type {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .enquiry-btn {
+      padding: 0.65rem 0.75rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: transparent;
+      color: var(--grey);
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .enquiry-btn:hover, .enquiry-btn.active {
+      border-color: var(--red);
+      color: var(--cream);
+      background: rgba(192,0,12,0.12);
+    }
+
+    .map-placeholder {
+      height: 200px;
+      background: linear-gradient(135deg, #0a0000, #1a0505);
+      border: 1px solid rgba(192,0,12,0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" alt="Venom Guitars">
+    <div class="nav-logo-text"><span>VENOM</span> GUITARS</div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown"><a href="about.html">About ▾</a>
+      <div class="nav-dropdown-menu"><a href="about.html">Our Story</a><a href="about.html#purpose">Our Purpose</a><a href="about.html#team">Our Team</a></div>
+    </div>
+    <div class="nav-dropdown"><a href="designs.html">Designs ▾</a>
+      <div class="nav-dropdown-menu"><a href="designs.html">All Models</a><a href="designs.html#red-belly">Red Belly Black</a><a href="designs.html#custom">Custom Builds</a></div>
+    </div>
+    <a href="builds.html">Build Videos</a>
+    <a href="education.html">Education</a>
+    <a href="community.html">Community</a>
+    <a href="media.html">Media</a>
+    <a href="contact.html" class="active btn-cta nav-cta">Contact</a>
+  </div>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mobile" id="mobile-menu">
+  <a href="index.html">Home</a><a href="about.html">About Us</a>
+  <a href="designs.html">Our Designs</a><a href="builds.html">Build Videos</a>
+  <a href="education.html">Education</a><a href="community.html">Community</a>
+  <a href="media.html">Media</a><a href="contact.html" class="active">Contact Us</a>
+</div>
+
+<div class="page-hero">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,rgba(192,0,12,0.08),transparent 60%);pointer-events:none;"></div>
+  <div class="container">
+    <div class="section-label">Reach Out</div>
+    <div class="page-hero-title">Get In <span style="color:var(--red);">Touch</span></div>
+    <div class="page-hero-sub">Let's talk guitars</div>
+    <p style="max-width:520px;margin-top:1rem;color:var(--grey);">Whether you're ready to commission a custom build, have a technical question, or just want to talk guitars — we're all ears. Response time is usually within 48 hours.</p>
+  </div>
+</div>
+
+<section class="section section-darker">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- LEFT: Info -->
+      <div>
+        <div class="section-label">Details</div>
+        <h2 class="display-md mb-4">Find Us</h2>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📧</div>
+          <div>
+            <div class="contact-info-label">Email</div>
+            <div class="contact-info-value"><a href="mailto:venomguitarsaus@gmail.com" style="color:var(--cream);transition:color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--cream)'">venomguitarsaus@gmail.com</a></div>
+            <div class="contact-info-sub">We reply within 48 business hours</div>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📍</div>
+          <div>
+            <div class="contact-info-label">Location</div>
+            <div class="contact-info-value">Australia</div>
+            <div class="contact-info-sub">Workshop visits by appointment only</div>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">⏱</div>
+          <div>
+            <div class="contact-info-label">Build Lead Time</div>
+            <div class="contact-info-value">8 – 16 Weeks</div>
+            <div class="contact-info-sub">Depending on complexity and current queue</div>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">▶</div>
+          <div>
+            <div class="contact-info-label">Social / YouTube</div>
+            <div class="contact-info-value">@venomguitars</div>
+            <div class="contact-info-sub">All platforms — YouTube, Instagram, TikTok, Facebook</div>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem;">
+          <div class="section-label" style="margin-bottom:1rem;">Socials</div>
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <a href="https://youtube.com/@venomguitars" target="_blank" class="btn btn-red-outline" style="font-size:0.7rem;padding:0.4rem 1rem;">▶ YouTube</a>
+            <a href="https://instagram.com/@venomguitars" target="_blank" class="btn btn-outline" style="font-size:0.7rem;padding:0.4rem 1rem;">📷 Instagram</a>
+            <a href="https://tiktok.com/@venomguitars" target="_blank" class="btn btn-outline" style="font-size:0.7rem;padding:0.4rem 1rem;">♪ TikTok</a>
+            <a href="https://facebook.com/venomguitars" target="_blank" class="btn btn-outline" style="font-size:0.7rem;padding:0.4rem 1rem;">f Facebook</a>
+          </div>
+        </div>
+
+        <div class="map-placeholder">
+          <div style="font-size:2.5rem;">🇦🇺</div>
+          <div style="font-family:var(--font-display);letter-spacing:0.1em;color:var(--grey);">Australia</div>
+          <div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--red);">Workshop Location — By Appointment</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div>
+        <div class="contact-form-wrap">
+          <div style="font-family:var(--font-display);font-size:1.5rem;letter-spacing:0.1em;color:var(--cream);margin-bottom:0.5rem;">Send a Message</div>
+          <p style="font-size:0.82rem;color:var(--grey);margin-bottom:1.5rem;">Tell us what you're after and we'll come back to you with everything you need to know.</p>
+
+          <!-- Enquiry type buttons -->
+          <div style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--grey);margin-bottom:0.6rem;">I'm enquiring about:</div>
+          <div class="enquiry-type">
+            <button class="enquiry-btn active" onclick="selectEnquiry(this)">Custom Build</button>
+            <button class="enquiry-btn" onclick="selectEnquiry(this)">Existing Series</button>
+            <button class="enquiry-btn" onclick="selectEnquiry(this)">Education / Workshop</button>
+            <button class="enquiry-btn" onclick="selectEnquiry(this)">Press / Media</button>
+            <button class="enquiry-btn" onclick="selectEnquiry(this)">General Question</button>
+            <button class="enquiry-btn" onclick="selectEnquiry(this)">Other</button>
+          </div>
+
+          <form id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">First Name *</label>
+                <input type="text" class="form-input" placeholder="Jake" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-input" placeholder="Roberts">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address *</label>
+              <input type="email" class="form-input" placeholder="you@email.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone (optional)</label>
+              <input type="tel" class="form-input" placeholder="+61 4xx xxx xxx">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Your State / Country</label>
+              <select class="form-select form-input">
+                <option value="">Select...</option>
+                <option>NSW</option><option>VIC</option><option>QLD</option>
+                <option>WA</option><option>SA</option><option>TAS</option>
+                <option>ACT</option><option>NT</option>
+                <option>International</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message *</label>
+              <textarea class="form-textarea form-input" placeholder="Tell us about your dream guitar — body shape, tonewoods, pickups, budget, timeline, anything relevant..." required style="min-height:160px;"></textarea>
+            </div>
+            <div class="form-group" style="display:flex;align-items:flex-start;gap:0.75rem;">
+              <input type="checkbox" id="consent" style="margin-top:3px;accent-color:var(--red);" required>
+              <label for="consent" style="font-size:0.75rem;color:var(--grey);cursor:pointer;">I agree to be contacted by Venom Guitars regarding my enquiry. We don't sell your data or spam you.</label>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+          </form>
+          <div class="form-success" id="form-success">
+            <div class="form-success-icon">🐍</div>
+            <div class="form-success-title">Message Sent!</div>
+            <p style="color:var(--grey);max-width:300px;margin:0 auto;">Cheers — we've received your message and will get back to you within 48 hours. Talk soon.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ TEASER -->
+<section class="section section-dark">
+  <div class="container" style="text-align:center;">
+    <div class="section-label" style="justify-content:center;">Before You Message</div>
+    <h2 class="display-md mb-3">Check the FAQ</h2>
+    <p style="max-width:480px;margin:0 auto 2rem;color:var(--grey);">We've answered the most common questions about custom builds, tonewoods, shipping, and setup on our Education page.</p>
+    <a href="education.html#faq" class="btn btn-primary">View FAQ</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <img src="images/logo.png" alt="Venom Guitars" class="footer-brand-logo">
+      <div class="footer-tagline">Handcrafted. Australian. Deadly.</div>
+      <p class="footer-desc">Building boutique-quality custom electric guitars from the heart of Australia.</p>
+      <div class="footer-social">
+        <a href="http://facebook.com/venomguitars">f</a><a href="http://instagram.com/@venomguitars">in</a>
+        <a href="http://tiktok.com/@venomguitars">tt</a><a href="http://youtube.com/@venomguitars">▶</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a><a href="about.html">About Us</a>
+        <a href="designs.html">Our Designs</a><a href="builds.html">Build Videos</a>
+        <a href="education.html">Education</a><a href="community.html">Community</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Guitar Series</div>
+      <div class="footer-links">
+        <a href="designs.html#red-belly">Red Belly Black</a>
+        <a href="designs.html#taipan">Taipan Series</a>
+        <a href="designs.html#custom">Custom Builds</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Connect</div>
+      <div class="footer-links">
+        <a href="contact.html">Contact Us</a><a href="media.html">Media</a>
+        <a href="community.html">Community</a>
+      </div>
+      <div style="margin-top:1.5rem;font-size:0.8rem;color:var(--grey);">📧 <a href="mailto:venomguitarsaus@gmail.com" style="color:var(--red);">venomguitarsaus@gmail.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 <span class="footer-bottom-brand">Venom Guitars</span>. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  function selectEnquiry(btn) {
+    document.querySelectorAll('.enquiry-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  });
+</script>
+</body>
+</html>

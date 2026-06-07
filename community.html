@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community — Venom Guitars</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <style>
+    .community-card {
+      background: var(--charcoal);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .community-card:hover { border-color: rgba(192,0,12,0.4); transform: translateY(-4px); }
+    .community-card::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; background:linear-gradient(90deg,transparent,var(--red),transparent); opacity:0; transition:opacity 0.3s; }
+    .community-card:hover::before { opacity:1; }
+    .community-icon { font-size:2.5rem; margin-bottom:1rem; }
+    .community-title { font-family:var(--font-display); font-size:1.4rem; letter-spacing:0.08em; color:var(--cream); margin-bottom:0.5rem; }
+
+    .social-platform {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.07);
+      background: var(--charcoal);
+      transition: border-color 0.3s, transform 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .social-platform:hover { border-color: rgba(192,0,12,0.4); transform: translateX(4px); }
+    .social-logo { width: 52px; height: 52px; border-radius: 8px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0; }
+    .social-name { font-family:var(--font-display); font-size:1.2rem; letter-spacing:0.06em; color:var(--cream); }
+    .social-handle { font-size:0.78rem; color:var(--red); margin:0.15rem 0 0.3rem; }
+    .social-desc { font-size:0.78rem; color:var(--grey); }
+    .social-arrow { margin-left:auto; color:var(--red); font-size:1.2rem; flex-shrink:0; }
+
+    .member-card {
+      background: var(--charcoal);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 1.5rem;
+      text-align: center;
+      transition: border-color 0.3s;
+    }
+    .member-card:hover { border-color: rgba(192,0,12,0.3); }
+    .member-avatar { width:64px;height:64px; border-radius:50%; background:linear-gradient(135deg,var(--red-dark),#1a0a0a); border:2px solid rgba(192,0,12,0.3); display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin:0 auto 1rem; }
+    .member-name { font-family:var(--font-display); letter-spacing:0.06em; color:var(--cream); margin-bottom:0.2rem; }
+    .member-tag { font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); margin-bottom:0.5rem; }
+    .member-bio { font-size:0.78rem; color:var(--grey); line-height:1.6; }
+
+    .join-band {
+      background: linear-gradient(135deg,#0f0000,#1a0505,#0a0a0a);
+      border: 1px solid rgba(192,0,12,0.25);
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .join-band::after {
+      content: '🐍';
+      position: absolute;
+      font-size: 18rem;
+      right: -2rem;
+      bottom: -3rem;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 0.75rem;
+      max-width: 480px;
+      flex-wrap: wrap;
+    }
+    .newsletter-form input {
+      flex: 1;
+      min-width: 200px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--cream);
+      padding: 0.75rem 1rem;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .newsletter-form input:focus { border-color: var(--red); }
+    .newsletter-form input::placeholder { color: var(--grey); }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" alt="Venom Guitars">
+    <div class="nav-logo-text"><span>VENOM</span> GUITARS</div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown"><a href="about.html">About ▾</a>
+      <div class="nav-dropdown-menu"><a href="about.html">Our Story</a><a href="about.html#purpose">Our Purpose</a><a href="about.html#team">Our Team</a></div>
+    </div>
+    <div class="nav-dropdown"><a href="designs.html">Designs ▾</a>
+      <div class="nav-dropdown-menu"><a href="designs.html">All Models</a><a href="designs.html#red-belly">Red Belly Black Series</a><a href="designs.html#custom">Custom Builds</a></div>
+    </div>
+    <a href="builds.html">Build Videos</a>
+    <a href="education.html">Education</a>
+    <a href="community.html" class="active">Community</a>
+    <a href="media.html">Media</a>
+    <a href="contact.html" class="btn-cta nav-cta">Contact</a>
+  </div>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mobile" id="mobile-menu">
+  <a href="index.html">Home</a><a href="about.html">About Us</a>
+  <a href="designs.html">Our Designs</a><a href="builds.html">Build Videos</a>
+  <a href="education.html">Education</a><a href="community.html" class="active">Community</a>
+  <a href="media.html">Media</a><a href="contact.html">Contact Us</a>
+</div>
+
+<div class="page-hero">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(192,0,12,0.07),transparent 60%);pointer-events:none;"></div>
+  <div class="container">
+    <div class="section-label">The Pack</div>
+    <div class="page-hero-title">Our <span style="color:var(--red);">Community</span></div>
+    <div class="page-hero-sub">Grassroots players, builders, and tone chasers</div>
+    <p style="max-width:560px;margin-top:1rem;color:var(--grey);">Venom Guitars was built for musicians — and we mean that. From garage jammers to gigging pros, this community is for anyone who cares about playing great instruments built right here in Australia.</p>
+  </div>
+</div>
+
+<!-- WHAT WE'RE ABOUT -->
+<section class="section section-darker">
+  <div class="container">
+    <div class="section-label">Why Community Matters</div>
+    <h2 class="display-md mb-6">More Than Guitars</h2>
+    <div class="grid-3">
+      <div class="community-card reveal animate-up">
+        <div class="community-icon">🎸</div>
+        <div class="community-title">Players First</div>
+        <p style="font-size:0.85rem;color:var(--grey);">We started as players. We know what it's like to deal with a guitar that fights you. Everything we build is designed around the player experience — playability, tone, and feel over everything else.</p>
+      </div>
+      <div class="community-card reveal animate-up delay-1">
+        <div class="community-icon">🔧</div>
+        <div class="community-title">Builders Welcome</div>
+        <p style="font-size:0.85rem;color:var(--grey);">Want to learn lutherie? We actively encourage it. Share your builds, ask questions, and get real feedback from people who've made the same mistakes and figured out how to fix them.</p>
+      </div>
+      <div class="community-card reveal animate-up delay-2">
+        <div class="community-icon">🇦🇺</div>
+        <div class="community-title">Proudly Local</div>
+        <p style="font-size:0.85rem;color:var(--grey);">The Australian music scene is world-class and chronically underrepresented. We want to amplify local artists, support local gigs, and shine a light on the incredible talent in this country.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIALS -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-label">Find Us Online</div>
+    <h2 class="display-md mb-6">Social Channels</h2>
+    <div style="display:flex;flex-direction:column;gap:0.75rem;max-width:700px;">
+      <a href="https://youtube.com/@venomguitars" target="_blank" class="social-platform">
+        <div class="social-logo" style="background:#c4302b;">▶</div>
+        <div>
+          <div class="social-name">YouTube</div>
+          <div class="social-handle">@venomguitars</div>
+          <div class="social-desc">Full build series, playthroughs, setup tutorials, and behind-the-scenes workshop footage.</div>
+        </div>
+        <div class="social-arrow">→</div>
+      </a>
+      <a href="https://instagram.com/@venomguitars" target="_blank" class="social-platform">
+        <div class="social-logo" style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);">📷</div>
+        <div>
+          <div class="social-name">Instagram</div>
+          <div class="social-handle">@venomguitars</div>
+          <div class="social-desc">Build progress photos, finished guitars, resin pours, and Reel content from the shop floor.</div>
+        </div>
+        <div class="social-arrow">→</div>
+      </a>
+      <a href="https://tiktok.com/@venomguitars" target="_blank" class="social-platform">
+        <div class="social-logo" style="background:#010101; border:1px solid rgba(255,255,255,0.1);">♪</div>
+        <div>
+          <div class="social-name">TikTok</div>
+          <div class="social-handle">@venomguitars</div>
+          <div class="social-desc">Quick tips, satisfying machining clips, resin art pours, and guitar content that actually performs.</div>
+        </div>
+        <div class="social-arrow">→</div>
+      </a>
+      <a href="https://facebook.com/venomguitars" target="_blank" class="social-platform">
+        <div class="social-logo" style="background:#1877f2;">f</div>
+        <div>
+          <div class="social-name">Facebook</div>
+          <div class="social-handle">Venom Guitars</div>
+          <div class="social-desc">Community discussion, announcements, event info, and for those who still use Facebook (we love you).</div>
+        </div>
+        <div class="social-arrow">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY MEMBERS -->
+<section class="section section-darker">
+  <div class="container">
+    <div class="section-label">Our People</div>
+    <h2 class="display-md mb-2">Community Spotlights</h2>
+    <p class="mb-6">Real players. Real builds. The Venom community is full of people doing interesting things with music and guitars — here are a few.</p>
+    <div class="grid-4">
+      <div class="member-card reveal animate-up">
+        <div class="member-avatar">🎸</div>
+        <div class="member-name">Jake R.</div>
+        <div class="member-tag">Blues & Rock</div>
+        <p class="member-bio">"The Red Belly Black just screams. I've played Gibsons and Fenders my whole life — this thing holds its own."</p>
+      </div>
+      <div class="member-card reveal animate-up delay-1">
+        <div class="member-avatar">🔧</div>
+        <div class="member-name">Mel T.</div>
+        <div class="member-tag">Hobbyist Builder</div>
+        <p class="member-bio">"I've built three guitars now following Venom's guides. The fretwork tutorials alone saved me from disaster twice."</p>
+      </div>
+      <div class="member-card reveal animate-up delay-2">
+        <div class="member-avatar">🎵</div>
+        <div class="member-name">Sam K.</div>
+        <div class="member-tag">Session Musician</div>
+        <p class="member-bio">"Had a custom Blackwood build made. It's been in every session since. Producers always ask what it is."</p>
+      </div>
+      <div class="member-card reveal animate-up delay-3">
+        <div class="member-avatar">🎶</div>
+        <div class="member-name">Dan B.</div>
+        <div class="member-tag">Metal & Prog</div>
+        <p class="member-bio">"Waiting on a Taipan pre-order. In the meantime I'm deep in the build video rabbit hole. Send help."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN / NEWSLETTER -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="join-band">
+      <div style="position:relative;z-index:2;">
+        <div class="section-label">Stay in the Loop</div>
+        <h2 class="display-md mb-2" style="color:var(--cream);">Join the <span class="text-red">Pack</span></h2>
+        <p style="max-width:500px;margin-bottom:2rem;color:var(--grey);">Get new build drops, education content, community spotlights, and early access to new series — direct to your inbox. No spam. No bullshit. Just guitars.</p>
+        <div class="newsletter-form" id="newsletter-form">
+          <input type="email" placeholder="your@email.com" id="newsletter-email">
+          <button class="btn btn-primary" onclick="subscribeNewsletter()">Subscribe</button>
+        </div>
+        <div id="newsletter-msg" style="margin-top:1rem;font-size:0.85rem;color:var(--red);display:none;">Cheers! You're on the list. 🐍</div>
+        <p style="font-size:0.72rem;color:var(--grey);margin-top:1rem;max-width:400px;">By subscribing you agree to receive occasional emails from Venom Guitars. Unsubscribe any time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS / GIGS -->
+<section class="section section-darker">
+  <div class="container">
+    <div class="section-label">Get Together</div>
+    <h2 class="display-md mb-6">Events & Meetups</h2>
+    <div style="padding:3rem;border:1px dashed rgba(192,0,12,0.25);background:rgba(192,0,12,0.03);text-align:center;max-width:600px;margin:0 auto;">
+      <div style="font-size:4rem;margin-bottom:1rem;">📅</div>
+      <div style="font-family:var(--font-display);font-size:1.5rem;letter-spacing:0.1em;color:var(--cream);margin-bottom:0.75rem;">Events Coming Soon</div>
+      <p style="font-size:0.85rem;color:var(--grey);max-width:400px;margin:0 auto 1.5rem;">We're planning workshop open days, guitar meetups, and live demo sessions. Sign up to the newsletter to be first to know.</p>
+      <a href="contact.html" class="btn btn-primary">Express Interest</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <img src="images/logo.png" alt="Venom Guitars" class="footer-brand-logo">
+      <div class="footer-tagline">Handcrafted. Australian. Deadly.</div>
+      <p class="footer-desc">Building boutique-quality custom electric guitars from the heart of Australia.</p>
+      <div class="footer-social">
+        <a href="http://facebook.com/venomguitars">f</a><a href="http://instagram.com/@venomguitars">in</a>
+        <a href="http://tiktok.com/@venomguitars">tt</a><a href="http://youtube.com/@venomguitars">▶</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a><a href="about.html">About Us</a>
+        <a href="designs.html">Our Designs</a><a href="builds.html">Build Videos</a>
+        <a href="education.html">Education</a><a href="community.html">Community</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Guitar Series</div>
+      <div class="footer-links">
+        <a href="designs.html#red-belly">Red Belly Black</a>
+        <a href="designs.html#taipan">Taipan Series</a>
+        <a href="designs.html#custom">Custom Builds</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Connect</div>
+      <div class="footer-links">
+        <a href="contact.html">Contact Us</a><a href="media.html">Media</a>
+      </div>
+      <div style="margin-top:1.5rem;font-size:0.8rem;color:var(--grey);">📧 <a href="mailto:venomguitarsaus@gmail.com" style="color:var(--red);">venomguitarsaus@gmail.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 <span class="footer-bottom-brand">Venom Guitars</span>. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  function subscribeNewsletter() {
+    const email = document.getElementById('newsletter-email').value;
+    if (email && email.includes('@')) {
+      document.getElementById('newsletter-form').style.display = 'none';
+      document.getElementById('newsletter-msg').style.display = 'block';
+    }
+  }
+</script>
+</body>
+</html>

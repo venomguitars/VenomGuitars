@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Series — Red Belly Black | Venom Guitars</title>
+  <meta name="description" content="The Red Belly Black Series from Venom Guitars. Inspired by Australia's iconic venomous snake — available in 6-string, 7/8-string electric and 4/5-string bass configurations.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <style>
+    /* Hero band */
+    .rbb-hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #050000 0%, #0a0000 30%, #0a0a0a 100%);
+    }
+    .rbb-hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 30% 50%, rgba(120,0,8,0.25) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 80% at 85% 40%, rgba(80,0,5,0.1) 0%, transparent 70%);
+    }
+    .rbb-hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(192,0,12,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(192,0,12,0.07) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse at 30% 50%, black 30%, transparent 70%);
+    }
+    .rbb-hero-content { position: relative; z-index: 2; max-width: 660px; }
+    .rbb-series-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      border: 1px solid rgba(192,0,12,0.4);
+      padding: 0.35rem 1rem;
+      margin-bottom: 1.5rem;
+      background: rgba(192,0,12,0.08);
+    }
+    .rbb-main-title {
+      font-family: var(--font-display);
+      font-size: clamp(4rem, 10vw, 9rem);
+      letter-spacing: 0.03em;
+      line-height: 0.88;
+      color: var(--cream);
+    }
+    .rbb-main-title .red-line { color: var(--red); }
+    .rbb-sub {
+      font-family: var(--font-grunge);
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      color: rgba(232,220,200,0.6);
+      margin: 1rem 0 0.5rem;
+    }
+    .rbb-hero-desc {
+      font-size: 0.92rem;
+      color: #888;
+      line-height: 1.8;
+      max-width: 520px;
+      margin: 1.25rem 0 2.5rem;
+    }
+
+    /* Drip accent */
+    .drip-accent {
+      position: absolute;
+      top: 0; right: 15%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      pointer-events: none;
+    }
+    .drip-line {
+      width: 2px;
+      height: 120px;
+      background: linear-gradient(180deg, transparent, var(--red));
+    }
+    .drip-drop {
+      width: 8px; height: 14px;
+      background: var(--red);
+      border-radius: 0 0 50% 50%;
+    }
+
+    /* Snake fact box */
+    .snake-fact {
+      background: linear-gradient(135deg, rgba(192,0,12,0.08), rgba(192,0,12,0.03));
+      border: 1px solid rgba(192,0,12,0.2);
+      border-left: 4px solid var(--red);
+      padding: 2rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .snake-fact::after {
+      content: '🐍';
+      position: absolute;
+      font-size: 8rem;
+      right: -1rem;
+      bottom: -1rem;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+    .snake-fact-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      letter-spacing: 0.1em;
+      color: var(--red-bright);
+      margin-bottom: 0.75rem;
+    }
+    .snake-fact-text { font-size: 0.88rem; color: #aaa; line-height: 1.8; }
+
+    /* Model cards */
+    .model-card {
+      background: var(--charcoal);
+      border: 1px solid rgba(255,255,255,0.07);
+      overflow: hidden;
+      position: relative;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .model-card:hover { border-color: rgba(192,0,12,0.6); transform: translateY(-6px); }
+    .model-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--red-dark), var(--red), var(--red-dark));
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .model-card:hover::before { opacity: 1; }
+    .model-header {
+      padding: 2rem;
+      background: linear-gradient(135deg, #0d0000, #1a0505);
+      text-align: center;
+      position: relative;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .model-code {
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.5rem;
+    }
+    .model-name {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      letter-spacing: 0.08em;
+      color: var(--cream);
+      line-height: 1.1;
+    }
+    .model-type {
+      font-family: var(--font-grunge);
+      font-size: 1rem;
+      color: rgba(192,0,12,0.7);
+      margin-top: 0.25rem;
+    }
+    .model-guitar-icon {
+      position: absolute;
+      right: 1rem; top: 50%;
+      transform: translateY(-50%);
+      font-size: 4rem;
+      opacity: 0.12;
+    }
+    .model-body { padding: 1.75rem; }
+    .model-desc { font-size: 0.85rem; color: var(--grey); line-height: 1.7; margin-bottom: 1.25rem; }
+    .model-spec-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.8rem;
+    }
+    .model-spec-row:last-child { border-bottom: none; }
+    .model-spec-key { color: var(--grey); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .model-spec-val { color: var(--cream); font-weight: 500; }
+    .model-availability {
+      margin-top: 1.25rem;
+      padding: 0.6rem 1rem;
+      background: rgba(192,0,12,0.1);
+      border: 1px solid rgba(192,0,12,0.25);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      text-align: center;
+    }
+
+    /* Design concept band */
+    .concept-band {
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #0a0000, #110005, #0a0a0a);
+      border-top: 1px solid rgba(192,0,12,0.15);
+      border-bottom: 1px solid rgba(192,0,12,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .concept-band::before {
+      content: 'RBB';
+      position: absolute;
+      font-family: var(--font-display);
+      font-size: 25vw;
+      color: rgba(192,0,12,0.04);
+      top: 50%; right: -2rem;
+      transform: translateY(-50%);
+      letter-spacing: 0.1em;
+      pointer-events: none;
+    }
+
+    /* Color palette */
+    .palette-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.02);
+      transition: border-color 0.2s;
+    }
+    .palette-item:hover { border-color: rgba(192,0,12,0.3); }
+    .palette-swatch {
+      width: 48px; height: 48px;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .palette-name { font-family: var(--font-display); letter-spacing: 0.06em; color: var(--cream); font-size: 1rem; }
+    .palette-desc { font-size: 0.75rem; color: var(--grey); margin-top: 0.15rem; }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" alt="Venom Guitars">
+    <div class="nav-logo-text"><span>VENOM</span> GUITARS</div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown">
+      <a href="about.html">About ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="about.html">About Us</a>
+        <a href="our-purpose.html">Our Purpose</a>
+        <a href="our-staff.html">Our Staff</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="designs.html" class="active">Designs ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="designs.html">All Designs</a>
+        <a href="series-red-belly-black.html" class="active">Red Belly Black Series</a>
+        <a href="designs.html#taipan">Taipan Series</a>
+        <a href="designs.html#custom">Custom Builds</a>
+      </div>
+    </div>
+    <a href="builds.html">Build Videos</a>
+    <a href="education.html">Education</a>
+    <div class="nav-dropdown">
+      <a href="community.html">Community ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="community.html">Our Community</a>
+        <a href="social-media.html">Social Media</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="media.html">Media ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="media.html">Our Media</a>
+        <a href="blogs-articles.html">Blogs &amp; Articles</a>
+        <a href="social-media.html">Social Media</a>
+      </div>
+    </div>
+    <a href="contact.html" class="btn-cta nav-cta">Contact</a>
+  </div>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mobile" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="our-purpose.html" class="mobile-sub">— Our Purpose</a>
+  <a href="our-staff.html" class="mobile-sub">— Our Staff</a>
+  <a href="designs.html">Our Designs</a>
+  <a href="series-red-belly-black.html" class="mobile-sub active">— Red Belly Black Series</a>
+  <a href="builds.html">Build Videos</a>
+  <a href="education.html">Education</a>
+  <a href="community.html">Community</a>
+  <a href="media.html">Media</a>
+  <a href="blogs-articles.html" class="mobile-sub">— Blogs &amp; Articles</a>
+  <a href="social-media.html" class="mobile-sub">— Social Media</a>
+  <a href="contact.html">Contact Us</a>
+</div>
+
+<!-- SERIES HERO -->
+<div class="rbb-hero">
+  <div class="rbb-hero-bg"></div>
+  <div class="rbb-hero-grid"></div>
+  <!-- Drip accent -->
+  <div class="drip-accent">
+    <div class="drip-line"></div>
+    <div class="drip-drop"></div>
+  </div>
+  <div class="rbb-hero-content container">
+    <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey);margin-bottom:1.25rem;">
+      <a href="index.html" style="color:var(--grey);">Home</a><span style="color:rgba(192,0,12,0.4);">›</span>
+      <a href="designs.html" style="color:var(--grey);">Designs</a><span style="color:rgba(192,0,12,0.4);">›</span>
+      <span style="color:var(--red);">Red Belly Black</span>
+    </div>
+    <div class="rbb-series-badge">🐍 Flagship Series · Available Now</div>
+    <div class="rbb-main-title">
+      <span class="red-line">Red</span><br>
+      <span class="red-line">Belly</span><br>
+      Black
+    </div>
+    <div class="rbb-sub">Series — RBBS</div>
+    <p class="rbb-hero-desc">One of Australia's most iconic venomous snakes becomes one of Australia's most iconic guitar series. Deeply black body, striking red belly, and a bite that cuts through any mix. Available in 6-string electric, 7/8-string extended, and 4/5-string bass configurations.</p>
+    <div class="btn-group">
+      <a href="contact.html" class="btn btn-primary">Enquire Now</a>
+      <a href="#models" class="btn btn-outline">View All Models ↓</a>
+    </div>
+  </div>
+</div>
+
+<!-- SNAKE INSPIRATION -->
+<section class="section section-darker">
+  <div class="container">
+    <div class="section-label">The Inspiration</div>
+    <h2 class="display-md mb-6">Australian Red-Bellied Black Snake</h2>
+    <div class="snake-fact mb-6">
+      <div class="snake-fact-title">Pseudechis porphyriacus</div>
+      <p class="snake-fact-text">The Australian Red-Bellied Black Snake is one of Australia's most iconic venomous snakes — known for its striking glossy black upper body contrasted by a vibrant crimson to pinkish underside. Commonly found along the east coast in wetlands, forests, and grasslands, this species is generally shy and prefers to avoid confrontation, though it will defend itself if threatened.</p>
+      <p class="snake-fact-text" style="margin-top:0.75rem;">Despite its potent venom, bites are rarely fatal thanks to modern medical treatment. The red-bellied black snake plays an important ecological role, feeding on frogs, fish, small mammals, and other reptiles, helping maintain balance within its habitat. Its distinctive appearance and calm nature have made it a well-recognised and respected symbol of Australia's diverse wildlife.</p>
+    </div>
+    <div class="split-layout">
+      <div>
+        <div class="section-label">Design Concept</div>
+        <h3 style="font-family:var(--font-display);font-size:1.8rem;letter-spacing:0.08em;color:var(--cream);margin-bottom:1rem;">Nature's Own Design</h3>
+        <p>One of Australia's most iconic venomous snakes — the "Red Bellied Black" — is the concept behind this design series. It brings the aesthetics of a deeply black body and neck/headstock with the striking red front, replicating nature's own breathtaking design language.</p>
+        <p style="margin-top:0.85rem;">The guitar is available in your choice of configurations. Standard being 6 String Electric and 4 String Bass. 7, 8 String electric and 5 String Bass available on request.</p>
+        <div style="margin-top:2rem;">
+          <div style="font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--grey);margin-bottom:0.75rem;">Colour Palette</div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;">
+            <div class="palette-item">
+              <div class="palette-swatch" style="background:#0a0a0a;"></div>
+              <div><div class="palette-name">Gloss Black Body</div><div class="palette-desc">Deep gloss black — as dark as the snake's dorsal scales</div></div>
+            </div>
+            <div class="palette-item">
+              <div class="palette-swatch" style="background:linear-gradient(135deg,#c0000c,#7a0008);"></div>
+              <div><div class="palette-name">Crimson Red Belly</div><div class="palette-desc">Striking resin red on the front face — nature's own warning colour</div></div>
+            </div>
+            <div class="palette-item">
+              <div class="palette-swatch" style="background:#1a0e05;"></div>
+              <div><div class="palette-name">Dark Maple Neck</div><div class="palette-desc">Queensland Maple, finished dark to match the black aesthetic</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;">
+        <svg viewBox="0 0 300 540" width="240" style="filter:drop-shadow(0 0 40px rgba(192,0,12,0.4));animation:float 5s ease-in-out infinite;" xmlns="http://www.w3.org/2000/svg">
+          <!-- Extended Strat-style body for RBB -->
+          <path d="M150 260 Q60 270 45 345 Q32 420 68 472 Q90 505 150 508 Q210 505 232 472 Q268 420 255 345 Q240 270 150 260Z" fill="#080808" stroke="#c0000c" stroke-width="2"/>
+          <!-- Red belly highlight -->
+          <path d="M150 290 Q100 298 88 350 Q78 408 105 445 Q122 468 150 470 Q178 468 195 445 Q222 408 212 350 Q200 298 150 290Z" fill="rgba(192,0,12,0.25)" stroke="rgba(192,0,12,0.5)" stroke-width="1"/>
+          <!-- Waist cuts -->
+          <path d="M65 310 Q42 340 45 385" fill="none" stroke="#c0000c" stroke-width="1.5" opacity="0.6"/>
+          <path d="M235 310 Q258 340 255 385" fill="none" stroke="#c0000c" stroke-width="1.5" opacity="0.6"/>
+          <!-- Pickguard -->
+          <path d="M120 280 Q90 310 85 370 Q82 420 110 440 L150 445 L155 290Z" fill="rgba(192,0,12,0.12)" stroke="rgba(192,0,12,0.3)" stroke-width="0.8"/>
+          <!-- Pickups — 3 singles -->
+          <rect x="113" y="305" width="60" height="12" rx="2" fill="#111" stroke="rgba(192,0,12,0.6)" stroke-width="1"/>
+          <rect x="113" y="330" width="60" height="12" rx="2" fill="#111" stroke="rgba(192,0,12,0.6)" stroke-width="1"/>
+          <rect x="113" y="358" width="60" height="12" rx="2" fill="#111" stroke="rgba(192,0,12,0.6)" stroke-width="1"/>
+          <!-- Bridge -->
+          <rect x="128" y="448" width="44" height="10" rx="1" fill="#222" stroke="#888" stroke-width="0.8"/>
+          <!-- Controls -->
+          <circle cx="185" cy="415" r="6" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+          <circle cx="198" cy="400" r="5" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+          <circle cx="198" cy="385" r="5" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+          <!-- Neck — longer for detail -->
+          <rect x="137" y="52" width="26" height="215" rx="3" fill="#1a0e05" stroke="#c0000c" stroke-width="1.2"/>
+          <!-- Side dots -->
+          <circle cx="145" cy="95" r="3" fill="rgba(192,0,12,0.5)"/>
+          <circle cx="145" cy="155" r="3" fill="rgba(192,0,12,0.5)"/>
+          <circle cx="145" cy="200" r="3" fill="rgba(192,0,12,0.5)"/>
+          <!-- Frets -->
+          <line x1="137" y1="80" x2="163" y2="80" stroke="rgba(200,180,100,0.5)" stroke-width="0.9"/>
+          <line x1="137" y1="108" x2="163" y2="108" stroke="rgba(200,180,100,0.5)" stroke-width="0.9"/>
+          <line x1="137" y1="134" x2="163" y2="134" stroke="rgba(200,180,100,0.5)" stroke-width="0.9"/>
+          <line x1="137" y1="158" x2="163" y2="158" stroke="rgba(200,180,100,0.5)" stroke-width="0.9"/>
+          <line x1="137" y1="180" x2="163" y2="180" stroke="rgba(200,180,100,0.5)" stroke-width="0.9"/>
+          <line x1="137" y1="200" x2="163" y2="200" stroke="rgba(200,180,100,0.5)" stroke-width="0.9"/>
+          <line x1="137" y1="218" x2="163" y2="218" stroke="rgba(200,180,100,0.5)" stroke-width="0.9"/>
+          <line x1="137" y1="234" x2="163" y2="234" stroke="rgba(200,180,100,0.5)" stroke-width="0.9"/>
+          <line x1="137" y1="248" x2="163" y2="248" stroke="rgba(200,180,100,0.5)" stroke-width="0.9"/>
+          <!-- Headstock -->
+          <path d="M132 44 Q124 22 128 8 L172 8 Q176 22 168 44Z" fill="#0d0000" stroke="#c0000c" stroke-width="1.5"/>
+          <!-- Logo on headstock -->
+          <text x="150" y="32" text-anchor="middle" font-family="sans-serif" font-size="7" fill="rgba(192,0,12,0.7)" letter-spacing="2">VENOM</text>
+          <!-- Tuners -->
+          <circle cx="133" cy="16" r="5" fill="#777" stroke="#555" stroke-width="0.5"/>
+          <circle cx="143" cy="10" r="5" fill="#777" stroke="#555" stroke-width="0.5"/>
+          <circle cx="157" cy="10" r="5" fill="#777" stroke="#555" stroke-width="0.5"/>
+          <circle cx="167" cy="16" r="5" fill="#777" stroke="#555" stroke-width="0.5"/>
+          <!-- Strings -->
+          <line x1="140" y1="52" x2="141" y2="460" stroke="rgba(192,0,12,0.6)" stroke-width="0.8"/>
+          <line x1="145" y1="52" x2="146" y2="460" stroke="rgba(192,0,12,0.6)" stroke-width="0.8"/>
+          <line x1="150" y1="52" x2="150" y2="460" stroke="rgba(192,0,12,0.6)" stroke-width="0.8"/>
+          <line x1="155" y1="52" x2="154" y2="460" stroke="rgba(192,0,12,0.6)" stroke-width="0.8"/>
+          <line x1="160" y1="52" x2="159" y2="460" stroke="rgba(192,0,12,0.6)" stroke-width="0.8"/>
+          <line x1="164" y1="52" x2="163" y2="460" stroke="rgba(192,0,12,0.5)" stroke-width="1.2"/>
+          <!-- Nut -->
+          <rect x="135" y="50" width="30" height="3" rx="1" fill="#eee" opacity="0.5"/>
+          <!-- Drip from headstock -->
+          <path d="M150 8 Q152 20 150 28" stroke="var(--red)" stroke-width="2" fill="none"/>
+          <circle cx="150" cy="30" r="4" fill="var(--red)"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODELS -->
+<section class="section section-dark" id="models">
+  <div class="container">
+    <div class="section-label">Model Range</div>
+    <h2 class="display-md mb-2">All RBBS Models</h2>
+    <p style="margin-bottom:3rem;max-width:600px;color:var(--grey);">The Red Belly Black Series is available across multiple configurations to suit players of every style — from 6-string players to extended range shredders and bass players.</p>
+    <div class="grid-3">
+
+      <!-- RBBS-6SE -->
+      <div class="model-card">
+        <div class="model-header">
+          <div class="model-guitar-icon">🎸</div>
+          <div class="model-code">MODEL: RBBS-6SE</div>
+          <div class="model-name">6 String Electric</div>
+          <div class="model-type">Standard Electric</div>
+        </div>
+        <div class="model-body">
+          <p class="model-desc">The flagship of the series. A full 25.5" scale 6-string electric built for players who want classic range with the unmistakable Venom aesthetic. Versatile enough for blues, rock, metal, and everything in between.</p>
+          <div class="model-spec-row"><div class="model-spec-key">Strings</div><div class="model-spec-val">6 String</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Type</div><div class="model-spec-val">Electric</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Scale</div><div class="model-spec-val">648mm (25.5")</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Pickups</div><div class="model-spec-val">3x Custom SSS</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Body</div><div class="model-spec-val">Blackwood / Resin Art</div></div>
+          <div class="model-availability">Available — POA</div>
+          <a href="contact.html" class="btn btn-primary" style="display:block;text-align:center;margin-top:1rem;font-size:0.8rem;padding:0.65rem;">Enquire</a>
+        </div>
+      </div>
+
+      <!-- RBBS-7SE -->
+      <div class="model-card">
+        <div class="model-header">
+          <div class="model-guitar-icon">🎸</div>
+          <div class="model-code">MODEL: RBBS-7SE</div>
+          <div class="model-name">7 String Electric</div>
+          <div class="model-type">Extended Range</div>
+        </div>
+        <div class="model-body">
+          <p class="model-desc">Drop the low B and open up a world of extended range tone. The RBBS-7SE keeps the same iconic aesthetics of the series but adds a 7th string for players who need more headroom in the low end — metal, prog, djent, or just curious.</p>
+          <div class="model-spec-row"><div class="model-spec-key">Strings</div><div class="model-spec-val">7 String</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Type</div><div class="model-spec-val">Electric</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Scale</div><div class="model-spec-val">648mm (25.5")</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Pickups</div><div class="model-spec-val">Custom HSS-7 (on request)</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Body</div><div class="model-spec-val">Blackwood / Resin Art</div></div>
+          <div class="model-availability">On Request — POA</div>
+          <a href="contact.html" class="btn btn-primary" style="display:block;text-align:center;margin-top:1rem;font-size:0.8rem;padding:0.65rem;">Enquire</a>
+        </div>
+      </div>
+
+      <!-- RBBS-8SE -->
+      <div class="model-card">
+        <div class="model-header">
+          <div class="model-guitar-icon">🎸</div>
+          <div class="model-code">MODEL: RBBS-8SE</div>
+          <div class="model-name">8 String Electric</div>
+          <div class="model-type">Extended Range</div>
+        </div>
+        <div class="model-body">
+          <p class="model-desc">For the players who want to go further. The RBBS-8SE pushes into baritone territory with a low F# string that opens up sonic landscapes impossible on a standard instrument. For the technically adventurous and the detuned masses.</p>
+          <div class="model-spec-row"><div class="model-spec-key">Strings</div><div class="model-spec-val">8 String</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Type</div><div class="model-spec-val">Electric</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Scale</div><div class="model-spec-val">686mm (27") — TBC</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Pickups</div><div class="model-spec-val">Custom HH-8 (on request)</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Body</div><div class="model-spec-val">Mahogany / Resin Art</div></div>
+          <div class="model-availability">On Request — POA</div>
+          <a href="contact.html" class="btn btn-primary" style="display:block;text-align:center;margin-top:1rem;font-size:0.8rem;padding:0.65rem;">Enquire</a>
+        </div>
+      </div>
+
+      <!-- RBBS-4SB -->
+      <div class="model-card">
+        <div class="model-header" style="background:linear-gradient(135deg,#000d0a,#001508);">
+          <div class="model-guitar-icon">🎵</div>
+          <div class="model-code">MODEL: RBBS-4SB</div>
+          <div class="model-name">4 String Bass</div>
+          <div class="model-type">Electric Bass</div>
+        </div>
+        <div class="model-body">
+          <p class="model-desc">The bass player doesn't get left out. The RBBS-4SB brings the Red Belly Black aesthetic to the low end — same striking black and red finish, same build quality, tuned for the fundamental groove. Standard E-A-D-G configuration.</p>
+          <div class="model-spec-row"><div class="model-spec-key">Strings</div><div class="model-spec-val">4 String</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Type</div><div class="model-spec-val">Electric Bass</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Scale</div><div class="model-spec-val">864mm (34")</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Pickups</div><div class="model-spec-val">Custom Split-P / J</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Body</div><div class="model-spec-val">Blackwood / Resin Art</div></div>
+          <div class="model-availability">Available — POA</div>
+          <a href="contact.html" class="btn btn-primary" style="display:block;text-align:center;margin-top:1rem;font-size:0.8rem;padding:0.65rem;">Enquire</a>
+        </div>
+      </div>
+
+      <!-- RBBS-5SB -->
+      <div class="model-card">
+        <div class="model-header" style="background:linear-gradient(135deg,#000d0a,#001508);">
+          <div class="model-guitar-icon">🎵</div>
+          <div class="model-code">MODEL: RBBS-5SB</div>
+          <div class="model-name">5 String Bass</div>
+          <div class="model-type">Extended Bass</div>
+        </div>
+        <div class="model-body">
+          <p class="model-desc">Add a low B string and unlock the full extended range of modern bass playing. The RBBS-5SB is for the bassist who needs to go low and stay tight — studio, live, or anywhere a 4-string just doesn't reach far enough.</p>
+          <div class="model-spec-row"><div class="model-spec-key">Strings</div><div class="model-spec-val">5 String</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Type</div><div class="model-spec-val">Electric Bass</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Scale</div><div class="model-spec-val">864mm (34")</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Pickups</div><div class="model-spec-val">Custom 5-String Set</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Body</div><div class="model-spec-val">Blackwood / Resin Art</div></div>
+          <div class="model-availability">On Request — POA</div>
+          <a href="contact.html" class="btn btn-primary" style="display:block;text-align:center;margin-top:1rem;font-size:0.8rem;padding:0.65rem;">Enquire</a>
+        </div>
+      </div>
+
+      <!-- Custom Config -->
+      <div class="model-card" style="border:1px dashed rgba(192,0,12,0.3);background:rgba(192,0,12,0.03);">
+        <div class="model-header" style="background:linear-gradient(135deg,#0a0000,#0d0000);min-height:160px;">
+          <div class="model-guitar-icon" style="opacity:0.06;">⚙️</div>
+          <div class="model-code">MODEL: RBBS-CUSTOM</div>
+          <div class="model-name">Custom Config</div>
+          <div class="model-type">Your Specs</div>
+        </div>
+        <div class="model-body">
+          <p class="model-desc">Want the Red Belly Black aesthetic in a configuration not listed above? Left-handed? Different scale length? Baritone tuning? Fanned frets? We can do it. The RBBS design language applied to your exact specification.</p>
+          <div class="model-spec-row"><div class="model-spec-key">Strings</div><div class="model-spec-val">Your choice</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Type</div><div class="model-spec-val">Electric / Bass</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Scale</div><div class="model-spec-val">To spec</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Pickups</div><div class="model-spec-val">To spec</div></div>
+          <div class="model-spec-row"><div class="model-spec-key">Body</div><div class="model-spec-val">To spec</div></div>
+          <div class="model-availability" style="background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.1);color:var(--grey);">Commission — POA</div>
+          <a href="contact.html" class="btn btn-primary" style="display:block;text-align:center;margin-top:1rem;font-size:0.8rem;padding:0.65rem;">Talk to Us</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DESIGN PHILOSOPHY BAND -->
+<div class="concept-band">
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="grid-2" style="align-items:center;">
+      <div>
+        <div class="section-label">Build Philosophy</div>
+        <h2 class="display-md mb-3">Every Detail<br><span class="text-red">Is Deliberate</span></h2>
+        <p>The Red Belly Black isn't just a colour scheme slapped on a generic body. Every design decision reflects the source material — the snake, the Australian landscape, the tension between beauty and danger. The body contours, the pickup placement, the hardware finish — all chosen for the complete aesthetic.</p>
+        <p style="margin-top:0.85rem;">Style and materials specs are being finalised. We're in the process of completing the production documentation for each model variant. Want to be involved in shaping the final spec? Reach out now.</p>
+        <a href="contact.html" class="btn btn-primary" style="margin-top:2rem;display:inline-block;">Commission an RBBS Guitar</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <div style="padding:1.5rem;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);">
+          <div style="font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--red);margin-bottom:0.5rem;">Construction</div>
+          <div style="font-family:var(--font-display);letter-spacing:0.06em;color:var(--cream);margin-bottom:0.4rem;">Bolt-On Neck Joint</div>
+          <div style="font-size:0.8rem;color:var(--grey);">Precision bolt-on for easy future maintenance and neck replacements.</div>
+        </div>
+        <div style="padding:1.5rem;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);">
+          <div style="font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--red);margin-bottom:0.5rem;">Finish</div>
+          <div style="font-family:var(--font-display);letter-spacing:0.06em;color:var(--cream);margin-bottom:0.4rem;">Gloss Polyester / Resin Art</div>
+          <div style="font-size:0.8rem;color:var(--grey);">Hard-wearing gloss over resin art bodies. Unique every single time.</div>
+        </div>
+        <div style="padding:1.5rem;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);">
+          <div style="font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--red);margin-bottom:0.5rem;">Setup</div>
+          <div style="font-family:var(--font-display);letter-spacing:0.06em;color:var(--cream);margin-bottom:0.4rem;">Full Professional Setup</div>
+          <div style="font-size:0.8rem;color:var(--grey);">Every guitar leaves the workshop set up to play properly. No compromise.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section style="padding:5rem 2rem;background:var(--black);text-align:center;">
+  <div class="container">
+    <div class="section-label" style="justify-content:center;">Get Yours</div>
+    <h2 class="display-md mb-3">Want a <span class="text-red">Red Belly Black?</span></h2>
+    <p style="max-width:480px;margin:0 auto 2rem;color:var(--grey);">All RBBS guitars are built to order. Reach out to discuss your configuration, timeline, and pricing. We'll put together a spec sheet and quote for your build.</p>
+    <div class="btn-group" style="justify-content:center;">
+      <a href="contact.html" class="btn btn-primary">Commission Your Build</a>
+      <a href="designs.html" class="btn btn-outline">All Guitar Designs</a>
+      <a href="builds.html" class="btn btn-red-outline">Watch Build Videos</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <img src="images/logo.png" alt="Venom Guitars" class="footer-brand-logo">
+      <div class="footer-tagline">Handcrafted. Australian. Deadly.</div>
+      <p class="footer-desc">Building boutique-quality custom electric guitars from the heart of Australia.</p>
+      <div class="footer-social">
+        <a href="http://facebook.com/venomguitars" target="_blank">f</a>
+        <a href="http://instagram.com/@venomguitars" target="_blank">in</a>
+        <a href="http://tiktok.com/@venomguitars" target="_blank">tt</a>
+        <a href="http://youtube.com/@venomguitars" target="_blank">▶</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a><a href="about.html">About Us</a>
+        <a href="our-purpose.html">Our Purpose</a><a href="our-staff.html">Our Staff</a>
+        <a href="designs.html">Our Designs</a><a href="builds.html">Build Videos</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">RBBS Models</div>
+      <div class="footer-links">
+        <a href="#models">RBBS-6SE — 6 String Electric</a>
+        <a href="#models">RBBS-7SE — 7 String Electric</a>
+        <a href="#models">RBBS-8SE — 8 String Electric</a>
+        <a href="#models">RBBS-4SB — 4 String Bass</a>
+        <a href="#models">RBBS-5SB — 5 String Bass</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Connect</div>
+      <div class="footer-links">
+        <a href="contact.html">Contact Us</a><a href="community.html">Community</a>
+        <a href="blogs-articles.html">Blogs &amp; Articles</a><a href="media.html">Media</a>
+      </div>
+      <div style="margin-top:1.5rem;font-size:0.8rem;color:var(--grey);">📧 <a href="mailto:venomguitarsaus@gmail.com" style="color:var(--red);">venomguitarsaus@gmail.com</a></div>
+      <div style="font-size:0.8rem;color:var(--grey);margin-top:0.4rem;">📍 Sydney, NSW, Australia</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 <span class="footer-bottom-brand">Venom Guitars</span>. All rights reserved. Made in Australia.</div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

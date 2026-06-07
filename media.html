@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media — Venom Guitars</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <style>
+    .article-card {
+      background: var(--charcoal);
+      border: 1px solid rgba(255,255,255,0.07);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+    .article-card:hover { border-color: rgba(192,0,12,0.5); transform: translateY(-4px); }
+    .article-card::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; background:linear-gradient(90deg,transparent,var(--red),transparent); opacity:0; transition:opacity 0.3s; }
+    .article-card:hover::before { opacity:1; }
+    .article-thumb {
+      width:100%; aspect-ratio:16/9;
+      display:flex; align-items:center; justify-content:center;
+      font-size:5rem; opacity:0.15;
+      filter:grayscale(50%);
+    }
+    .article-body { padding:1.5rem; flex:1; display:flex; flex-direction:column; }
+    .article-meta {
+      display:flex; gap:1rem; align-items:center;
+      font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase;
+      color:var(--grey); margin-bottom:0.6rem;
+    }
+    .article-cat { color:var(--red); }
+    .article-title {
+      font-family:var(--font-display); font-size:1.2rem; letter-spacing:0.05em;
+      color:var(--cream); margin-bottom:0.5rem; line-height:1.25;
+    }
+    .article-excerpt { font-size:0.82rem; color:var(--grey); line-height:1.65; flex:1; margin-bottom:1rem; }
+    .article-read { font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--red); }
+
+    .featured-article {
+      display:grid; grid-template-columns:1fr 1fr; gap:0;
+      border:1px solid rgba(192,0,12,0.3); background:var(--charcoal);
+      overflow:hidden; cursor:pointer; transition:border-color 0.3s;
+    }
+    .featured-article:hover { border-color:rgba(192,0,12,0.7); }
+    .featured-article-thumb {
+      background:linear-gradient(135deg,#0a0000,#1a0505);
+      display:flex; align-items:center; justify-content:center;
+      font-size:12rem; opacity:0.12; min-height:300px;
+    }
+    .featured-article-body { padding:3rem; display:flex; flex-direction:column; justify-content:center; }
+    .featured-label { font-size:0.65rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--red); margin-bottom:1rem; }
+    .featured-title { font-family:var(--font-display); font-size:2rem; letter-spacing:0.06em; color:var(--cream); margin-bottom:1rem; line-height:1.15; }
+    .featured-excerpt { font-size:0.88rem; color:var(--grey); line-height:1.7; margin-bottom:1.5rem; }
+
+    .press-item {
+      display:flex; gap:1.5rem; align-items:flex-start;
+      padding:1.5rem; border:1px solid rgba(255,255,255,0.06);
+      background:rgba(255,255,255,0.02); transition:border-color 0.2s;
+    }
+    .press-item:hover { border-color:rgba(192,0,12,0.3); }
+    .press-outlet {
+      font-family:var(--font-display); font-size:1rem;
+      letter-spacing:0.08em; color:var(--cream); margin-bottom:0.25rem;
+    }
+    .press-quote { font-size:0.82rem; color:var(--grey); line-height:1.65; font-style:italic; }
+    .press-date { font-size:0.68rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--red); margin-top:0.5rem; }
+
+    @media (max-width:700px) {
+      .featured-article { grid-template-columns:1fr; }
+      .featured-article-thumb { min-height:160px; font-size:6rem; }
+      .featured-article-body { padding:1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" alt="Venom Guitars">
+    <div class="nav-logo-text"><span>VENOM</span> GUITARS</div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown"><a href="about.html">About ▾</a>
+      <div class="nav-dropdown-menu"><a href="about.html">Our Story</a><a href="about.html#purpose">Our Purpose</a><a href="about.html#team">Our Team</a></div>
+    </div>
+    <div class="nav-dropdown"><a href="designs.html">Designs ▾</a>
+      <div class="nav-dropdown-menu"><a href="designs.html">All Models</a><a href="designs.html#red-belly">Red Belly Black</a><a href="designs.html#custom">Custom Builds</a></div>
+    </div>
+    <a href="builds.html">Build Videos</a>
+    <a href="education.html">Education</a>
+    <a href="community.html">Community</a>
+    <a href="media.html" class="active">Media</a>
+    <a href="contact.html" class="btn-cta nav-cta">Contact</a>
+  </div>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mobile" id="mobile-menu">
+  <a href="index.html">Home</a><a href="about.html">About Us</a>
+  <a href="designs.html">Our Designs</a><a href="builds.html">Build Videos</a>
+  <a href="education.html">Education</a><a href="community.html">Community</a>
+  <a href="media.html" class="active">Media</a><a href="contact.html">Contact Us</a>
+</div>
+
+<div class="page-hero">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 40% 60%,rgba(192,0,12,0.06),transparent 60%);pointer-events:none;"></div>
+  <div class="container">
+    <div class="section-label">Press & Blog</div>
+    <div class="page-hero-title">Our <span style="color:var(--red);">Media</span></div>
+    <div class="page-hero-sub">Articles, announcements, and press</div>
+    <p style="max-width:560px;margin-top:1rem;color:var(--grey);">The latest from Venom Guitars — build announcements, articles on the craft, industry news, and press coverage. No filler content, just substance.</p>
+    <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+      <a href="#blog" style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);border-bottom:1px solid rgba(192,0,12,0.4);padding-bottom:2px;">Blog</a>
+      <a href="#press" style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--grey);border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:2px;">Press</a>
+      <a href="#social" style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--grey);border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:2px;">Social</a>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED ARTICLE -->
+<section class="section section-darker" id="blog">
+  <div class="container">
+    <div class="section-label">Latest</div>
+    <h2 class="display-md mb-6">Featured Article</h2>
+    <div class="featured-article">
+      <div class="featured-article-thumb">🪵</div>
+      <div class="featured-article-body">
+        <div class="featured-label">📅 June 2025 · Tonewoods</div>
+        <div class="featured-title">Why Australian Timber Belongs in Your Electric Guitar</div>
+        <p class="featured-excerpt">We've been using native Australian hardwoods since day one — Blackwood, Silky Oak, Queensland Maple — and the results keep surprising us. Here's why the world is sleeping on Australian tonewoods and what they actually bring to the table tonally.</p>
+        <a href="#" class="btn btn-primary" style="align-self:flex-start;">Read Article</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG GRID -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-label">All Articles</div>
+    <h2 class="display-md mb-6">Blogs & Articles</h2>
+    <div class="grid-3">
+      <div class="article-card reveal animate-up" style="position:relative;">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#0a0000,#1a0505);">🐍</div>
+        <div class="article-body">
+          <div class="article-meta"><span class="article-cat">Brand</span><span>May 2025</span><span>8 min</span></div>
+          <div class="article-title">The Story Behind the Snake</div>
+          <p class="article-excerpt">How the Red Belly Black became our flagship and what the snake in our logo actually represents — Australian identity, danger, and beauty.</p>
+          <div class="article-read">Read Article →</div>
+        </div>
+      </div>
+      <div class="article-card reveal animate-up delay-1" style="position:relative;">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#001200,#001a05);">🎸</div>
+        <div class="article-body">
+          <div class="article-meta"><span class="article-cat">Guitar Tech</span><span>Apr 2025</span><span>12 min</span></div>
+          <div class="article-title">5 Setup Mistakes Killing Your Tone</div>
+          <p class="article-excerpt">We see these same setup errors on almost every guitar that comes through the shop. Fix these five things and your guitar will feel like a different instrument.</p>
+          <div class="article-read">Read Article →</div>
+        </div>
+      </div>
+      <div class="article-card reveal animate-up delay-2" style="position:relative;">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#00080f,#000d1a);">🎨</div>
+        <div class="article-body">
+          <div class="article-meta"><span class="article-cat">Craft</span><span>Mar 2025</span><span>15 min</span></div>
+          <div class="article-title">Resin Art Guitar Bodies: Everything You Need to Know</div>
+          <p class="article-excerpt">The process of making a resin art guitar body is part science, part artistry. We break down every step — from colour theory to structural considerations.</p>
+          <div class="article-read">Read Article →</div>
+        </div>
+      </div>
+      <div class="article-card reveal animate-up" style="position:relative;">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#0d0d00,#1a1500);">⚡</div>
+        <div class="article-body">
+          <div class="article-meta"><span class="article-cat">Electronics</span><span>Feb 2025</span><span>10 min</span></div>
+          <div class="article-title">Custom Wound Pickups: Are They Worth It?</div>
+          <p class="article-excerpt">We've been experimenting with custom winding specs for our Red Belly Black series. Here's what we learned about DCR, magnet choice, and why mass-produced pickups leave so much on the table.</p>
+          <div class="article-read">Read Article →</div>
+        </div>
+      </div>
+      <div class="article-card reveal animate-up delay-1" style="position:relative;">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#0a000f,#120016);">🌿</div>
+        <div class="article-body">
+          <div class="article-meta"><span class="article-cat">Sustainability</span><span>Jan 2025</span><span>9 min</span></div>
+          <div class="article-title">Responsible Timber Sourcing in Australia</div>
+          <p class="article-excerpt">How we source our tonewoods ethically, why certification matters, and the difference between plantation-grown and old-growth timber in instrument building.</p>
+          <div class="article-read">Read Article →</div>
+        </div>
+      </div>
+      <div class="article-card reveal animate-up delay-2" style="position:relative;">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#0f0500,#1a0a00);">🏭</div>
+        <div class="article-body">
+          <div class="article-meta"><span class="article-cat">Industry</span><span>Dec 2024</span><span>11 min</span></div>
+          <div class="article-title">Why Australian Guitar Manufacturing Matters</div>
+          <p class="article-excerpt">The case for building guitars locally — economics, quality control, cultural identity, and why the "cheaper overseas" argument is missing the point entirely.</p>
+          <div class="article-read">Read Article →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section class="section section-darker" id="press">
+  <div class="container">
+    <div class="section-label">Coverage</div>
+    <h2 class="display-md mb-6">Press & Features</h2>
+    <div style="display:flex;flex-direction:column;gap:0.75rem;max-width:800px;">
+      <div class="press-item">
+        <div style="font-size:2rem;flex-shrink:0;">📰</div>
+        <div>
+          <div class="press-outlet">Australian Guitar Magazine</div>
+          <p class="press-quote">"Venom Guitars is building something genuinely exciting — a boutique Australian brand with a strong identity and instruments that back it up."</p>
+          <div class="press-date">2025 · Feature</div>
+        </div>
+      </div>
+      <div class="press-item">
+        <div style="font-size:2rem;flex-shrink:0;">🎵</div>
+        <div>
+          <div class="press-outlet">Music Industry Edge</div>
+          <p class="press-quote">"The Red Belly Black Series is a statement guitar — the resin art finish is one of the most striking things we've seen on a production instrument."</p>
+          <div class="press-date">2025 · Review</div>
+        </div>
+      </div>
+      <div class="press-item">
+        <div style="font-size:2rem;flex-shrink:0;">🏆</div>
+        <div>
+          <div class="press-outlet">Tone Report Weekly</div>
+          <p class="press-quote">"Venom is what happens when genuine craft and strong brand vision collide. Watch this space."</p>
+          <div class="press-date">2024 · Brand Spotlight</div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-6">
+      <div style="padding:2rem;border:1px dashed rgba(192,0,12,0.25);background:rgba(192,0,12,0.03);max-width:500px;">
+        <div style="font-family:var(--font-display);letter-spacing:0.1em;color:var(--cream);margin-bottom:0.75rem;">Press Enquiries</div>
+        <p style="font-size:0.85rem;color:var(--grey);margin-bottom:1rem;">For media kit, hi-res images, interview requests, or review unit availability, please get in touch directly.</p>
+        <a href="mailto:venomguitarsaus@gmail.com" class="btn btn-red-outline" style="font-size:0.8rem;padding:0.5rem 1.2rem;display:inline-block;">Contact Press Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL FEED -->
+<section class="section section-dark" id="social">
+  <div class="container">
+    <div class="section-label">Social Media</div>
+    <h2 class="display-md mb-2">Follow Along</h2>
+    <p class="mb-6">The freshest content lives on our socials — build clips, resin pours, playthroughs, and behind-the-scenes from the workshop.</p>
+    <div class="grid-4">
+      <a href="https://youtube.com/@venomguitars" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;padding:2rem;border:1px solid rgba(255,255,255,0.07);background:var(--charcoal);text-align:center;transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(196,48,43,0.6)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'">
+        <div style="font-size:2.5rem;">▶</div>
+        <div style="font-family:var(--font-display);letter-spacing:0.1em;color:var(--cream);">YouTube</div>
+        <div style="font-size:0.75rem;color:var(--grey);">Full build series & tutorials</div>
+      </a>
+      <a href="https://instagram.com/@venomguitars" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;padding:2rem;border:1px solid rgba(255,255,255,0.07);background:var(--charcoal);text-align:center;transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(253,29,29,0.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'">
+        <div style="font-size:2.5rem;">📷</div>
+        <div style="font-family:var(--font-display);letter-spacing:0.1em;color:var(--cream);">Instagram</div>
+        <div style="font-size:0.75rem;color:var(--grey);">Build photos & Reels</div>
+      </a>
+      <a href="https://tiktok.com/@venomguitars" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;padding:2rem;border:1px solid rgba(255,255,255,0.07);background:var(--charcoal);text-align:center;transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'">
+        <div style="font-size:2.5rem;">♪</div>
+        <div style="font-family:var(--font-display);letter-spacing:0.1em;color:var(--cream);">TikTok</div>
+        <div style="font-size:0.75rem;color:var(--grey);">Quick clips & viral content</div>
+      </a>
+      <a href="https://facebook.com/venomguitars" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;padding:2rem;border:1px solid rgba(255,255,255,0.07);background:var(--charcoal);text-align:center;transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(24,119,242,0.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'">
+        <div style="font-size:2.5rem;">f</div>
+        <div style="font-family:var(--font-display);letter-spacing:0.1em;color:var(--cream);">Facebook</div>
+        <div style="font-size:0.75rem;color:var(--grey);">Community & announcements</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <img src="images/logo.png" alt="Venom Guitars" class="footer-brand-logo">
+      <div class="footer-tagline">Handcrafted. Australian. Deadly.</div>
+      <p class="footer-desc">Building boutique-quality custom electric guitars from the heart of Australia.</p>
+      <div class="footer-social">
+        <a href="http://facebook.com/venomguitars">f</a><a href="http://instagram.com/@venomguitars">in</a>
+        <a href="http://tiktok.com/@venomguitars">tt</a><a href="http://youtube.com/@venomguitars">▶</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a><a href="about.html">About Us</a>
+        <a href="designs.html">Our Designs</a><a href="builds.html">Build Videos</a>
+        <a href="education.html">Education</a><a href="community.html">Community</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Guitar Series</div>
+      <div class="footer-links">
+        <a href="designs.html#red-belly">Red Belly Black</a>
+        <a href="designs.html#taipan">Taipan Series</a>
+        <a href="designs.html#custom">Custom Builds</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Connect</div>
+      <div class="footer-links">
+        <a href="contact.html">Contact Us</a><a href="media.html">Media</a>
+        <a href="community.html">Community</a>
+      </div>
+      <div style="margin-top:1.5rem;font-size:0.8rem;color:var(--grey);">📧 <a href="mailto:venomguitarsaus@gmail.com" style="color:var(--red);">venomguitarsaus@gmail.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 <span class="footer-bottom-brand">Venom Guitars</span>. All rights reserved.</div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

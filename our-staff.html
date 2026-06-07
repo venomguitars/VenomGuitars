@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Staff — Venom Guitars</title>
+  <meta name="description" content="Meet Plummo and Hazy — the co-founders and directors behind Venom Guitars. Two long-time friends combining woodworking, music, and business to build Australia's premier custom guitar brand.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <style>
+    .founder-card {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 0;
+      border: 1px solid rgba(192,0,12,0.25);
+      overflow: hidden;
+      margin-bottom: 2rem;
+      transition: border-color 0.3s;
+    }
+    .founder-card:hover { border-color: rgba(192,0,12,0.6); }
+    .founder-photo-panel {
+      background: linear-gradient(135deg, #0d0000, #1a0505);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .founder-photo-panel::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(192,0,12,0.1), transparent 70%);
+    }
+    .founder-avatar-large {
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      border: 3px solid rgba(192,0,12,0.5);
+      background: linear-gradient(135deg, #1a0505, #0a0a0a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 0 40px rgba(192,0,12,0.2);
+    }
+    .founder-name-large {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      letter-spacing: 0.15em;
+      color: var(--cream);
+      position: relative; z-index: 2;
+      text-align: center;
+    }
+    .founder-role-large {
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-top: 0.4rem;
+      position: relative; z-index: 2;
+      text-align: center;
+    }
+    .founder-info-panel {
+      padding: 3rem;
+      background: var(--charcoal);
+    }
+    .founder-bio {
+      font-size: 0.92rem;
+      color: #aaa;
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+    }
+    .founder-skills {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .skill-chip {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      background: rgba(192,0,12,0.1);
+      border: 1px solid rgba(192,0,12,0.3);
+      color: var(--red-bright);
+    }
+    .founder-quote {
+      border-left: 3px solid var(--red);
+      padding: 1rem 1.5rem;
+      background: rgba(192,0,12,0.05);
+      font-family: var(--font-type);
+      font-size: 1rem;
+      color: var(--cream);
+      line-height: 1.7;
+      font-style: italic;
+    }
+    @media (max-width: 750px) {
+      .founder-card { grid-template-columns: 1fr; }
+      .founder-photo-panel { padding: 2.5rem; }
+    }
+
+    .partner-card {
+      background: var(--charcoal);
+      border: 1px solid rgba(255,255,255,0.07);
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .partner-card:hover { border-color: rgba(192,0,12,0.4); transform: translateY(-4px); }
+    .partner-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--red), transparent);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .partner-card:hover::before { opacity: 1; }
+    .partner-logo-area {
+      padding: 2.5rem 2rem;
+      background: linear-gradient(135deg, #0d0000, #0a0a0a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 120px;
+      position: relative;
+    }
+    .partner-logo-text {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      letter-spacing: 0.12em;
+      color: var(--cream);
+      text-align: center;
+    }
+    .partner-logo-sub {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-top: 0.25rem;
+      text-align: center;
+    }
+    .partner-body {
+      padding: 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .partner-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      letter-spacing: 0.08em;
+      color: var(--cream);
+      margin-bottom: 0.75rem;
+    }
+    .partner-desc { font-size: 0.85rem; color: var(--grey); line-height: 1.7; flex: 1; margin-bottom: 1.25rem; }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" alt="Venom Guitars">
+    <div class="nav-logo-text"><span>VENOM</span> GUITARS</div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown">
+      <a href="about.html" class="active">About ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="about.html">About Us</a>
+        <a href="our-purpose.html">Our Purpose</a>
+        <a href="our-staff.html" class="active">Our Staff</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="designs.html">Designs ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="designs.html">All Designs</a>
+        <a href="series-red-belly-black.html">Red Belly Black Series</a>
+        <a href="designs.html#taipan">Taipan Series</a>
+        <a href="designs.html#custom">Custom Builds</a>
+      </div>
+    </div>
+    <a href="builds.html">Build Videos</a>
+    <a href="education.html">Education</a>
+    <div class="nav-dropdown">
+      <a href="community.html">Community ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="community.html">Our Community</a>
+        <a href="social-media.html">Social Media</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="media.html">Media ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="media.html">Our Media</a>
+        <a href="blogs-articles.html">Blogs &amp; Articles</a>
+        <a href="social-media.html">Social Media</a>
+      </div>
+    </div>
+    <a href="contact.html" class="btn-cta nav-cta">Contact</a>
+  </div>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mobile" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="our-purpose.html" class="mobile-sub">— Our Purpose</a>
+  <a href="our-staff.html" class="mobile-sub active">— Our Staff</a>
+  <a href="designs.html">Our Designs</a>
+  <a href="series-red-belly-black.html" class="mobile-sub">— Red Belly Black Series</a>
+  <a href="builds.html">Build Videos</a>
+  <a href="education.html">Education</a>
+  <a href="community.html">Community</a>
+  <a href="media.html">Media</a>
+  <a href="blogs-articles.html" class="mobile-sub">— Blogs &amp; Articles</a>
+  <a href="social-media.html" class="mobile-sub">— Social Media</a>
+  <a href="contact.html">Contact Us</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(192,0,12,0.07),transparent 60%);pointer-events:none;"></div>
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey);margin-bottom:1.5rem;">
+      <a href="index.html" style="color:var(--grey);transition:color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--grey)'">Home</a>
+      <span style="color:rgba(192,0,12,0.4);">›</span>
+      <a href="about.html" style="color:var(--grey);transition:color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--grey)'">About Us</a>
+      <span style="color:rgba(192,0,12,0.4);">›</span>
+      <span style="color:var(--red);">Our Staff</span>
+    </div>
+    <div class="section-label">The People</div>
+    <div class="page-hero-title">Our <span style="color:var(--red);">Staff</span></div>
+    <div class="page-hero-sub">Two mates. One mission. Deadly guitars.</div>
+    <p style="max-width:580px;margin-top:1rem;color:var(--grey);">Venom Guitars is headquartered in Sydney, NSW — a company born between two long-time friends who reconnected after years apart, combining their talents in woodworking, music, and business.</p>
+  </div>
+</div>
+
+<!-- CO-FOUNDERS -->
+<section class="section section-darker">
+  <div class="container">
+    <div class="section-label">Co-Founders</div>
+    <h2 class="display-md mb-6">The Founding Team</h2>
+
+    <!-- PLUMMO -->
+    <div class="founder-card">
+      <div class="founder-photo-panel">
+        <div class="founder-avatar-large">🎸</div>
+        <div class="founder-name-large">PLUMMO</div>
+        <div class="founder-role-large">Co-Founder & Director</div>
+      </div>
+      <div class="founder-info-panel">
+        <p class="founder-bio">Plummo is one half of the founding duo behind Venom Guitars — a lifelong musician and craftsperson who's been building and playing guitars for as long as most people can remember. His background sits squarely at the intersection of music and woodworking, giving him an instinctive sense of how an instrument needs to feel in the hands of a player, not just how it looks on paper.</p>
+        <p class="founder-bio">As a Co-Founder and Director, Plummo drives the creative and technical direction of Venom's builds — from initial design concepts through to final setup. He believes that a guitar should be a genuine extension of the player, built to their exact requirements and tuned to their style. Every build decision reflects that philosophy.</p>
+        <div class="founder-skills">
+          <div class="skill-chip">Guitar Building</div>
+          <div class="skill-chip">Woodworking</div>
+          <div class="skill-chip">Design Direction</div>
+          <div class="skill-chip">Setup & Intonation</div>
+          <div class="skill-chip">Business Strategy</div>
+        </div>
+        <div class="founder-quote">
+          "A guitar isn't just a tool. It's a relationship between the instrument and the player. We build ours to make that relationship as good as it can possibly be."
+        </div>
+      </div>
+    </div>
+
+    <!-- HAZY -->
+    <div class="founder-card">
+      <div class="founder-photo-panel" style="background:linear-gradient(135deg,#000d0a,#001a12);">
+        <div class="founder-avatar-large" style="background:linear-gradient(135deg,#002010,#0a0a0a);border-color:rgba(0,180,80,0.3);">🔧</div>
+        <div class="founder-name-large">HAZY</div>
+        <div class="founder-role-large">Co-Founder & Director</div>
+      </div>
+      <div class="founder-info-panel">
+        <p class="founder-bio">Hazy is the other half of the equation — and the person who brings the timber expertise, business acumen, and relentless drive to get things done. As the force behind Hazy's Wood, he has deep connections in the Australian hardwood space, giving Venom Guitars access to premium native timbers that simply aren't available through conventional channels.</p>
+        <p class="founder-bio">As Co-Founder and Director, Hazy manages the supply chain, partner relationships, and operational backbone of the business. He's the person who makes sure the timber arrives, the build schedule is realistic, and the business runs the way it should. He also plays — which means he understands from the inside what a great guitar needs to feel like.</p>
+        <div class="founder-skills">
+          <div class="skill-chip">Timber Sourcing</div>
+          <div class="skill-chip">Business Operations</div>
+          <div class="skill-chip">Woodcraft</div>
+          <div class="skill-chip">Partner Relations</div>
+          <div class="skill-chip">Music</div>
+        </div>
+        <div class="founder-quote">
+          "The timber is the soul of the guitar. Get the wood right and you're 80% of the way there. That's what we obsess over — finding wood with character."
+        </div>
+      </div>
+    </div>
+
+    <!-- Origin story -->
+    <div style="margin-top:2rem;padding:2.5rem;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);">
+      <div class="section-label" style="margin-bottom:1rem;">Origin Story</div>
+      <div style="font-family:var(--font-display);font-size:1.5rem;letter-spacing:0.08em;color:var(--cream);margin-bottom:1rem;">Two Old Mates, One New Mission</div>
+      <p>Plummo and Hazy are long-time friends who reconnected after a number of years apart. Both had built careers in their respective fields — music and woodworking, business and timber — but neither had stopped thinking about the idea of a truly premium, genuinely Australian guitar brand.</p>
+      <p style="margin-top:0.85rem;">When they finally sat down together and put the idea on the table, it was obvious: they had exactly the combined skillset to make it happen. Venom Guitars was the result. Not a corporate venture, not an investor pitch — just two people who love music and craft, deciding to build something worth building.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS PARTNERS -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-label">Our Network</div>
+    <h2 class="display-md mb-2">Business Partners</h2>
+    <p style="max-width:600px;margin-bottom:3rem;color:var(--grey);">Venom Guitars is proud to have a number of partner businesses who support our operations. Without them, life would be significantly more difficult — and our guitars wouldn't be quite as good.</p>
+    <div class="grid-2" style="max-width:900px;">
+
+      <!-- Oz Soundz Group -->
+      <div class="partner-card" style="position:relative;">
+        <div class="partner-logo-area">
+          <div>
+            <div class="partner-logo-text">OZ SOUNDZ</div>
+            <div class="partner-logo-sub">GROUP</div>
+          </div>
+        </div>
+        <div class="partner-body">
+          <div class="partner-name">The Oz Soundz Group</div>
+          <p class="partner-desc">The Oz Soundz Group is a key partner in the Venom Guitars ecosystem — providing support across the broader music and audio landscape. Their involvement gives Venom Guitars a connection to the wider Australian music industry, supporting everything from events and artist management to audio production and live sound.</p>
+          <div style="display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap;">
+            <a href="https://ozsoundzgroup.com.au" target="_blank" class="btn btn-red" style="font-size:0.75rem;padding:0.45rem 1.2rem;">Visit Website →</a>
+            <div style="font-size:0.7rem;color:var(--grey);letter-spacing:0.1em;">ozsoundzgroup.com.au</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hazy's Wood -->
+      <div class="partner-card" style="position:relative;">
+        <div class="partner-logo-area" style="background:linear-gradient(135deg,#020d05,#0a0a0a);">
+          <div>
+            <div class="partner-logo-text" style="color:rgba(100,200,100,0.8);">HAZY'S</div>
+            <div class="partner-logo-sub" style="color:rgba(80,160,80,0.7);">WOOD</div>
+          </div>
+        </div>
+        <div class="partner-body">
+          <div class="partner-name">Hazy's Wood</div>
+          <p class="partner-desc">Run by Venom's own Co-Founder, Hazy's Wood is where our timber comes from. This isn't an arms-length supplier relationship — it's integrated into the heart of how we build. Hazy's connections in the Australian hardwood market means Venom Guitars has access to hand-selected, premium native tonewoods that you simply won't find in a timber yard.</p>
+          <div style="display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap;">
+            <a href="https://hazyswood.com.au" target="_blank" class="btn btn-red" style="font-size:0.75rem;padding:0.45rem 1.2rem;">Visit Website →</a>
+            <div style="font-size:0.7rem;color:var(--grey);letter-spacing:0.1em;">hazyswood.com.au</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:3rem;padding:2rem;border:1px dashed rgba(192,0,12,0.2);background:rgba(192,0,12,0.03);max-width:600px;">
+      <div style="font-family:var(--font-display);letter-spacing:0.1em;color:var(--cream);margin-bottom:0.75rem;">Become a Partner</div>
+      <p style="font-size:0.85rem;color:var(--grey);margin-bottom:1.25rem;">Are you a business in the music, woodworking, or instrument space? We're always open to conversations about collaboration and partnership. Reach out and let's see what we can build together.</p>
+      <a href="contact.html" class="btn btn-primary" style="font-size:0.85rem;padding:0.65rem 1.75rem;">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:5rem 2rem;background:linear-gradient(135deg,#0a0000,#110003);border-top:1px solid rgba(192,0,12,0.2);text-align:center;">
+  <div class="container">
+    <div class="section-label" style="justify-content:center;">Work With Us</div>
+    <h2 class="display-md mb-3">Want to <span class="text-red">Connect?</span></h2>
+    <p style="max-width:480px;margin:0 auto 2rem;color:var(--grey);">Whether it's a commission, a collab, or a conversation — Plummo and Hazy would love to hear from you.</p>
+    <div class="btn-group" style="justify-content:center;">
+      <a href="contact.html" class="btn btn-primary">Contact the Team</a>
+      <a href="our-purpose.html" class="btn btn-outline">Our Purpose</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <img src="images/logo.png" alt="Venom Guitars" class="footer-brand-logo">
+      <div class="footer-tagline">Handcrafted. Australian. Deadly.</div>
+      <p class="footer-desc">Building boutique-quality custom electric guitars from the heart of Australia.</p>
+      <div class="footer-social">
+        <a href="http://facebook.com/venomguitars" target="_blank">f</a>
+        <a href="http://instagram.com/@venomguitars" target="_blank">in</a>
+        <a href="http://tiktok.com/@venomguitars" target="_blank">tt</a>
+        <a href="http://youtube.com/@venomguitars" target="_blank">▶</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a><a href="about.html">About Us</a>
+        <a href="our-purpose.html">Our Purpose</a><a href="our-staff.html">Our Staff</a>
+        <a href="designs.html">Our Designs</a><a href="builds.html">Build Videos</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Guitar Series</div>
+      <div class="footer-links">
+        <a href="series-red-belly-black.html">Red Belly Black</a>
+        <a href="designs.html#taipan">Taipan Series</a>
+        <a href="designs.html#custom">Custom Builds</a>
+      </div>
+      <div class="footer-heading" style="margin-top:1.5rem;">Partners</div>
+      <div class="footer-links">
+        <a href="https://ozsoundzgroup.com.au" target="_blank">Oz Soundz Group</a>
+        <a href="https://hazyswood.com.au" target="_blank">Hazy's Wood</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Connect</div>
+      <div class="footer-links">
+        <a href="contact.html">Contact Us</a><a href="community.html">Community</a>
+        <a href="blogs-articles.html">Blogs &amp; Articles</a><a href="media.html">Media</a>
+      </div>
+      <div style="margin-top:1.5rem;font-size:0.8rem;color:var(--grey);">📧 <a href="mailto:venomguitarsaus@gmail.com" style="color:var(--red);">venomguitarsaus@gmail.com</a></div>
+      <div style="font-size:0.8rem;color:var(--grey);margin-top:0.4rem;">📍 Sydney, NSW, Australia</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 <span class="footer-bottom-brand">Venom Guitars</span>. All rights reserved. Made in Australia.</div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

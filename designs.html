@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Designs — Venom Guitars</title>
+  <meta name="description" content="Explore Venom Guitars' series — Red Belly Black, Taipan, and fully custom builds. Australian hardwoods, resin art bodies, deadly tone.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <style>
+    .guitar-showcase {
+      padding: 4rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .guitar-showcase:last-child { border-bottom: none; }
+
+    .guitar-hero-card {
+      background: var(--charcoal);
+      border: 1px solid rgba(192,0,12,0.2);
+      position: relative;
+      overflow: hidden;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .guitar-hero-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(192,0,12,0.1), transparent 70%);
+    }
+    .guitar-svg-display {
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 20px 40px rgba(192,0,12,0.3));
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .spec-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--light-grey);
+      margin: 0.2rem;
+    }
+    .spec-badge span { color: var(--red); }
+
+    .option-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    .option-chip {
+      padding: 0.6rem 0.8rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      font-size: 0.8rem;
+      color: var(--grey);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .option-chip:hover, .option-chip.selected {
+      border-color: var(--red);
+      color: var(--cream);
+      background: rgba(192,0,12,0.1);
+    }
+
+    .price-tag {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--red);
+      letter-spacing: 0.05em;
+    }
+    .price-note { font-size: 0.75rem; color: var(--grey); margin-top: 0.25rem; }
+
+    /* Guitar builder section */
+    .builder-section {
+      background: linear-gradient(135deg, #0f0000, #1a0505, #0a0a0a);
+      border: 1px solid rgba(192,0,12,0.2);
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .builder-section::after {
+      content: 'CUSTOM';
+      position: absolute;
+      font-family: var(--font-display);
+      font-size: 12rem;
+      color: rgba(192,0,12,0.04);
+      right: -2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      letter-spacing: 0.1em;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" alt="Venom Guitars">
+    <div class="nav-logo-text"><span>VENOM</span> GUITARS</div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown">
+      <a href="about.html">About ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="about.html">Our Story</a>
+        <a href="about.html#purpose">Our Purpose</a>
+        <a href="about.html#team">Our Team</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="designs.html" class="active">Designs ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="designs.html">All Models</a>
+        <a href="designs.html#red-belly">Red Belly Black Series</a>
+        <a href="designs.html#custom">Custom Builds</a>
+      </div>
+    </div>
+    <a href="builds.html">Build Videos</a>
+    <a href="education.html">Education</a>
+    <a href="community.html">Community</a>
+    <a href="media.html">Media</a>
+    <a href="contact.html" class="btn-cta nav-cta">Contact</a>
+  </div>
+  <div class="nav-hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="designs.html" class="active">Our Designs</a>
+  <a href="builds.html">Build Videos</a>
+  <a href="education.html">Education</a>
+  <a href="community.html">Community</a>
+  <a href="media.html">Media</a>
+  <a href="contact.html">Contact Us</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div style="position:absolute; top:0; right:0; width:50%; height:100%; background:radial-gradient(ellipse at right, rgba(192,0,12,0.06), transparent 70%); pointer-events:none;"></div>
+  <div class="container">
+    <div class="section-label">Instruments</div>
+    <div class="page-hero-title">Our <span style="color:var(--red);">Designs</span></div>
+    <div class="page-hero-sub">Each one a weapon. Each one a work of art.</div>
+    <p style="max-width:560px; margin-top:1rem; color:var(--grey);">Browse our guitar series — or skip straight to commissioning a fully custom build. Australian timbers, boutique hardware, and setups that play themselves.</p>
+    <div style="display:flex; gap:1rem; margin-top:1.5rem; flex-wrap:wrap;">
+      <a href="#red-belly" style="font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); border-bottom:1px solid rgba(192,0,12,0.4); padding-bottom:2px;">Red Belly Black</a>
+      <a href="#taipan" style="font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--grey); border-bottom:1px solid rgba(255,255,255,0.2); padding-bottom:2px;">Taipan Series</a>
+      <a href="#death-adder" style="font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--grey); border-bottom:1px solid rgba(255,255,255,0.2); padding-bottom:2px;">Death Adder</a>
+      <a href="#custom" style="font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--grey); border-bottom:1px solid rgba(255,255,255,0.2); padding-bottom:2px;">Custom Build</a>
+    </div>
+  </div>
+</div>
+
+<!-- RED BELLY BLACK -->
+<section class="section section-darker" id="red-belly">
+  <div class="container">
+    <div class="guitar-showcase">
+      <div class="section-label">Flagship Series</div>
+      <div class="split-layout" style="align-items:start;">
+        <div>
+          <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.5rem;">
+            <h2 class="display-md">Red Belly Black</h2>
+            <div class="badge badge-new">Available</div>
+          </div>
+          <div class="accent-line mb-3"></div>
+          <p>Named after Australia's most iconic serpent, the Red Belly Black series is our flagship — bold, dangerous, and impossible to ignore. The body is carved from premium Australian Blackwood, with a hand-poured resin art finish featuring the black and red colourways of its namesake.</p>
+          <p class="mt-2">Hot single-coil pickups deliver that crisp, biting Aussie tone. Whether you're playing blues, rock, or going full noise, this guitar cuts through like a black snake through long grass.</p>
+
+          <div style="margin:2rem 0;">
+            <div style="font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--grey); margin-bottom:0.75rem;">Key Specs</div>
+            <table class="specs-table">
+              <tr><td>Body</td><td>Australian Blackwood / Resin Art</td></tr>
+              <tr><td>Neck</td><td>Queensland Maple, C-profile</td></tr>
+              <tr><td>Fingerboard</td><td>Rosewood, 22 frets</td></tr>
+              <tr><td>Scale Length</td><td>648mm (25.5")</td></tr>
+              <tr><td>Pickups</td><td>3x Hot Single Coil (custom wound)</td></tr>
+              <tr><td>Hardware</td><td>Chrome / Vintage style</td></tr>
+              <tr><td>Controls</td><td>Volume, Tone, 5-way selector</td></tr>
+              <tr><td>Finish</td><td>Gloss Polyester / Resin Art</td></tr>
+              <tr><td>Weight</td><td>~3.4kg</td></tr>
+            </table>
+          </div>
+
+          <div class="price-tag">POA</div>
+          <div class="price-note">Price on application — each build is unique. Contact us for a quote.</div>
+
+          <div class="btn-group mt-4">
+            <a href="contact.html" class="btn btn-primary">Enquire Now</a>
+            <a href="builds.html" class="btn btn-outline">Watch Build Video</a>
+          </div>
+        </div>
+        <div>
+          <div class="guitar-hero-card" style="background:linear-gradient(135deg,#0a0000,#1a0505);">
+            <svg class="guitar-svg-display" viewBox="0 0 260 460" width="220" xmlns="http://www.w3.org/2000/svg">
+              <!-- Body -->
+              <path d="M 130 230 Q 50 240 40 310 Q 30 380 60 420 Q 80 450 130 450 Q 180 450 200 420 Q 230 380 220 310 Q 210 240 130 230 Z" fill="#0d0505" stroke="#c0000c" stroke-width="1.5"/>
+              <!-- Body waist detail -->
+              <path d="M 65 270 Q 45 295 47 330" fill="none" stroke="rgba(192,0,12,0.4)" stroke-width="1"/>
+              <path d="M 195 270 Q 215 295 213 330" fill="none" stroke="rgba(192,0,12,0.4)" stroke-width="1"/>
+              <!-- Red belly art -->
+              <ellipse cx="130" cy="355" rx="55" ry="65" fill="rgba(192,0,12,0.08)" stroke="rgba(192,0,12,0.2)" stroke-width="1"/>
+              <!-- Red resin swirl -->
+              <path d="M 90 320 Q 110 300 130 310 Q 150 320 165 305 Q 175 295 170 315 Q 165 335 145 345 Q 125 355 110 345 Q 95 335 90 320 Z" fill="rgba(192,0,12,0.15)" stroke="rgba(192,0,12,0.3)" stroke-width="0.8"/>
+              <!-- Pickups -->
+              <rect x="103" y="285" width="54" height="14" rx="2" fill="#111" stroke="rgba(192,0,12,0.5)" stroke-width="1"/>
+              <rect x="103" y="313" width="54" height="14" rx="2" fill="#111" stroke="rgba(192,0,12,0.5)" stroke-width="1"/>
+              <!-- Bridge -->
+              <rect x="115" y="400" width="30" height="8" rx="1" fill="#333" stroke="#888" stroke-width="0.5"/>
+              <!-- Controls -->
+              <circle cx="170" cy="380" r="5" fill="#222" stroke="#666" stroke-width="0.8"/>
+              <circle cx="183" cy="368" r="4" fill="#222" stroke="#666" stroke-width="0.8"/>
+              <circle cx="183" cy="355" r="4" fill="#222" stroke="#666" stroke-width="0.8"/>
+              <!-- Neck -->
+              <rect x="121" y="50" width="18" height="185" rx="2" fill="#1a0e05" stroke="#c0000c" stroke-width="1"/>
+              <!-- Frets -->
+              <line x1="121" y1="80" x2="139" y2="80" stroke="rgba(200,180,100,0.5)" stroke-width="0.8"/>
+              <line x1="121" y1="105" x2="139" y2="105" stroke="rgba(200,180,100,0.5)" stroke-width="0.8"/>
+              <line x1="121" y1="128" x2="139" y2="128" stroke="rgba(200,180,100,0.5)" stroke-width="0.8"/>
+              <line x1="121" y1="149" x2="139" y2="149" stroke="rgba(200,180,100,0.5)" stroke-width="0.8"/>
+              <line x1="121" y1="168" x2="139" y2="168" stroke="rgba(200,180,100,0.5)" stroke-width="0.8"/>
+              <line x1="121" y1="185" x2="139" y2="185" stroke="rgba(200,180,100,0.5)" stroke-width="0.8"/>
+              <line x1="121" y1="200" x2="139" y2="200" stroke="rgba(200,180,100,0.5)" stroke-width="0.8"/>
+              <line x1="121" y1="214" x2="139" y2="214" stroke="rgba(200,180,100,0.5)" stroke-width="0.8"/>
+              <!-- Headstock -->
+              <path d="M 117 35 Q 110 15 114 5 L 146 5 Q 150 15 143 35 Z" fill="#111" stroke="#c0000c" stroke-width="1.2"/>
+              <!-- Tuning pegs -->
+              <circle cx="118" cy="12" r="4" fill="#777"/>
+              <circle cx="127" cy="7" r="4" fill="#777"/>
+              <circle cx="137" cy="7" r="4" fill="#777"/>
+              <circle cx="146" cy="12" r="4" fill="#777"/>
+              <!-- Strings -->
+              <line x1="125" y1="50" x2="127" y2="415" stroke="rgba(192,0,12,0.5)" stroke-width="0.7"/>
+              <line x1="129" y1="50" x2="131" y2="415" stroke="rgba(192,0,12,0.5)" stroke-width="0.7"/>
+              <line x1="133" y1="50" x2="135" y2="415" stroke="rgba(192,0,12,0.5)" stroke-width="0.7"/>
+              <line x1="137" y1="50" x2="138" y2="415" stroke="rgba(192,0,12,0.5)" stroke-width="0.7"/>
+              <!-- Nut -->
+              <rect x="119" y="48" width="22" height="3" rx="1" fill="#ddd" opacity="0.6"/>
+              <!-- Drip detail -->
+              <path d="M 130 5 Q 132 15 130 20" stroke="var(--red)" stroke-width="1.5" fill="none"/>
+              <circle cx="130" cy="22" r="3" fill="var(--red)" opacity="0.9"/>
+            </svg>
+          </div>
+          <div style="margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:0.4rem;">
+            <div class="spec-badge">🪵 <span>Blackwood</span> Body</div>
+            <div class="spec-badge">🎸 <span>Custom</span> Wound Pickups</div>
+            <div class="spec-badge">🇦🇺 <span>Australian</span> Made</div>
+            <div class="spec-badge">🎨 <span>Resin</span> Art Finish</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAIPAN -->
+<section class="section section-dark" id="taipan">
+  <div class="container">
+    <div class="guitar-showcase">
+      <div class="section-label">Coming Soon</div>
+      <div class="split-layout reverse">
+        <div>
+          <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.5rem;">
+            <h2 class="display-md">Taipan <span style="color:var(--red);">Series</span></h2>
+            <div class="badge">In Development</div>
+          </div>
+          <div class="accent-line mb-3"></div>
+          <p>The Taipan — Australia's most venomous land snake — demands a guitar that lives up to the name. This series is built for the heavy hitter. Mahogany body for deep, resonant warmth. Twin high-output humbuckers for serious bite.</p>
+          <p class="mt-2">We're currently prototyping the Taipan series — testing different Mahogany-Maple combinations, refining the neck profile, and dialing in the pickup wind for maximum aggression without muddiness.</p>
+          <p class="mt-2">If you want early access or want to commission a pre-production Taipan, reach out now.</p>
+
+          <div style="margin:2rem 0;">
+            <div style="font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--grey); margin-bottom:0.75rem;">Planned Specs</div>
+            <table class="specs-table">
+              <tr><td>Body</td><td>Mahogany with Maple cap (TBC)</td></tr>
+              <tr><td>Neck</td><td>Mahogany, D-profile</td></tr>
+              <tr><td>Fingerboard</td><td>Ebony, 22 frets</td></tr>
+              <tr><td>Scale Length</td><td>628mm (24.75")</td></tr>
+              <tr><td>Pickups</td><td>2x High-output Humbuckers (custom)</td></tr>
+              <tr><td>Hardware</td><td>Black nickel</td></tr>
+              <tr><td>Controls</td><td>2x Volume, 2x Tone, 3-way</td></tr>
+              <tr><td>Finish</td><td>Satin / Nitro Lacquer (TBC)</td></tr>
+            </table>
+          </div>
+
+          <div class="btn-group mt-4">
+            <a href="contact.html" class="btn btn-primary">Get Early Access</a>
+          </div>
+        </div>
+        <div>
+          <div class="guitar-hero-card" style="background:linear-gradient(135deg,#050a00,#0a1205);">
+            <svg class="guitar-svg-display" viewBox="0 0 280 480" width="240" xmlns="http://www.w3.org/2000/svg">
+              <!-- LP-style body -->
+              <path d="M 140 220 Q 60 228 48 295 Q 38 360 68 408 Q 95 445 140 448 Q 185 445 212 408 Q 242 360 232 295 Q 220 228 140 220 Z" fill="#0a0800" stroke="rgba(192,0,12,0.6)" stroke-width="1.5"/>
+              <!-- Carved top -->
+              <path d="M 140 235 Q 80 243 70 300 Q 62 358 86 398 Q 105 428 140 431 Q 175 428 194 398 Q 218 358 210 300 Q 200 243 140 235 Z" fill="none" stroke="rgba(192,0,12,0.2)" stroke-width="0.8"/>
+              <!-- Neck binding -->
+              <rect x="127" y="48" width="26" height="175" rx="3" fill="#120b02" stroke="rgba(192,0,12,0.6)" stroke-width="1.2"/>
+              <!-- Frets LP style -->
+              <line x1="127" y1="78" x2="153" y2="78" stroke="rgba(200,180,100,0.5)" stroke-width="0.8"/>
+              <line x1="127" y1="103" x2="153" y2="103" stroke="rgba(200,180,100,0.5)" stroke-width="0.8"/>
+              <line x1="127" y1="126" x2="153" y2="126" stroke="rgba(200,180,100,0.5)" stroke-width="0.8"/>
+              <line x1="127" y1="147" x2="153" y2="147" stroke="rgba(200,180,100,0.5)" stroke-width="0.8"/>
+              <line x1="127" y1="166" x2="153" y2="166" stroke="rgba(200,180,100,0.5)" stroke-width="0.8"/>
+              <line x1="127" y1="183" x2="153" y2="183" stroke="rgba(200,180,100,0.5)" stroke-width="0.8"/>
+              <!-- Humbuckers -->
+              <rect x="100" y="270" width="80" height="20" rx="2" fill="#111" stroke="rgba(192,0,12,0.6)" stroke-width="1"/>
+              <rect x="100" y="308" width="80" height="20" rx="2" fill="#111" stroke="rgba(192,0,12,0.6)" stroke-width="1"/>
+              <!-- Pole pieces -->
+              <circle cx="113" cy="280" r="2" fill="#555"/>
+              <circle cx="125" cy="280" r="2" fill="#555"/>
+              <circle cx="137" cy="280" r="2" fill="#555"/>
+              <circle cx="149" cy="280" r="2" fill="#555"/>
+              <circle cx="161" cy="280" r="2" fill="#555"/>
+              <circle cx="173" cy="280" r="2" fill="#555"/>
+              <!-- Tune-o-matic -->
+              <rect x="115" y="392" width="50" height="6" rx="2" fill="#333" stroke="#999" stroke-width="0.5"/>
+              <rect x="118" y="385" width="44" height="7" rx="1" fill="#222" stroke="#777" stroke-width="0.5"/>
+              <!-- Controls -->
+              <circle cx="173" cy="358" r="6" fill="#1a1a1a" stroke="#666" stroke-width="0.8"/>
+              <circle cx="188" cy="342" r="5" fill="#1a1a1a" stroke="#666" stroke-width="0.8"/>
+              <circle cx="188" cy="360" r="5" fill="#1a1a1a" stroke="#666" stroke-width="0.8"/>
+              <!-- Headstock (angled LP style) -->
+              <path d="M 122 40 Q 115 20 118 8 L 162 8 Q 165 20 158 40 Z" fill="#0d0800" stroke="rgba(192,0,12,0.8)" stroke-width="1.2"/>
+              <!-- Tuners LP style -->
+              <circle cx="125" cy="15" r="4" fill="#888"/>
+              <circle cx="135" cy="10" r="4" fill="#888"/>
+              <circle cx="145" cy="10" r="4" fill="#888"/>
+              <circle cx="155" cy="15" r="4" fill="#888"/>
+              <!-- Strings -->
+              <line x1="133" y1="48" x2="136" y2="400" stroke="rgba(192,0,12,0.4)" stroke-width="0.7"/>
+              <line x1="138" y1="48" x2="140" y2="400" stroke="rgba(192,0,12,0.4)" stroke-width="0.7"/>
+              <line x1="143" y1="48" x2="144" y2="400" stroke="rgba(192,0,12,0.4)" stroke-width="0.7"/>
+              <line x1="148" y1="48" x2="148" y2="400" stroke="rgba(192,0,12,0.4)" stroke-width="0.7"/>
+              <!-- "Coming Soon" overlay text -->
+              <text x="140" y="440" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(192,0,12,0.6)" letter-spacing="3">COMING SOON</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEATH ADDER -->
+<section class="section section-darker" id="death-adder">
+  <div class="container">
+    <div class="guitar-showcase">
+      <div class="section-label">Future Series</div>
+      <div class="split-layout">
+        <div>
+          <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.5rem;">
+            <h2 class="display-md">Death <span style="color:var(--red);">Adder</span></h2>
+            <div class="badge">Concept Stage</div>
+          </div>
+          <div class="accent-line mb-3"></div>
+          <p>Short. Wide. Devastating. The Death Adder series concept takes a radical approach — a short-scale, wide-body guitar optimised for low tunings and baritone playing. Named after Australia's deadliest ambush predator.</p>
+          <p class="mt-2">This is still in concept stage, but if you're interested in a baritone or short-scale commission in this direction, we're open to discussion. Be part of shaping the series.</p>
+
+          <div style="margin-top:2rem; padding:1.5rem; border:1px dashed rgba(192,0,12,0.3); background:rgba(192,0,12,0.04);">
+            <div style="font-family:var(--font-display); letter-spacing:0.1em; color:var(--cream); margin-bottom:0.5rem;">Interested in Influencing This Series?</div>
+            <p style="font-size:0.85rem; color:var(--grey);">We want player input on the Death Adder. Tell us what you want — specs, playability, price point. The people who reach out now will shape what this guitar becomes.</p>
+            <a href="contact.html" class="btn btn-red-outline mt-4" style="display:inline-block; margin-top:1rem;">Have Your Say</a>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:center;">
+          <div style="text-align:center; padding:3rem; border:1px dashed rgba(192,0,12,0.2); background:rgba(192,0,12,0.03); width:100%;">
+            <div style="font-size:6rem; margin-bottom:1rem; filter:grayscale(50%);">🎸</div>
+            <div style="font-family:var(--font-display); font-size:1.5rem; letter-spacing:0.1em; color:var(--grey);">Concept Art</div>
+            <div style="font-size:0.8rem; color:var(--red); margin-top:0.5rem; font-family:var(--font-grunge);">Coming Soon</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOM BUILD -->
+<section class="section section-dark" id="custom">
+  <div class="container">
+    <div class="section-label">Fully Custom</div>
+    <h2 class="display-md mb-2">Custom Builds</h2>
+    <div class="accent-line mb-4"></div>
+
+    <div class="builder-section">
+      <div class="grid-2" style="position:relative; z-index:2;">
+        <div>
+          <div style="font-family:var(--font-grunge); color:var(--red); font-size:1.5rem; margin-bottom:1rem;">Your Vision. Our Craft.</div>
+          <p>If our series doesn't quite nail what you're after, we do fully custom builds from the ground up. You pick every spec — body shape, tonewoods, hardware, electronics, finish. We build it.</p>
+          <p class="mt-2">Custom builds take 8-16 weeks depending on complexity. We'll send you progress photos throughout the build. When it arrives, it will be the only guitar in the world exactly like it.</p>
+
+          <div style="margin:2rem 0;">
+            <div style="font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--grey); margin-bottom:0.75rem;">What you can customise</div>
+            <div class="option-grid">
+              <div class="option-chip selected">Body Shape</div>
+              <div class="option-chip selected">Tonewoods</div>
+              <div class="option-chip selected">Pickups</div>
+              <div class="option-chip selected">Hardware</div>
+              <div class="option-chip selected">Neck Profile</div>
+              <div class="option-chip selected">Scale Length</div>
+              <div class="option-chip selected">Finish</div>
+              <div class="option-chip selected">Inlay Design</div>
+              <div class="option-chip selected">Electronics</div>
+              <div class="option-chip selected">Nut Material</div>
+              <div class="option-chip selected">Fret Wire</div>
+              <div class="option-chip selected">Radius</div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn-primary">Start Your Build</a>
+        </div>
+        <div>
+          <div style="font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--grey); margin-bottom:1rem;">Available Body Tonewoods</div>
+          <div style="display:flex; flex-direction:column; gap:0.75rem;">
+            <div style="padding:0.75rem 1rem; border:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <div style="font-family:var(--font-display); letter-spacing:0.06em; color:var(--cream);">Australian Blackwood</div>
+                <div style="font-size:0.75rem; color:var(--grey);">Warm, complex midrange. Stunning grain.</div>
+              </div>
+              <div class="badge badge-new">Native</div>
+            </div>
+            <div style="padding:0.75rem 1rem; border:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <div style="font-family:var(--font-display); letter-spacing:0.06em; color:var(--cream);">Queensland Maple</div>
+                <div style="font-size:0.75rem; color:var(--grey);">Bright, articulate highs. Dense and hard.</div>
+              </div>
+              <div class="badge">Native</div>
+            </div>
+            <div style="padding:0.75rem 1rem; border:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <div style="font-family:var(--font-display); letter-spacing:0.06em; color:var(--cream);">Silky Oak</div>
+                <div style="font-size:0.75rem; color:var(--grey);">Balanced tone. Beautiful lace/ribbon figure.</div>
+              </div>
+              <div class="badge">Native</div>
+            </div>
+            <div style="padding:0.75rem 1rem; border:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <div style="font-family:var(--font-display); letter-spacing:0.06em; color:var(--cream);">Mahogany</div>
+                <div style="font-size:0.75rem; color:var(--grey);">Classic warmth. Sustain-heavy. Legendary tone.</div>
+              </div>
+              <div class="badge">International</div>
+            </div>
+            <div style="padding:0.75rem 1rem; border:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <div style="font-family:var(--font-display); letter-spacing:0.06em; color:var(--cream);">Resin Art Body</div>
+                <div style="font-size:0.75rem; color:var(--grey);">Custom colour pour. Completely one-of-a-kind.</div>
+              </div>
+              <div class="badge badge-new">Signature</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <img src="images/logo.png" alt="Venom Guitars" class="footer-brand-logo">
+      <div class="footer-tagline">Handcrafted. Australian. Deadly.</div>
+      <p class="footer-desc">Building boutique-quality custom electric guitars from the heart of Australia.</p>
+      <div class="footer-social">
+        <a href="http://facebook.com/venomguitars">f</a>
+        <a href="http://instagram.com/@venomguitars">in</a>
+        <a href="http://tiktok.com/@venomguitars">tt</a>
+        <a href="http://youtube.com/@venomguitars">▶</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="designs.html">Our Designs</a>
+        <a href="builds.html">Build Videos</a>
+        <a href="education.html">Education</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Guitar Series</div>
+      <div class="footer-links">
+        <a href="#red-belly">Red Belly Black</a>
+        <a href="#taipan">Taipan Series</a>
+        <a href="#death-adder">Death Adder</a>
+        <a href="#custom">Custom Builds</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Connect</div>
+      <div class="footer-links">
+        <a href="contact.html">Contact Us</a>
+        <a href="media.html">Media & Press</a>
+        <a href="community.html">Community</a>
+      </div>
+      <div style="margin-top:1.5rem; font-size:0.8rem; color:var(--grey);">📧 <a href="mailto:venomguitarsaus@gmail.com" style="color:var(--red);">venomguitarsaus@gmail.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 <span class="footer-bottom-brand">Venom Guitars</span>. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

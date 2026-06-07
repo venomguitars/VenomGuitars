@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education — Venom Guitars</title>
+  <meta name="description" content="Learn lutherie, guitar setup, tonewoods, electronics and more from Venom Guitars. Free guides and resources for players and builders.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <style>
+    .edu-card {
+      background: var(--charcoal);
+      border: 1px solid rgba(255,255,255,0.07);
+      overflow: hidden;
+      position: relative;
+      transition: border-color 0.3s, transform 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .edu-card:hover { border-color: rgba(192,0,12,0.5); transform: translateY(-4px); }
+    .edu-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--red), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .edu-card:hover::before { opacity: 1; }
+    .edu-card-icon {
+      padding: 2rem 2rem 0;
+      font-size: 2.5rem;
+    }
+    .edu-card-body { padding: 1rem 2rem 2rem; flex: 1; display: flex; flex-direction: column; }
+    .edu-card-level {
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .level-beginner { color: #4caf50; }
+    .level-intermediate { color: #ff9800; }
+    .level-advanced { color: var(--red); }
+    .edu-card-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      letter-spacing: 0.06em;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+    .edu-card-desc { font-size: 0.82rem; color: var(--grey); line-height: 1.65; flex: 1; margin-bottom: 1.25rem; }
+    .edu-card-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .topic-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grey);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .topic-pill:hover, .topic-pill.active {
+      border-color: var(--red);
+      color: var(--cream);
+      background: rgba(192,0,12,0.1);
+    }
+    .topic-pill .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--red);
+    }
+
+    .guide-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.02);
+      transition: border-color 0.2s, background 0.2s;
+      cursor: pointer;
+    }
+    .guide-row:hover {
+      border-color: rgba(192,0,12,0.3);
+      background: rgba(192,0,12,0.04);
+    }
+    .guide-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .guide-title {
+      font-family: var(--font-display);
+      letter-spacing: 0.06em;
+      color: var(--cream);
+      font-size: 1rem;
+    }
+    .guide-sub { font-size: 0.78rem; color: var(--grey); margin-top: 0.15rem; }
+    .guide-badge { margin-left: auto; flex-shrink: 0; }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 1.25rem 0;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      color: var(--cream);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .faq-question:hover { color: var(--red-bright); }
+    .faq-arrow {
+      width: 20px; height: 20px;
+      border: 1px solid rgba(192,0,12,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--red);
+      font-size: 0.8rem;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .faq-answer-inner {
+      padding-bottom: 1.25rem;
+      font-size: 0.88rem;
+      color: var(--grey);
+      line-height: 1.75;
+    }
+    .faq-item.open .faq-answer { max-height: 400px; }
+
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .glossary-item {
+      padding: 1rem 1.25rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.02);
+    }
+    .glossary-term {
+      font-family: var(--font-display);
+      letter-spacing: 0.08em;
+      color: var(--red-bright);
+      font-size: 0.95rem;
+      margin-bottom: 0.35rem;
+    }
+    .glossary-def { font-size: 0.8rem; color: var(--grey); line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" alt="Venom Guitars">
+    <div class="nav-logo-text"><span>VENOM</span> GUITARS</div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown">
+      <a href="about.html">About ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="about.html">Our Story</a>
+        <a href="about.html#purpose">Our Purpose</a>
+        <a href="about.html#team">Our Team</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="designs.html">Designs ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="designs.html">All Models</a>
+        <a href="designs.html#red-belly">Red Belly Black Series</a>
+        <a href="designs.html#custom">Custom Builds</a>
+      </div>
+    </div>
+    <a href="builds.html">Build Videos</a>
+    <a href="education.html" class="active">Education</a>
+    <a href="community.html">Community</a>
+    <a href="media.html">Media</a>
+    <a href="contact.html" class="btn-cta nav-cta">Contact</a>
+  </div>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mobile" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="designs.html">Our Designs</a>
+  <a href="builds.html">Build Videos</a>
+  <a href="education.html" class="active">Education</a>
+  <a href="community.html">Community</a>
+  <a href="media.html">Media</a>
+  <a href="contact.html">Contact Us</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(192,0,12,0.07),transparent 60%);pointer-events:none;"></div>
+  <div class="container">
+    <div class="section-label">Learn the Craft</div>
+    <div class="page-hero-title">Edu<span style="color:var(--red);">cation</span></div>
+    <div class="page-hero-sub">From player to builder — knowledge is free</div>
+    <p style="max-width:560px;margin-top:1rem;color:var(--grey);">Whether you're setting up your first guitar or routing your first body blank, we share everything we know. Free guides, glossaries, FAQs, and deep dives into the craft of lutherie.</p>
+    <div style="display:flex;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+      <a href="#courses" style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);border-bottom:1px solid rgba(192,0,12,0.4);padding-bottom:2px;">Courses</a>
+      <a href="#guides" style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--grey);border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:2px;">Guides</a>
+      <a href="#faq" style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--grey);border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:2px;">FAQ</a>
+      <a href="#glossary" style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--grey);border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:2px;">Glossary</a>
+    </div>
+  </div>
+</div>
+
+<!-- TOPIC FILTER -->
+<section class="section section-darker" id="courses">
+  <div class="container">
+    <div class="section-label">Topics</div>
+    <h2 class="display-md mb-4">Learn by Subject</h2>
+    <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:3rem;">
+      <div class="topic-pill active"><div class="dot"></div>All Topics</div>
+      <div class="topic-pill"><div class="dot"></div>Lutherie Basics</div>
+      <div class="topic-pill"><div class="dot"></div>Tonewoods</div>
+      <div class="topic-pill"><div class="dot"></div>Electronics</div>
+      <div class="topic-pill"><div class="dot"></div>Setup & Maintenance</div>
+      <div class="topic-pill"><div class="dot"></div>Finishing</div>
+      <div class="topic-pill"><div class="dot"></div>Resin Art</div>
+    </div>
+
+    <div class="grid-3">
+      <div class="edu-card reveal animate-up">
+        <div class="edu-card-icon">🪵</div>
+        <div class="edu-card-body">
+          <div class="edu-card-level level-beginner">● Beginner</div>
+          <div class="edu-card-title">Understanding Tonewoods</div>
+          <p class="edu-card-desc">Why does the timber matter? We break down the acoustic and electrical properties of common guitar woods — Mahogany, Alder, Ash, Blackwood, Maple — and what they actually do to your tone.</p>
+          <a href="#" class="btn btn-red-outline" style="font-size:0.75rem;padding:0.4rem 1rem;display:inline-block;">Read Guide →</a>
+          <div class="edu-card-meta"><span>📖 12 min read</span><span>🏷 Tonewoods</span></div>
+        </div>
+      </div>
+      <div class="edu-card reveal animate-up delay-1">
+        <div class="edu-card-icon">🔧</div>
+        <div class="edu-card-body">
+          <div class="edu-card-level level-beginner">● Beginner</div>
+          <div class="edu-card-title">Guitar Setup 101</div>
+          <p class="edu-card-desc">A properly set up guitar plays itself. Learn how to adjust action, intonation, truss rod, and nut slots. This is the single most impactful skill any guitarist can learn.</p>
+          <a href="#" class="btn btn-red-outline" style="font-size:0.75rem;padding:0.4rem 1rem;display:inline-block;">Read Guide →</a>
+          <div class="edu-card-meta"><span>📖 18 min read</span><span>🏷 Setup</span></div>
+        </div>
+      </div>
+      <div class="edu-card reveal animate-up delay-2">
+        <div class="edu-card-icon">⚡</div>
+        <div class="edu-card-body">
+          <div class="edu-card-level level-intermediate">● Intermediate</div>
+          <div class="edu-card-title">Pickup Wiring Demystified</div>
+          <p class="edu-card-desc">Single coils, humbuckers, series/parallel, coil splits — we decode pickup wiring with clear diagrams. Includes common mods and how to shield your cavities properly.</p>
+          <a href="#" class="btn btn-red-outline" style="font-size:0.75rem;padding:0.4rem 1rem;display:inline-block;">Read Guide →</a>
+          <div class="edu-card-meta"><span>📖 22 min read</span><span>🏷 Electronics</span></div>
+        </div>
+      </div>
+      <div class="edu-card reveal animate-up">
+        <div class="edu-card-icon">🎨</div>
+        <div class="edu-card-body">
+          <div class="edu-card-level level-intermediate">● Intermediate</div>
+          <div class="edu-card-title">Resin Art Guitar Bodies</div>
+          <p class="edu-card-desc">Our signature technique. How we design, pour, and finish resin art guitar bodies. Covers pigment selection, mold prep, curing, sanding back, and applying a gloss topcoat.</p>
+          <a href="#" class="btn btn-red-outline" style="font-size:0.75rem;padding:0.4rem 1rem;display:inline-block;">Read Guide →</a>
+          <div class="edu-card-meta"><span>📖 28 min read</span><span>🏷 Finishing · Resin</span></div>
+        </div>
+      </div>
+      <div class="edu-card reveal animate-up delay-1">
+        <div class="edu-card-icon">📐</div>
+        <div class="edu-card-body">
+          <div class="edu-card-level level-intermediate">● Intermediate</div>
+          <div class="edu-card-title">Body Routing Fundamentals</div>
+          <p class="edu-card-desc">Template making, router bit selection, climb cuts, and avoiding tear-out. We walk through routing a full guitar body — pickup cavities, neck pocket, control cavity, and contours.</p>
+          <a href="#" class="btn btn-red-outline" style="font-size:0.75rem;padding:0.4rem 1rem;display:inline-block;">Read Guide →</a>
+          <div class="edu-card-meta"><span>📖 35 min read</span><span>🏷 Lutherie</span></div>
+        </div>
+      </div>
+      <div class="edu-card reveal animate-up delay-2">
+        <div class="edu-card-icon">🎸</div>
+        <div class="edu-card-body">
+          <div class="edu-card-level level-advanced">● Advanced</div>
+          <div class="edu-card-title">Fretwork: Level, Crown, Polish</div>
+          <p class="edu-card-desc">The dark art of a proper fret job. We cover leveling beams, crowning files, micro-mesh polishing, and how to diagnose fret buzz vs nut or saddle issues. Includes video references.</p>
+          <a href="#" class="btn btn-red-outline" style="font-size:0.75rem;padding:0.4rem 1rem;display:inline-block;">Read Guide →</a>
+          <div class="edu-card-meta"><span>📖 40 min read</span><span>🏷 Fretwork · Advanced</span></div>
+        </div>
+      </div>
+      <div class="edu-card reveal animate-up">
+        <div class="edu-card-icon">🌿</div>
+        <div class="edu-card-body">
+          <div class="edu-card-level level-beginner">● Beginner</div>
+          <div class="edu-card-title">Australian Tonewoods Guide</div>
+          <p class="edu-card-desc">A deep dive into native Australian timbers and their guitar-building properties. Blackwood, Silky Oak, Queensland Maple, Camphor Laurel, Huon Pine — their tone, workability, and availability.</p>
+          <a href="#" class="btn btn-red-outline" style="font-size:0.75rem;padding:0.4rem 1rem;display:inline-block;">Read Guide →</a>
+          <div class="edu-card-meta"><span>📖 15 min read</span><span>🏷 Tonewoods · Australian</span></div>
+        </div>
+      </div>
+      <div class="edu-card reveal animate-up delay-1">
+        <div class="edu-card-icon">🔩</div>
+        <div class="edu-card-body">
+          <div class="edu-card-level level-intermediate">● Intermediate</div>
+          <div class="edu-card-title">Neck Building from Scratch</div>
+          <p class="edu-card-desc">Quartersawn vs flatsawn blanks, truss rod channels, headstock angles, fingerboard radius, and binding. A complete walkthrough of building a bolt-on guitar neck.</p>
+          <a href="#" class="btn btn-red-outline" style="font-size:0.75rem;padding:0.4rem 1rem;display:inline-block;">Read Guide →</a>
+          <div class="edu-card-meta"><span>📖 45 min read</span><span>🏷 Lutherie · Necks</span></div>
+        </div>
+      </div>
+      <div class="edu-card reveal animate-up delay-2">
+        <div class="edu-card-icon">🧪</div>
+        <div class="edu-card-body">
+          <div class="edu-card-level level-advanced">● Advanced</div>
+          <div class="edu-card-title">Nitro vs Poly Finishes</div>
+          <p class="edu-card-desc">The never-ending debate — nitrocellulose vs polyester/polyurethane. We give you the actual facts on tone, durability, application, and why the answer depends entirely on your build.</p>
+          <a href="#" class="btn btn-red-outline" style="font-size:0.75rem;padding:0.4rem 1rem;display:inline-block;">Read Guide →</a>
+          <div class="edu-card-meta"><span>📖 20 min read</span><span>🏷 Finishing</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK GUIDES -->
+<section class="section section-dark" id="guides">
+  <div class="container">
+    <div class="section-label">Quick Reference</div>
+    <h2 class="display-md mb-2">Setup & Maintenance Guides</h2>
+    <p class="mb-6">One-page references you can print and pin above your workbench.</p>
+    <div style="display:flex;flex-direction:column;gap:0.75rem;">
+      <div class="guide-row"><div class="guide-icon">📏</div><div><div class="guide-title">String Action Reference Chart</div><div class="guide-sub">Standard action heights for Fender-style, Gibson-style, and acoustic guitars</div></div><div class="guide-badge"><span class="badge">Free PDF</span></div></div>
+      <div class="guide-row"><div class="guide-icon">🔄</div><div><div class="guide-title">Truss Rod Adjustment Guide</div><div class="guide-sub">How to measure neck relief and when (and when not) to adjust the truss rod</div></div><div class="guide-badge"><span class="badge">Free PDF</span></div></div>
+      <div class="guide-row"><div class="guide-icon">🎵</div><div><div class="guide-title">Intonation Step-by-Step</div><div class="guide-sub">Getting your guitar to play in tune all the way up the neck</div></div><div class="guide-badge"><span class="badge">Free PDF</span></div></div>
+      <div class="guide-row"><div class="guide-icon">🪛</div><div><div class="guide-title">Pickup Height Calculator</div><div class="guide-sub">Recommended starting heights for single coils, P90s, and humbuckers</div></div><div class="guide-badge"><span class="badge">Free PDF</span></div></div>
+      <div class="guide-row"><div class="guide-icon">🧲</div><div><div class="guide-title">Wiring Diagrams Pack</div><div class="guide-sub">SSS, HSS, HH, HHH — common wiring configurations with mods</div></div><div class="guide-badge"><span class="badge">Free PDF</span></div></div>
+      <div class="guide-row"><div class="guide-icon">🪵</div><div><div class="guide-title">Tonewood Comparison Chart</div><div class="guide-sub">Side-by-side tone, weight, and workability ratings for 20+ tonewoods</div></div><div class="guide-badge"><span class="badge">Free PDF</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-darker" id="faq">
+  <div class="container">
+    <div class="section-label">Common Questions</div>
+    <h2 class="display-md mb-6">FAQ</h2>
+    <div class="container-narrow">
+      <div class="faq-item">
+        <button class="faq-question">How long does a custom build take? <div class="faq-arrow">▼</div></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Custom builds typically take 8–16 weeks depending on complexity. Resin art finishes, binding, and unique inlay work add time. We'll give you a realistic estimate when you enquire, and we'll keep you updated with photos throughout the process. We don't rush builds — every day spent is a better guitar.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What tonewoods do you use? <div class="faq-arrow">▼</div></button>
+        <div class="faq-answer"><div class="faq-answer-inner">We primarily use Australian hardwoods — Blackwood, Queensland Maple, Silky Oak, and Camphor Laurel — because we believe Australia has extraordinary tonewoods that deserve recognition. We also use international classics like Mahogany, Alder, and Ash when the build calls for it. All timber is responsibly sourced.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I specify my own pickups and hardware? <div class="faq-arrow">▼</div></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Absolutely. If you want Lollar pickups, Gotoh hardware, or a specific aged nickel bridge, we'll source it or you can supply it. We have preferred suppliers we recommend, but we're not locked in to any brand. Your build, your specs.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do you ship guitars interstate or internationally? <div class="faq-arrow">▼</div></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes to both. We ship Australia-wide and can arrange international shipping. Guitars are packed in hard cases with extensive protective packaging. International orders require additional time and cost — contact us for a shipping quote to your location.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between the resin art finish and a standard finish? <div class="faq-arrow">▼</div></button>
+        <div class="faq-answer"><div class="faq-answer-inner">A resin art finish means the body itself is partially or fully made from clear/pigmented epoxy resin, often combined with timber. It creates a completely unique visual — swirls, cells, layers of colour — that can never be exactly replicated. It's heavier than a solid wood body and requires more build time, but the visual result is genuinely one-of-a-kind.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I visit the workshop? <div class="faq-arrow">▼</div></button>
+        <div class="faq-answer"><div class="faq-answer-inner">By appointment, yes. We love having players and builders come through — it's a great way to discuss your build in person and see the timbers we have on hand. Reach out via the contact page and we'll arrange a time.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do you do repairs or setups on non-Venom guitars? <div class="faq-arrow">▼</div></button>
+        <div class="faq-answer"><div class="faq-answer-inner">On a case-by-case basis. We primarily focus on new builds, but if you've got a guitar that needs serious work — a refret, nut replacement, or electronics overhaul — reach out and we'll let you know if we can fit it in.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GLOSSARY -->
+<section class="section section-dark" id="glossary">
+  <div class="container">
+    <div class="section-label">Terminology</div>
+    <h2 class="display-md mb-2">Luthier's Glossary</h2>
+    <p class="mb-6">Don't know your nut from your saddle? Your truss rod from your trust fund? We've got you.</p>
+    <div class="glossary-grid">
+      <div class="glossary-item"><div class="glossary-term">Action</div><div class="glossary-def">The height of the strings above the frets. Low action = easier to play; too low = fret buzz. The goal is finding the sweet spot.</div></div>
+      <div class="glossary-item"><div class="glossary-term">Binding</div><div class="glossary-def">A strip of material (plastic, wood, or purfling) inlaid along the edge of the body, neck, or headstock. Decorative and protective.</div></div>
+      <div class="glossary-item"><div class="glossary-term">Bolt-On</div><div class="glossary-def">A neck joint where the neck is bolted (or screwed) to the body. Used in Fender-style builds. Easier to replace than set or through-neck joints.</div></div>
+      <div class="glossary-item"><div class="glossary-term">Coil Split</div><div class="glossary-def">A mod that bypasses one coil of a humbucker, giving you a single-coil sound. Adds versatility; sound is thinner than a true single coil.</div></div>
+      <div class="glossary-item"><div class="glossary-term">Fret Dress</div><div class="glossary-def">The process of levelling, re-crowning, and polishing frets to eliminate buzzing and inconsistencies. One of the highest-value guitar tech jobs.</div></div>
+      <div class="glossary-item"><div class="glossary-term">Humbucker</div><div class="glossary-def">A dual-coil pickup that cancels electromagnetic hum. Warmer, louder, and thicker-sounding than single coils. Used in Gibson-style guitars.</div></div>
+      <div class="glossary-item"><div class="glossary-term">Intonation</div><div class="glossary-def">How accurately a guitar plays in tune up the neck. Set by adjusting saddle position so the 12th fret harmonic matches the fretted note.</div></div>
+      <div class="glossary-item"><div class="glossary-term">Luthier</div><div class="glossary-def">A craftsperson who builds and/or repairs stringed instruments. The word comes from the French word for lute. We're electric luthiers.</div></div>
+      <div class="glossary-item"><div class="glossary-term">Nut</div><div class="glossary-def">The slotted piece at the top of the neck (between headstock and fretboard) that guides and spaces the strings. Material affects open-string tone and tuning stability.</div></div>
+      <div class="glossary-item"><div class="glossary-term">Quartersawn</div><div class="glossary-def">Timber cut so the growth rings run roughly perpendicular to the face. More stable, resists warping, and shows beautiful medullary ray figure in species like Oak.</div></div>
+      <div class="glossary-item"><div class="glossary-term">Relief</div><div class="glossary-def">The slight forward bow in a guitar neck, controlled by the truss rod. A small amount of relief (0.1–0.3mm) is usually desirable for playability.</div></div>
+      <div class="glossary-item"><div class="glossary-term">Scale Length</div><div class="glossary-def">The vibrating string length from nut to saddle. Fender-style = 648mm (25.5"). Gibson-style = 628mm (24.75"). Affects tension, feel, and tone.</div></div>
+      <div class="glossary-item"><div class="glossary-term">Truss Rod</div><div class="glossary-def">A steel rod running inside the neck that counteracts string tension. Adjusting it controls neck relief. Turn carefully and never force it.</div></div>
+      <div class="glossary-item"><div class="glossary-term">Tonewood</div><div class="glossary-def">Any timber used in instrument construction chosen for its acoustic properties. In electric guitars, the effect is subtle but real — body resonance affects sustain and character.</div></div>
+      <div class="glossary-item"><div class="glossary-term">Zero Fret</div><div class="glossary-def">A fret installed at the nut position so open strings have the same tone as fretted notes. Used on some vintage and custom builds for consistent timbre.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div style="padding:5rem 2rem;background:linear-gradient(135deg,#0a0000,#110003);border-top:1px solid rgba(192,0,12,0.2);text-align:center;">
+  <div class="section-label" style="justify-content:center;">Still Got Questions?</div>
+  <h2 class="display-md mb-3" style="color:var(--cream);">Ask the <span class="text-red">Team</span></h2>
+  <p style="max-width:480px;margin:0 auto 2rem;color:var(--grey);">Can't find the answer? Drop us a message and we'll either answer directly or turn it into a new guide.</p>
+  <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <img src="images/logo.png" alt="Venom Guitars" class="footer-brand-logo">
+      <div class="footer-tagline">Handcrafted. Australian. Deadly.</div>
+      <p class="footer-desc">Building boutique-quality custom electric guitars from the heart of Australia.</p>
+      <div class="footer-social">
+        <a href="http://facebook.com/venomguitars">f</a>
+        <a href="http://instagram.com/@venomguitars">in</a>
+        <a href="http://tiktok.com/@venomguitars">tt</a>
+        <a href="http://youtube.com/@venomguitars">▶</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a><a href="about.html">About Us</a>
+        <a href="designs.html">Our Designs</a><a href="builds.html">Build Videos</a>
+        <a href="education.html">Education</a><a href="community.html">Community</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Learn</div>
+      <div class="footer-links">
+        <a href="#courses">All Courses</a><a href="#guides">Free Guides</a>
+        <a href="#faq">FAQ</a><a href="#glossary">Glossary</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Connect</div>
+      <div class="footer-links">
+        <a href="contact.html">Contact Us</a><a href="media.html">Media</a>
+        <a href="community.html">Community</a>
+      </div>
+      <div style="margin-top:1.5rem;font-size:0.8rem;color:var(--grey);">📧 <a href="mailto:venomguitarsaus@gmail.com" style="color:var(--red);">venomguitarsaus@gmail.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 <span class="footer-bottom-brand">Venom Guitars</span>. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+  document.querySelectorAll('.topic-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.topic-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Purpose — Venom Guitars</title>
+  <meta name="description" content="Why do we exist? The vision and purpose behind Venom Guitars — supporting grassroots and professional musicians with handcrafted Australian instruments.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <style>
+    .purpose-hero-block {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, #0a0000 0%, #110005 40%, #0a0a0a 100%);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .purpose-hero-block::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(192,0,12,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(192,0,12,0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+    }
+    .big-quote {
+      font-family: var(--font-grunge);
+      font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+      color: var(--red);
+      line-height: 1.5;
+      max-width: 820px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .big-quote::before {
+      content: '"';
+      font-size: 8rem;
+      color: rgba(192,0,12,0.12);
+      position: absolute;
+      top: -2rem; left: -2rem;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .pillar {
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.07);
+      background: var(--charcoal);
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .pillar:hover { border-color: rgba(192,0,12,0.5); transform: translateY(-4px); }
+    .pillar::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--red), transparent);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .pillar:hover::before { opacity: 1; }
+    .pillar-number {
+      font-family: var(--font-display);
+      font-size: 5rem;
+      color: rgba(192,0,12,0.1);
+      line-height: 1;
+      position: absolute;
+      top: 1rem; right: 1.5rem;
+    }
+    .pillar-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .pillar-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: 0.08em;
+      color: var(--cream);
+      margin-bottom: 0.75rem;
+    }
+    .pillar-text { font-size: 0.9rem; color: #999; line-height: 1.8; }
+
+    .vision-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid rgba(192,0,12,0.25);
+      overflow: hidden;
+    }
+    .vision-panel {
+      padding: 3.5rem;
+    }
+    .vision-panel:first-child {
+      background: linear-gradient(135deg, #0d0000, #1a0505);
+      border-right: 1px solid rgba(192,0,12,0.2);
+    }
+    .vision-panel:last-child {
+      background: rgba(255,255,255,0.02);
+    }
+    .vision-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1.25rem;
+    }
+    .vision-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      letter-spacing: 0.06em;
+      color: var(--cream);
+      line-height: 0.95;
+      margin-bottom: 1.5rem;
+    }
+    .vision-text {
+      font-size: 0.92rem;
+      color: #999;
+      line-height: 1.85;
+    }
+    @media (max-width: 800px) {
+      .vision-split { grid-template-columns: 1fr; }
+      .vision-panel:first-child { border-right: none; border-bottom: 1px solid rgba(192,0,12,0.2); }
+    }
+
+    .music-quote {
+      background: linear-gradient(135deg, rgba(192,0,12,0.08), rgba(192,0,12,0.03));
+      border: 1px solid rgba(192,0,12,0.2);
+      padding: 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .music-quote-text {
+      font-family: var(--font-type);
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      color: var(--cream);
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .music-quote::after {
+      content: '🎵';
+      position: absolute;
+      font-size: 15rem;
+      opacity: 0.04;
+      top: 50%; right: -2rem;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .values-row {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1px;
+      background: rgba(192,0,12,0.15);
+      border: 1px solid rgba(192,0,12,0.15);
+    }
+    .value-cell {
+      background: var(--black);
+      padding: 2rem;
+      transition: background 0.3s;
+    }
+    .value-cell:hover { background: rgba(192,0,12,0.05); }
+    .value-cell-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+    .value-cell-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+    .value-cell-text { font-size: 0.82rem; color: var(--grey); line-height: 1.65; }
+    @media (max-width: 700px) {
+      .values-row { grid-template-columns: 1fr; }
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 1.5rem;
+    }
+    .breadcrumb a { color: var(--grey); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--red); }
+    .breadcrumb-sep { color: rgba(192,0,12,0.4); }
+    .breadcrumb-current { color: var(--red); }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" alt="Venom Guitars">
+    <div class="nav-logo-text"><span>VENOM</span> GUITARS</div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown">
+      <a href="about.html" class="active">About ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="about.html">About Us</a>
+        <a href="our-purpose.html" class="active">Our Purpose</a>
+        <a href="our-staff.html">Our Staff</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="designs.html">Designs ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="designs.html">All Designs</a>
+        <a href="series-red-belly-black.html">Red Belly Black Series</a>
+        <a href="designs.html#taipan">Taipan Series</a>
+        <a href="designs.html#custom">Custom Builds</a>
+      </div>
+    </div>
+    <a href="builds.html">Build Videos</a>
+    <a href="education.html">Education</a>
+    <div class="nav-dropdown">
+      <a href="community.html">Community ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="community.html">Our Community</a>
+        <a href="social-media.html">Social Media</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="media.html">Media ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="media.html">Our Media</a>
+        <a href="blogs-articles.html">Blogs &amp; Articles</a>
+        <a href="social-media.html">Social Media</a>
+      </div>
+    </div>
+    <a href="contact.html" class="btn-cta nav-cta">Contact</a>
+  </div>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mobile" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="our-purpose.html" class="mobile-sub active">— Our Purpose</a>
+  <a href="our-staff.html" class="mobile-sub">— Our Staff</a>
+  <a href="designs.html">Our Designs</a>
+  <a href="series-red-belly-black.html" class="mobile-sub">— Red Belly Black Series</a>
+  <a href="builds.html">Build Videos</a>
+  <a href="education.html">Education</a>
+  <a href="community.html">Community</a>
+  <a href="media.html">Media</a>
+  <a href="blogs-articles.html" class="mobile-sub">— Blogs &amp; Articles</a>
+  <a href="social-media.html" class="mobile-sub">— Social Media</a>
+  <a href="contact.html">Contact Us</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(192,0,12,0.09),transparent 65%);pointer-events:none;"></div>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="about.html">About Us</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Our Purpose</span>
+    </div>
+    <div class="section-label">Why We Exist</div>
+    <div class="page-hero-title">Our <span style="color:var(--red);">Purpose</span></div>
+    <div class="page-hero-sub">Music is the blood of life and the soul of the planet.</div>
+    <p style="max-width:580px;margin-top:1rem;color:var(--grey);">Venom Guitars was created to supply high quality custom guitars, built to our customers' specifications to support their musical endeavours — and through music, support all of humanity.</p>
+  </div>
+</div>
+
+<!-- OPENING QUOTE HERO -->
+<div class="purpose-hero-block">
+  <div class="big-quote">
+    Music is the blood of life and the soul of the planet. Venom Guitars was created to supply high quality custom guitars, built to our customers' specifications to support their musical endeavours and to bring peace, tranquillity and life to all — through the medium of music.
+  </div>
+</div>
+
+<!-- VISION + PURPOSE SPLIT -->
+<section class="section section-darker">
+  <div class="container">
+    <div class="vision-split">
+      <div class="vision-panel">
+        <div class="vision-label">🌐 Our Vision</div>
+        <div class="vision-heading">A Household Name in Music</div>
+        <p class="vision-text">Our vision is to see Venom Guitars become a household recognised brand in the music and recording industry in Australia — and ultimately the global market — as a supplier of high quality, professionally constructed musical instruments and services.</p>
+        <p class="vision-text" style="margin-top:1rem;">We have a primary focus on supporting "grass roots" indie musicians and professionals on their career paths, striving to bring new music to the community. A brand born in a Sydney workshop, bound for stages across the world.</p>
+        <div class="accent-line" style="margin-top:2rem;"></div>
+        <div style="font-family:var(--font-display);font-size:0.85rem;letter-spacing:0.15em;color:var(--red);margin-top:0.75rem;">SYDNEY, NSW, AUSTRALIA → THE WORLD</div>
+      </div>
+      <div class="vision-panel">
+        <div class="vision-label">🎯 Our Purpose</div>
+        <div class="vision-heading">Built for Musicians</div>
+        <p class="vision-text">Venom Guitars was created to supply high quality custom guitars, built to our customers' exact specifications. We exist to support their musical endeavours — and through music, support all of humanity. To bring peace, tranquillity and life to all through the medium of music.</p>
+        <p class="vision-text" style="margin-top:1rem;">Every guitar we build is an act of that purpose made physical. The timber, the resin, the wound pickups, the careful setup — all of it exists so a musician can do what music demands: connect, express, and move the world.</p>
+        <a href="contact.html" class="btn btn-primary" style="display:inline-block;margin-top:2rem;">Commission a Guitar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MUSIC PHILOSOPHY QUOTE -->
+<div style="padding:4rem 2rem;background:var(--deep);">
+  <div class="container">
+    <div class="music-quote">
+      <p class="music-quote-text">"Music is the universal language. It doesn't care where you're from, what you look like, or what you believe. A great guitar in the hands of a great player can change a room — and rooms, changed enough, change the world."</p>
+      <div style="font-family:var(--font-body);font-size:0.72rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--red);margin-top:1.25rem;">— Venom Guitars</div>
+    </div>
+  </div>
+</div>
+
+<!-- CORE PILLARS -->
+<section class="section section-darker">
+  <div class="container">
+    <div class="section-label">What Drives Us</div>
+    <h2 class="display-md mb-2">Our Core Pillars</h2>
+    <p style="max-width:580px;margin-bottom:3rem;color:var(--grey);">Everything we build, every decision we make, comes back to these foundations.</p>
+    <div class="grid-3">
+      <div class="pillar reveal animate-up">
+        <div class="pillar-number">01</div>
+        <div class="pillar-icon">🎸</div>
+        <div class="pillar-title">Quality Without Compromise</div>
+        <p class="pillar-text">Every guitar we build is a premium, handcrafted instrument. We use hand-selected materials, precision craftsmanship, and aggressive, bold designs that stand out on any stage. No filler, no shortcuts. If it doesn't meet the standard, it doesn't leave the workshop.</p>
+      </div>
+      <div class="pillar reveal animate-up delay-1">
+        <div class="pillar-number">02</div>
+        <div class="pillar-icon">🌱</div>
+        <div class="pillar-title">Support Grassroots Music</div>
+        <p class="pillar-text">We believe the next great Australian musician might be playing in a garage right now. Grassroots artists deserve access to professional-grade instruments that inspire them rather than hold them back. Venom exists for those players as much as for the touring professional.</p>
+      </div>
+      <div class="pillar reveal animate-up delay-2">
+        <div class="pillar-number">03</div>
+        <div class="pillar-icon">🇦🇺</div>
+        <div class="pillar-title">Australian Identity</div>
+        <p class="pillar-text">We're headquartered in Sydney, NSW. We use Australian hardwoods. We celebrate Australian wildlife in our design language. We want the world to hear "Venom Guitars" and think: that's what Australia sounds like. Bold, unique, and completely its own thing.</p>
+      </div>
+      <div class="pillar reveal animate-up">
+        <div class="pillar-number">04</div>
+        <div class="pillar-icon">🤝</div>
+        <div class="pillar-title">Partnership & Community</div>
+        <p class="pillar-text">We don't build alone. From our business partners at the Oz Soundz Group and Hazy's Wood to every musician who picks up one of our guitars, we believe the music industry thrives through collaboration, not competition.</p>
+      </div>
+      <div class="pillar reveal animate-up delay-1">
+        <div class="pillar-number">05</div>
+        <div class="pillar-icon">🌍</div>
+        <div class="pillar-title">Global Ambition</div>
+        <p class="pillar-text">We start in Australia — but we're building for the world. Our vision is a globally recognised brand that carries Australian craftsmanship and character to stages, studios, and living rooms on every continent. We're building that reputation one guitar at a time.</p>
+      </div>
+      <div class="pillar reveal animate-up delay-2">
+        <div class="pillar-number">06</div>
+        <div class="pillar-icon">🎵</div>
+        <div class="pillar-title">Music as a Force for Good</div>
+        <p class="pillar-text">Ultimately, we believe music makes the world better. Every guitar we put into a player's hands is a small contribution to that. Whether it's a bedroom player finding their voice or a professional delivering a career-defining performance — we're part of that story.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES GRID -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-label" style="justify-content:center;">How We Work</div>
+    <h2 class="display-md text-center mb-6">Our Values</h2>
+    <div class="values-row">
+      <div class="value-cell">
+        <div class="value-cell-icon">🔥</div>
+        <div class="value-cell-title">Passion First</div>
+        <p class="value-cell-text">We started because we love music and we love building guitars. That passion shows in every joint, every finish, every setup. When passion drives the work, quality follows naturally.</p>
+      </div>
+      <div class="value-cell">
+        <div class="value-cell-icon">🎯</div>
+        <div class="value-cell-title">Customer Specs. Always.</div>
+        <p class="value-cell-text">We build to your specifications, not ours. Your playing style, your music, your body preferences, your aesthetic — that's what drives the design. We're the vehicle for your vision.</p>
+      </div>
+      <div class="value-cell">
+        <div class="value-cell-icon">🛠</div>
+        <div class="value-cell-title">Honest Craftsmanship</div>
+        <p class="value-cell-text">We don't oversell. We don't badge-engineer. Every Venom Guitar is built by hand in Australia, from real materials, by people who care about the result. That's a promise we keep every build.</p>
+      </div>
+      <div class="value-cell">
+        <div class="value-cell-icon">📖</div>
+        <div class="value-cell-title">Share the Knowledge</div>
+        <p class="value-cell-text">Lutherie shouldn't be a closed club. We publish our build process, share guides, post educational content. The more people understand the craft, the better the whole instrument ecosystem becomes.</p>
+      </div>
+      <div class="value-cell">
+        <div class="value-cell-icon">🌿</div>
+        <div class="value-cell-title">Responsible Sourcing</div>
+        <p class="value-cell-text">Australian hardwoods are precious. We source responsibly, work with trusted suppliers, and choose plantation or sustainably harvested timber wherever possible. Good guitars shouldn't cost the environment.</p>
+      </div>
+      <div class="value-cell">
+        <div class="value-cell-icon">⚡</div>
+        <div class="value-cell-title">Continuous Improvement</div>
+        <p class="value-cell-text">Every build teaches us something. We track what works, what doesn't, and we get better. The guitar we build next year will be better than the one we built last year. That's not marketing — it's just true.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:5rem 2rem;background:linear-gradient(135deg,#0a0000,#110003);border-top:1px solid rgba(192,0,12,0.2);text-align:center;">
+  <div class="container">
+    <div class="section-label" style="justify-content:center;">Be Part of the Story</div>
+    <h2 class="display-md mb-3">Ready to Work <span class="text-red">With Us?</span></h2>
+    <p style="max-width:480px;margin:0 auto 2.5rem;color:var(--grey);">Whether you're commissioning a custom build, looking for a collaborator, or just want to say g'day — we'd love to hear from you.</p>
+    <div class="btn-group" style="justify-content:center;">
+      <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+      <a href="our-staff.html" class="btn btn-outline">Meet the Team</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <img src="images/logo.png" alt="Venom Guitars" class="footer-brand-logo">
+      <div class="footer-tagline">Handcrafted. Australian. Deadly.</div>
+      <p class="footer-desc">Building boutique-quality custom electric guitars from the heart of Australia.</p>
+      <div class="footer-social">
+        <a href="http://facebook.com/venomguitars" target="_blank">f</a>
+        <a href="http://instagram.com/@venomguitars" target="_blank">in</a>
+        <a href="http://tiktok.com/@venomguitars" target="_blank">tt</a>
+        <a href="http://youtube.com/@venomguitars" target="_blank">▶</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a><a href="about.html">About Us</a>
+        <a href="our-purpose.html">Our Purpose</a><a href="our-staff.html">Our Staff</a>
+        <a href="designs.html">Our Designs</a><a href="builds.html">Build Videos</a>
+        <a href="education.html">Education</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Guitar Series</div>
+      <div class="footer-links">
+        <a href="series-red-belly-black.html">Red Belly Black</a>
+        <a href="designs.html#taipan">Taipan Series</a>
+        <a href="designs.html#custom">Custom Builds</a>
+      </div>
+      <div class="footer-heading" style="margin-top:1.5rem;">Partners</div>
+      <div class="footer-links">
+        <a href="https://ozsoundzgroup.com.au" target="_blank">Oz Soundz Group</a>
+        <a href="https://hazyswood.com.au" target="_blank">Hazy's Wood</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Connect</div>
+      <div class="footer-links">
+        <a href="contact.html">Contact Us</a><a href="community.html">Community</a>
+        <a href="blogs-articles.html">Blogs &amp; Articles</a><a href="media.html">Media</a>
+      </div>
+      <div style="margin-top:1.5rem;font-size:0.8rem;color:var(--grey);">📧 <a href="mailto:venomguitarsaus@gmail.com" style="color:var(--red);">venomguitarsaus@gmail.com</a></div>
+      <div style="font-size:0.8rem;color:var(--grey);margin-top:0.4rem;">📍 Sydney, NSW, Australia</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 <span class="footer-bottom-brand">Venom Guitars</span>. All rights reserved. Made in Australia.</div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
