@@ -114,6 +114,14 @@
       filter: grayscale(40%);
       transition: transform 0.6s;
     }
+    .series-card-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 20% 15%;
+      display: block;
+      filter: saturate(1.15) contrast(1.05);
+    }
     .series-card:hover .series-card-bg { transform: scale(1.05); }
     .series-card-body {
       position: relative;
@@ -372,10 +380,10 @@
     <h2 class="display-md text-center mb-2">Featured Series</h2>
     <p class="text-center mb-6" style="max-width:500px; margin-left:auto; margin-right:auto;">Each Venom guitar is built to spec, using Australian timbers and resin art bodies that are as wild as the country that inspired them.</p>
 
-    <div class="grid-3" style="max-width:900px; margin:0 auto;">
+    <div class="grid-4" style="max-width:1180px; margin:0 auto;">
       <!-- Red Belly Black -->
       <div class="series-card reveal animate-up" onclick="window.location='designs.html#red-belly'">
-        <div class="series-card-bg">🐍</div>
+        <div class="series-card-bg"><img src="images/series-red-belly-black.jpg" alt="Red-bellied Black Snake" loading="lazy"></div>
         <div class="series-card-body">
           <div class="badge badge-new mb-2">Flagship</div>
           <div class="series-card-name">Red Belly<br>Black</div>
@@ -386,7 +394,7 @@
 
       <!-- Taipan -->
       <div class="series-card reveal animate-up delay-1" onclick="window.location='designs.html#taipan'">
-        <div class="series-card-bg" style="color:rgba(180,120,20,0.8);">🎸</div>
+        <div class="series-card-bg"><img src="images/series-taipan.jpg" alt="Taipan Snake" loading="lazy"></div>
         <div class="series-card-body">
           <div class="badge mb-2">Coming Soon</div>
           <div class="series-card-name">Taipan<br>Series</div>
@@ -395,8 +403,19 @@
         </div>
       </div>
 
+      <!-- Death Adder -->
+      <div class="series-card reveal animate-up delay-2" onclick="window.location='designs.html#death-adder'">
+        <div class="series-card-bg"><img src="images/series-death-adder.jpg" alt="Death Adder Snake" loading="lazy"></div>
+        <div class="series-card-body">
+          <div class="badge mb-2">Coming Soon</div>
+          <div class="series-card-name">Death<br>Adder</div>
+          <div class="series-card-desc">Compact, thick-set and lightning fast. Short-scale body with a venomous bite.</div>
+          <span class="btn btn-red-outline" style="font-size:0.75rem; padding:0.4rem 1rem;">Learn More →</span>
+        </div>
+      </div>
+
       <!-- Custom Build -->
-      <div class="series-card reveal animate-up delay-2" onclick="window.location='designs.html#custom'">
+      <div class="series-card reveal animate-up delay-3" onclick="window.location='designs.html#custom'">
         <div class="series-card-bg" style="filter:none;">⚡</div>
         <div class="series-card-body">
           <div class="badge mb-2">Made to Order</div>
