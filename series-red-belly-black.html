@@ -46,6 +46,29 @@
       margin-bottom: 1.5rem;
       background: rgba(192,0,12,0.08);
     }
+    .rbb-photo-band {
+      width: 100%;
+      max-width: 480px;
+      aspect-ratio: 16 / 7;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(192,0,12,0.4);
+      margin-bottom: 1.75rem;
+    }
+    .rbb-photo-band img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      object-position: 20% 25%;
+      filter: saturate(1.1) contrast(1.05);
+    }
+    .rbb-photo-band::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%);
+      pointer-events: none;
+    }
     .rbb-main-title {
       font-family: var(--font-display);
       font-size: clamp(4rem, 10vw, 9rem);
@@ -315,6 +338,9 @@
       <span style="color:var(--red);">Red Belly Black</span>
     </div>
     <div class="rbb-series-badge">🐍 Flagship Series · Available Now</div>
+    <div class="rbb-photo-band">
+      <img src="images/series-red-belly-black.jpg" alt="Red-bellied Black Snake">
+    </div>
     <div class="rbb-main-title">
       <span class="red-line">Red</span><br>
       <span class="red-line">Belly</span><br>

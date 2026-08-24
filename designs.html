@@ -14,6 +14,38 @@
     }
     .guitar-showcase:last-child { border-bottom: none; }
 
+    .series-photo-band {
+      width: 100%;
+      aspect-ratio: 21 / 6;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(192,0,12,0.35);
+      margin-bottom: 2rem;
+    }
+    .series-photo-band img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.1) contrast(1.05);
+    }
+    .series-photo-band::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,0.88) 100%);
+      pointer-events: none;
+    }
+    .series-photo-band::before {
+      content: '';
+      position: absolute; inset: 0;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+      pointer-events: none;
+      z-index: 2;
+    }
+    @media (max-width: 700px) {
+      .series-photo-band { aspect-ratio: 16 / 9; }
+    }
+
     .guitar-hero-card {
       background: var(--charcoal);
       border: 1px solid rgba(192,0,12,0.2);
@@ -172,6 +204,9 @@
 <section class="section section-darker" id="red-belly">
   <div class="container">
     <div class="guitar-showcase">
+      <div class="series-photo-band">
+        <img src="images/series-red-belly-black.jpg" alt="Red-bellied Black Snake">
+      </div>
       <div class="section-label">Flagship Series</div>
       <div class="split-layout" style="align-items:start;">
         <div>
@@ -273,6 +308,9 @@
 <section class="section section-dark" id="taipan">
   <div class="container">
     <div class="guitar-showcase">
+      <div class="series-photo-band">
+        <img src="images/series-taipan.jpg" alt="Taipan Snake">
+      </div>
       <div class="section-label">Coming Soon</div>
       <div class="split-layout reverse">
         <div>
@@ -362,6 +400,9 @@
 <section class="section section-darker" id="death-adder">
   <div class="container">
     <div class="guitar-showcase">
+      <div class="series-photo-band">
+        <img src="images/series-death-adder.jpg" alt="Death Adder Snake">
+      </div>
       <div class="section-label">Future Series</div>
       <div class="split-layout">
         <div>
