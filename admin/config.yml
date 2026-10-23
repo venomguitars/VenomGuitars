@@ -1,0 +1,4175 @@
+# Venom Guitars admin (Sveltia CMS). Edits are saved as commits to the GitHub repo.
+backend:
+  name: github
+  repo: venomguitars/VenomGuitars
+  branch: main
+site_url: https://venomguitars.com.au
+media_folder: images
+public_folder: /images
+publish_mode: simple
+locale: en
+collections:
+- name: pages
+  label: Pages & settings
+  files:
+  - name: site
+    label: Site settings (email, social links, footer)
+    file: content/site.json
+    fields:
+    - name: email
+      label: Contact email
+      widget: string
+    - name: facebook
+      label: Facebook URL
+      widget: string
+    - name: instagram
+      label: Instagram URL
+      widget: string
+    - name: tiktok
+      label: TikTok URL
+      widget: string
+    - name: youtube
+      label: YouTube URL
+      widget: string
+    - name: tagline
+      label: Footer tagline
+      widget: string
+    - name: footer_desc
+      label: Footer description
+      widget: text
+    - name: copyright
+      label: Copyright line
+      widget: string
+      hint: '[[Venom Guitars]] shows the brand name in red.'
+  - name: home
+    label: Home page
+    file: content/home.json
+    fields:
+    - name: seo
+      label: Search & browser tab (SEO)
+      widget: object
+      collapsed: true
+      fields:
+      - name: title
+        label: Page title
+        widget: string
+      - name: description
+        label: Search description
+        widget: text
+    - name: s3
+      label: Section 3 — VENOM
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: VENOM
+        widget: string
+        required: false
+    - name: s5
+      label: Section 5 — Handcrafted. Australian. Deadly.
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Handcrafted. Australian. Deadly.
+        widget: string
+        required: false
+    - name: s6
+      label: Section 6 — VENOM
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: VENOM
+        widget: string
+        required: false
+    - name: s7
+      label: Section 7 — GUITARS
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: GUITARS
+        widget: string
+        required: false
+      - name: k2
+        label: Custom electric guitars — forged in Australia
+        widget: string
+        required: false
+      - name: k3
+        label: View Our Guitars
+        widget: string
+        required: false
+      - name: k4
+        label: Watch Build Videos
+        widget: string
+        required: false
+      - name: k5
+        label: Scroll
+        widget: string
+        required: false
+    - name: s8
+      label: Section 8 — Our Story
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Our Story
+        widget: string
+        required: false
+      - name: k2
+        label: The Brand Journey
+        widget: string
+        required: false
+      - name: k3
+        label: At Venom Guitars we have a dream to manufacture an all…
+        widget: text
+        required: false
+      - name: k4
+        label: We want Venom Guitars to be recognised by grassroots a…
+        widget: text
+        required: false
+      - name: k5
+        label: We use a range of Australian and international hardwoo…
+        widget: text
+        required: false
+      - name: k6
+        label: Our Story
+        widget: string
+        required: false
+      - name: k7
+        label: Our Purpose
+        widget: string
+        required: false
+      - name: k8
+        label: Australian Owned
+        widget: string
+        required: false
+      - name: k9
+        label: Guitar Series
+        widget: string
+        required: false
+      - name: k10
+        label: Custom Builds
+        widget: string
+        required: false
+      - name: k11
+        label: Handcrafted
+        widget: string
+        required: false
+    - name: s9
+      label: Section 9 — Our Guitars
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Our Guitars
+        widget: string
+        required: false
+      - name: k2
+        label: Featured Series
+        widget: string
+        required: false
+      - name: k3
+        label: Each Venom guitar is built to spec, using Australian t…
+        widget: text
+        required: false
+      - name: k4
+        label: Flagship
+        widget: string
+        required: false
+      - name: k5
+        label: Red Belly Black
+        widget: text
+        required: false
+      - name: k6
+        label: Inspired by Australia's most iconic serpent. Resin art…
+        widget: string
+        required: false
+      - name: k7
+        label: Coming Soon
+        widget: string
+        required: false
+      - name: k8
+        label: Taipan Series
+        widget: text
+        required: false
+      - name: k9
+        label: Built for the heavy hitter. Mahogany body, twin humbuc…
+        widget: string
+        required: false
+      - name: k10
+        label: In Development
+        widget: string
+        required: false
+      - name: k11
+        label: Death Adder
+        widget: text
+        required: false
+      - name: k12
+        label: Compact, thick-set and lightning fast. Short-scale bod…
+        widget: string
+        required: false
+      - name: k13
+        label: In Development
+        widget: string
+        required: false
+      - name: k14
+        label: Red Back Series
+        widget: text
+        required: false
+      - name: k15
+        label: A deadly bite in a small package. Sleek body with the …
+        widget: string
+        required: false
+      - name: k16
+        label: In Development
+        widget: string
+        required: false
+      - name: k17
+        label: Funnel Web
+        widget: text
+        required: false
+      - name: k18
+        label: Australia's most feared. Aggressive lines for an aggre…
+        widget: string
+        required: false
+      - name: k19
+        label: Made to Order
+        widget: string
+        required: false
+      - name: k20
+        label: Custom Build
+        widget: text
+        required: false
+      - name: k21
+        label: Your vision, our craft. Full custom builds from tone w…
+        widget: string
+        required: false
+      - name: k22
+        label: All Designs
+        widget: string
+        required: false
+    - name: s10
+      label: Section 10 — The Process
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: The Process
+        widget: string
+        required: false
+      - name: k2
+        label: How We Build
+        widget: string
+        required: false
+      - name: k3
+        label: Design & Consult
+        widget: string
+        required: false
+      - name: k4
+        label: We work with you to nail the spec — body shape, tonewo…
+        widget: text
+        required: false
+      - name: k5
+        label: Wood Selection
+        widget: string
+        required: false
+      - name: k6
+        label: We source premium Australian hardwoods — Blackwood, Ro…
+        widget: text
+        required: false
+      - name: k7
+        label: Craft & Carve
+        widget: string
+        required: false
+      - name: k8
+        label: Hand-routed bodies, precision neck joints, bound fretb…
+        widget: text
+        required: false
+      - name: k9
+        label: Finish & Set Up
+        widget: string
+        required: false
+      - name: k10
+        label: Resin art pours, lacquer finishes, full professional s…
+        widget: text
+        required: false
+      - name: k11
+        label: Watch the Process
+        widget: string
+        required: false
+    - name: s11
+      label: Section 11 — Get Yours
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Get Yours
+        widget: string
+        required: false
+      - name: k2
+        label: Ready to Go Venomous?
+        widget: string
+        required: false
+      - name: k3
+        label: Venomous?
+        widget: string
+        required: false
+      - name: k4
+        label: Commission your custom Venom Guitar. We build to order…
+        widget: text
+        required: false
+      - name: k5
+        label: Commission a Build
+        widget: string
+        required: false
+      - name: k6
+        label: Browse Designs
+        widget: string
+        required: false
+    - name: s12
+      label: Section 12 — Build Videos
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Build Videos
+        widget: string
+        required: false
+      - name: k2
+        label: From the Workshop
+        widget: string
+        required: false
+      - name: k3
+        label: Raw footage. Sawdust, lacquer fumes, and the satisfact…
+        widget: text
+        required: false
+      - name: k4
+        label: Red Belly Black Build — Ep. 1
+        widget: string
+        required: false
+      - name: k5
+        label: Body Routing & Wood Selection
+        widget: string
+        required: false
+      - name: k6
+        label: Resin Art Body Pour
+        widget: string
+        required: false
+      - name: k7
+        label: Custom finish process
+        widget: string
+        required: false
+      - name: k8
+        label: Setup & First Playthrough
+        widget: string
+        required: false
+      - name: k9
+        label: Intonation, action, tone test
+        widget: string
+        required: false
+      - name: k10
+        label: All Build Videos →
+        widget: string
+        required: false
+    - name: s13
+      label: Section 13 — — Venom Guitars Team
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: — Venom Guitars Team
+        widget: string
+        required: false
+  - name: about
+    label: About page
+    file: content/about.json
+    fields:
+    - name: seo
+      label: Search & browser tab (SEO)
+      widget: object
+      collapsed: true
+      fields:
+      - name: title
+        label: Page title
+        widget: string
+      - name: description
+        label: Search description
+        widget: text
+    - name: s1
+      label: Section 1 — Venom Guitars
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Venom Guitars
+        widget: string
+        required: false
+    - name: s2
+      label: Section 2 — About Us
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: About Us
+        widget: string
+        required: false
+    - name: s3
+      label: Section 3 — The story behind the snake
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: The story behind the snake
+        widget: string
+        required: false
+      - name: k2
+        label: A dream to build Australia's most recognisable custom …
+        widget: text
+        required: false
+    - name: s4
+      label: Section 4 — Origin Story
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Origin Story
+        widget: string
+        required: false
+      - name: k2
+        label: Where It All Started
+        widget: string
+        required: false
+      - name: k3
+        label: Venom Guitars was born from a simple but powerful idea…
+        widget: text
+        required: false
+      - name: k4
+        label: We started with a love of music, a workshop, and a stu…
+        widget: text
+        required: false
+      - name: k5
+        label: Australia has some of the finest tonewoods in the worl…
+        widget: text
+        required: false
+      - name: k6
+        label: — Venom Guitars Founder
+        widget: string
+        required: false
+      - name: k7
+        label: Australian Made
+        widget: string
+        required: false
+      - name: k8
+        label: Every guitar built on Australian soil, by Australian h…
+        widget: string
+        required: false
+      - name: k9
+        label: Native Tonewoods
+        widget: string
+        required: false
+      - name: k10
+        label: We source sustainable Australian hardwoods for one-of-…
+        widget: string
+        required: false
+      - name: k11
+        label: Boutique Quality
+        widget: string
+        required: false
+      - name: k12
+        label: Professional-grade components and precision craftsmans…
+        widget: string
+        required: false
+    - name: s5
+      label: Section 5 — Why We Exist
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Why We Exist
+        widget: string
+        required: false
+      - name: k2
+        label: Our Purpose
+        widget: string
+        required: false
+      - name: k3
+        label: Deadly By Design
+        widget: string
+        required: false
+      - name: k4
+        label: Every aesthetic choice, from the resin art to the body…
+        widget: text
+        required: false
+      - name: k5
+        label: Supporting Musicians
+        widget: string
+        required: false
+      - name: k6
+        label: We're committed to being a supportive force in the Aus…
+        widget: text
+        required: false
+      - name: k7
+        label: Australian Identity
+        widget: string
+        required: false
+      - name: k8
+        label: From timbers to design motifs, every guitar carries th…
+        widget: text
+        required: false
+      - name: k9
+        label: Uncompromising Craft
+        widget: string
+        required: false
+      - name: k10
+        label: No corners cut. Every fret dressed, every nut slotted …
+        widget: text
+        required: false
+      - name: k11
+        label: Global Ambition
+        widget: string
+        required: false
+      - name: k12
+        label: We start Australian, but the goal is to put Venom Guit…
+        widget: text
+        required: false
+      - name: k13
+        label: Education First
+        widget: string
+        required: false
+      - name: k14
+        label: We share our knowledge openly — build videos, tutorial…
+        widget: text
+        required: false
+    - name: s6
+      label: Section 6 — The Journey
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: The Journey
+        widget: string
+        required: false
+      - name: k2
+        label: Milestones
+        widget: string
+        required: false
+      - name: k3
+        label: The Idea Strikes
+        widget: string
+        required: false
+      - name: k4
+        label: The concept for Venom Guitars forms — an Australian cu…
+        widget: text
+        required: false
+      - name: k5
+        label: First Builds Begin
+        widget: string
+        required: false
+      - name: k6
+        label: Workshop established. First timber sourced. Prototype …
+        widget: text
+        required: false
+      - name: k7
+        label: Red Belly Black Series Launch
+        widget: string
+        required: false
+      - name: k8
+        label: Our flagship series launches — inspired by Australia's…
+        widget: text
+        required: false
+      - name: k9
+        label: Brand Goes Online
+        widget: string
+        required: false
+      - name: k10
+        label: Venom Guitars launches across YouTube, Instagram, TikT…
+        widget: text
+        required: false
+      - name: k11
+        label: What's Coming
+        widget: string
+        required: false
+      - name: k12
+        label: New series in development. Expanded custom build progr…
+        widget: text
+        required: false
+    - name: s7
+      label: Section 7 — The People
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: The People
+        widget: string
+        required: false
+      - name: k2
+        label: Our Team
+        widget: string
+        required: false
+      - name: k3
+        label: Small crew. Big ambition. Every person at Venom Guitar…
+        widget: text
+        required: false
+      - name: k4
+        label: The Founder
+        widget: string
+        required: false
+      - name: k5
+        label: Head Luthier & Visionary
+        widget: string
+        required: false
+      - name: k6
+        label: The person behind the snake. Guitarist, woodworker, an…
+        widget: text
+        required: false
+      - name: k7
+        label: The Craftsman
+        widget: string
+        required: false
+      - name: k8
+        label: Build & Finish Specialist
+        widget: string
+        required: false
+      - name: k9
+        label: Obsessed with surface prep, lacquer application, and f…
+        widget: text
+        required: false
+      - name: k10
+        label: The Tone Chaser
+        widget: string
+        required: false
+      - name: k11
+        label: Electronics & Setup
+        widget: string
+        required: false
+      - name: k12
+        label: Wires every guitar by hand. Has rewound pickups more t…
+        widget: text
+        required: false
+      - name: k13
+        label: Want to join the Venom family? We occasionally take on…
+        widget: string
+        required: false
+      - name: k14
+        label: Get in Touch
+        widget: string
+        required: false
+  - name: designs
+    label: Designs page
+    file: content/designs.json
+    fields:
+    - name: seo
+      label: Search & browser tab (SEO)
+      widget: object
+      collapsed: true
+      fields:
+      - name: title
+        label: Page title
+        widget: string
+      - name: description
+        label: Search description
+        widget: text
+    - name: s1
+      label: Section 1 — Instruments
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Instruments
+        widget: string
+        required: false
+    - name: s2
+      label: Section 2 — Our Designs
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Our Designs
+        widget: string
+        required: false
+    - name: s3
+      label: Section 3 — Each one a weapon. Each one a work of a…
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Each one a weapon. Each one a work of art.
+        widget: string
+        required: false
+      - name: k2
+        label: Browse our guitar series — or skip straight to commiss…
+        widget: text
+        required: false
+    - name: s4
+      label: Section 4 — Flagship Series
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Flagship Series
+        widget: string
+        required: false
+      - name: k2
+        label: Red Belly Black
+        widget: string
+        required: false
+      - name: k3
+        label: Available
+        widget: string
+        required: false
+      - name: k4
+        label: Named after Australia's most iconic serpent, the Red B…
+        widget: text
+        required: false
+      - name: k5
+        label: Hot single-coil pickups deliver that crisp, biting Aus…
+        widget: text
+        required: false
+      - name: k6
+        label: Key Specs
+        widget: string
+        required: false
+      - name: k7
+        label: Model Codes
+        widget: string
+        required: false
+      - name: k8
+        label: RBBS-6SE · RBBS-7SE/8SE · RBBS-4SB/5SB
+        widget: string
+        required: false
+      - name: k9
+        label: Body
+        widget: string
+        required: false
+      - name: k10
+        label: Australian Blackwood / Resin Art
+        widget: string
+        required: false
+      - name: k11
+        label: Neck
+        widget: string
+        required: false
+      - name: k12
+        label: Queensland Maple, C-profile
+        widget: string
+        required: false
+      - name: k13
+        label: Fingerboard
+        widget: string
+        required: false
+      - name: k14
+        label: Rosewood, 22 frets
+        widget: string
+        required: false
+      - name: k15
+        label: Scale Length
+        widget: string
+        required: false
+      - name: k16
+        label: 648mm (25.5")
+        widget: string
+        required: false
+      - name: k17
+        label: Pickups
+        widget: string
+        required: false
+      - name: k18
+        label: 3x Hot Single Coil (custom wound)
+        widget: string
+        required: false
+      - name: k19
+        label: Hardware
+        widget: string
+        required: false
+      - name: k20
+        label: Chrome / Vintage style
+        widget: string
+        required: false
+      - name: k21
+        label: Controls
+        widget: string
+        required: false
+      - name: k22
+        label: Volume, Tone, 5-way selector
+        widget: string
+        required: false
+      - name: k23
+        label: Finish
+        widget: string
+        required: false
+      - name: k24
+        label: Gloss Polyester / Resin Art
+        widget: string
+        required: false
+      - name: k25
+        label: Weight
+        widget: string
+        required: false
+      - name: k26
+        label: ~3.4kg
+        widget: string
+        required: false
+      - name: k27
+        label: POA
+        widget: string
+        required: false
+      - name: k28
+        label: Price on application — each build is unique. Contact u…
+        widget: string
+        required: false
+      - name: k29
+        label: Enquire Now
+        widget: string
+        required: false
+      - name: k30
+        label: Watch Build Video
+        widget: string
+        required: false
+    - name: s6
+      label: Section 6 — Coming Soon
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Coming Soon
+        widget: string
+        required: false
+      - name: k2
+        label: Taipan Series
+        widget: string
+        required: false
+      - name: k3
+        label: In Development
+        widget: string
+        required: false
+      - name: k4
+        label: The Taipan — Australia's most venomous land snake — de…
+        widget: text
+        required: false
+      - name: k5
+        label: We're currently prototyping the Taipan series — testin…
+        widget: text
+        required: false
+      - name: k6
+        label: If you want early access or want to commission a pre-p…
+        widget: string
+        required: false
+      - name: k7
+        label: Planned Specs
+        widget: string
+        required: false
+      - name: k8
+        label: Body
+        widget: string
+        required: false
+      - name: k9
+        label: Mahogany with Maple cap (TBC)
+        widget: string
+        required: false
+      - name: k10
+        label: Neck
+        widget: string
+        required: false
+      - name: k11
+        label: Mahogany, D-profile
+        widget: string
+        required: false
+      - name: k12
+        label: Fingerboard
+        widget: string
+        required: false
+      - name: k13
+        label: Ebony, 22 frets
+        widget: string
+        required: false
+      - name: k14
+        label: Scale Length
+        widget: string
+        required: false
+      - name: k15
+        label: 628mm (24.75")
+        widget: string
+        required: false
+      - name: k16
+        label: Pickups
+        widget: string
+        required: false
+      - name: k17
+        label: 2x High-output Humbuckers (custom)
+        widget: string
+        required: false
+      - name: k18
+        label: Hardware
+        widget: string
+        required: false
+      - name: k19
+        label: Black nickel
+        widget: string
+        required: false
+      - name: k20
+        label: Controls
+        widget: string
+        required: false
+      - name: k21
+        label: 2x Volume, 2x Tone, 3-way
+        widget: string
+        required: false
+      - name: k22
+        label: Finish
+        widget: string
+        required: false
+      - name: k23
+        label: Satin / Nitro Lacquer (TBC)
+        widget: string
+        required: false
+      - name: k24
+        label: Get Early Access
+        widget: string
+        required: false
+    - name: s8
+      label: Section 8 — Future Series
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Future Series
+        widget: string
+        required: false
+      - name: k2
+        label: Death Adder
+        widget: string
+        required: false
+      - name: k3
+        label: In Development
+        widget: string
+        required: false
+      - name: k4
+        label: Short. Wide. Devastating. The Death Adder series takes…
+        widget: text
+        required: false
+      - name: k5
+        label: We're currently prototyping the Death Adder series, re…
+        widget: text
+        required: false
+      - name: k6
+        label: Interested in Influencing This Series?
+        widget: string
+        required: false
+      - name: k7
+        label: We want player input on the Death Adder. Tell us what …
+        widget: text
+        required: false
+      - name: k8
+        label: Have Your Say
+        widget: string
+        required: false
+    - name: s10
+      label: Section 10 — New Series
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: New Series
+        widget: string
+        required: false
+      - name: k2
+        label: Red Back
+        widget: string
+        required: false
+      - name: k3
+        label: In Development
+        widget: string
+        required: false
+      - name: k4
+        label: Drawing from the sinister elegance of the Redback Spid…
+        widget: text
+        required: false
+      - name: k5
+        label: We're currently prototyping the Red Back series. If yo…
+        widget: text
+        required: false
+      - name: k6
+        label: Planned Specs
+        widget: string
+        required: false
+      - name: k7
+        label: Model Codes
+        widget: string
+        required: false
+      - name: k8
+        label: RBS-6SE · RBS-7SE/8SE · RBS-4SB/5SB
+        widget: string
+        required: false
+      - name: k9
+        label: Body
+        widget: string
+        required: false
+      - name: k10
+        label: Burl top, black-and-red resin art
+        widget: string
+        required: false
+      - name: k11
+        label: Configurations
+        widget: string
+        required: false
+      - name: k12
+        label: 6-String · 7/8-String · 4/5-String Bass
+        widget: string
+        required: false
+      - name: k13
+        label: Style
+        widget: string
+        required: false
+      - name: k14
+        label: To be confirmed
+        widget: string
+        required: false
+      - name: k15
+        label: Materials
+        widget: string
+        required: false
+      - name: k16
+        label: To be confirmed
+        widget: string
+        required: false
+      - name: k17
+        label: Get Early Access
+        widget: string
+        required: false
+    - name: s12
+      label: Section 12 — New Series
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: New Series
+        widget: string
+        required: false
+      - name: k2
+        label: Funnel Web
+        widget: string
+        required: false
+      - name: k3
+        label: In Development
+        widget: string
+        required: false
+      - name: k4
+        label: One of the world's most dangerous spiders calls the Sy…
+        widget: text
+        required: false
+      - name: k5
+        label: We're currently prototyping the Funnel Web series. If …
+        widget: text
+        required: false
+      - name: k6
+        label: Interested in Influencing This Series?
+        widget: string
+        required: false
+      - name: k7
+        label: We want player input on the Funnel Web. Tell us what y…
+        widget: text
+        required: false
+      - name: k8
+        label: Have Your Say
+        widget: string
+        required: false
+    - name: s14
+      label: Section 14 — Fully Custom
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Fully Custom
+        widget: string
+        required: false
+      - name: k2
+        label: Custom Builds
+        widget: string
+        required: false
+      - name: k3
+        label: Your Vision. Our Craft.
+        widget: string
+        required: false
+      - name: k4
+        label: If our series doesn't quite nail what you're after, we…
+        widget: text
+        required: false
+      - name: k5
+        label: Custom builds take 8-16 weeks depending on complexity.…
+        widget: text
+        required: false
+      - name: k6
+        label: What you can customise
+        widget: string
+        required: false
+      - name: k7
+        label: Body Shape
+        widget: string
+        required: false
+      - name: k8
+        label: Tonewoods
+        widget: string
+        required: false
+      - name: k9
+        label: Pickups
+        widget: string
+        required: false
+      - name: k10
+        label: Hardware
+        widget: string
+        required: false
+      - name: k11
+        label: Neck Profile
+        widget: string
+        required: false
+      - name: k12
+        label: Scale Length
+        widget: string
+        required: false
+      - name: k13
+        label: Finish
+        widget: string
+        required: false
+      - name: k14
+        label: Inlay Design
+        widget: string
+        required: false
+      - name: k15
+        label: Electronics
+        widget: string
+        required: false
+      - name: k16
+        label: Nut Material
+        widget: string
+        required: false
+      - name: k17
+        label: Fret Wire
+        widget: string
+        required: false
+      - name: k18
+        label: Radius
+        widget: string
+        required: false
+      - name: k19
+        label: Start Your Build
+        widget: string
+        required: false
+      - name: k20
+        label: Available Body Tonewoods
+        widget: string
+        required: false
+      - name: k21
+        label: Australian Blackwood
+        widget: string
+        required: false
+      - name: k22
+        label: Warm, complex midrange. Stunning grain.
+        widget: string
+        required: false
+      - name: k23
+        label: Native
+        widget: string
+        required: false
+      - name: k24
+        label: Queensland Maple
+        widget: string
+        required: false
+      - name: k25
+        label: Bright, articulate highs. Dense and hard.
+        widget: string
+        required: false
+      - name: k26
+        label: Native
+        widget: string
+        required: false
+      - name: k27
+        label: Silky Oak
+        widget: string
+        required: false
+      - name: k28
+        label: Balanced tone. Beautiful lace/ribbon figure.
+        widget: string
+        required: false
+      - name: k29
+        label: Native
+        widget: string
+        required: false
+      - name: k30
+        label: Mahogany
+        widget: string
+        required: false
+      - name: k31
+        label: Classic warmth. Sustain-heavy. Legendary tone.
+        widget: string
+        required: false
+      - name: k32
+        label: International
+        widget: string
+        required: false
+      - name: k33
+        label: Resin Art Body
+        widget: string
+        required: false
+      - name: k34
+        label: Custom colour pour. Completely one-of-a-kind.
+        widget: string
+        required: false
+      - name: k35
+        label: Signature
+        widget: string
+        required: false
+  - name: series-red-belly-black
+    label: Red Belly Black series page page
+    file: content/series-red-belly-black.json
+    fields:
+    - name: seo
+      label: Search & browser tab (SEO)
+      widget: object
+      collapsed: true
+      fields:
+      - name: title
+        label: Page title
+        widget: string
+      - name: description
+        label: Search description
+        widget: text
+    - name: s4
+      label: Section 4 — 🐍 Flagship Series · Available Now
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: 🐍 Flagship Series · Available Now
+        widget: string
+        required: false
+      - name: k2
+        label: Series — RBBS
+        widget: string
+        required: false
+      - name: k3
+        label: One of Australia's most iconic venomous snakes becomes…
+        widget: text
+        required: false
+      - name: k4
+        label: Enquire Now
+        widget: string
+        required: false
+      - name: k5
+        label: View All Models ↓
+        widget: string
+        required: false
+    - name: s5
+      label: Section 5 — The Inspiration
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: The Inspiration
+        widget: string
+        required: false
+      - name: k2
+        label: Australian Red-Bellied Black Snake
+        widget: string
+        required: false
+      - name: k3
+        label: Pseudechis porphyriacus
+        widget: string
+        required: false
+      - name: k4
+        label: The Australian Red-Bellied Black Snake is one of Austr…
+        widget: text
+        required: false
+      - name: k5
+        label: Despite its potent venom, bites are rarely fatal thank…
+        widget: text
+        required: false
+      - name: k6
+        label: Design Concept
+        widget: string
+        required: false
+      - name: k7
+        label: Nature's Own Design
+        widget: string
+        required: false
+      - name: k8
+        label: One of Australia's most iconic venomous snakes — the "…
+        widget: text
+        required: false
+      - name: k9
+        label: The guitar is available in your choice of configuratio…
+        widget: text
+        required: false
+      - name: k10
+        label: Colour Palette
+        widget: string
+        required: false
+      - name: k11
+        label: Gloss Black Body
+        widget: string
+        required: false
+      - name: k12
+        label: Deep gloss black — as dark as the snake's dorsal scales
+        widget: string
+        required: false
+      - name: k13
+        label: Crimson Red Belly
+        widget: string
+        required: false
+      - name: k14
+        label: Striking resin red on the front face — nature's own wa…
+        widget: string
+        required: false
+      - name: k15
+        label: Dark Maple Neck
+        widget: string
+        required: false
+      - name: k16
+        label: Queensland Maple, finished dark to match the black aes…
+        widget: string
+        required: false
+    - name: s6
+      label: Section 6 — Model Range
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Model Range
+        widget: string
+        required: false
+      - name: k2
+        label: All RBBS Models
+        widget: string
+        required: false
+      - name: k3
+        label: The Red Belly Black Series is available across multipl…
+        widget: text
+        required: false
+      - name: k4
+        label: 'MODEL: RBBS-6SE'
+        widget: string
+        required: false
+      - name: k5
+        label: 6 String Electric
+        widget: string
+        required: false
+      - name: k6
+        label: Standard Electric
+        widget: string
+        required: false
+      - name: k7
+        label: The flagship of the series. A full 25.5" scale 6-strin…
+        widget: text
+        required: false
+      - name: k8
+        label: Strings
+        widget: string
+        required: false
+      - name: k9
+        label: 6 String
+        widget: string
+        required: false
+      - name: k10
+        label: Type
+        widget: string
+        required: false
+      - name: k11
+        label: Electric
+        widget: string
+        required: false
+      - name: k12
+        label: Scale
+        widget: string
+        required: false
+      - name: k13
+        label: 648mm (25.5")
+        widget: string
+        required: false
+      - name: k14
+        label: Pickups
+        widget: string
+        required: false
+      - name: k15
+        label: 3x Custom SSS
+        widget: string
+        required: false
+      - name: k16
+        label: Body
+        widget: string
+        required: false
+      - name: k17
+        label: Blackwood / Resin Art
+        widget: string
+        required: false
+      - name: k18
+        label: Available — POA
+        widget: string
+        required: false
+      - name: k19
+        label: Enquire
+        widget: string
+        required: false
+      - name: k20
+        label: 'MODEL: RBBS-7SE'
+        widget: string
+        required: false
+      - name: k21
+        label: 7 String Electric
+        widget: string
+        required: false
+      - name: k22
+        label: Extended Range
+        widget: string
+        required: false
+      - name: k23
+        label: Drop the low B and open up a world of extended range t…
+        widget: text
+        required: false
+      - name: k24
+        label: Strings
+        widget: string
+        required: false
+      - name: k25
+        label: 7 String
+        widget: string
+        required: false
+      - name: k26
+        label: Type
+        widget: string
+        required: false
+      - name: k27
+        label: Electric
+        widget: string
+        required: false
+      - name: k28
+        label: Scale
+        widget: string
+        required: false
+      - name: k29
+        label: 648mm (25.5")
+        widget: string
+        required: false
+      - name: k30
+        label: Pickups
+        widget: string
+        required: false
+      - name: k31
+        label: Custom HSS-7 (on request)
+        widget: string
+        required: false
+      - name: k32
+        label: Body
+        widget: string
+        required: false
+      - name: k33
+        label: Blackwood / Resin Art
+        widget: string
+        required: false
+      - name: k34
+        label: On Request — POA
+        widget: string
+        required: false
+      - name: k35
+        label: Enquire
+        widget: string
+        required: false
+      - name: k36
+        label: 'MODEL: RBBS-8SE'
+        widget: string
+        required: false
+      - name: k37
+        label: 8 String Electric
+        widget: string
+        required: false
+      - name: k38
+        label: Extended Range
+        widget: string
+        required: false
+      - name: k39
+        label: For the players who want to go further. The RBBS-8SE p…
+        widget: text
+        required: false
+      - name: k40
+        label: Strings
+        widget: string
+        required: false
+      - name: k41
+        label: 8 String
+        widget: string
+        required: false
+      - name: k42
+        label: Type
+        widget: string
+        required: false
+      - name: k43
+        label: Electric
+        widget: string
+        required: false
+      - name: k44
+        label: Scale
+        widget: string
+        required: false
+      - name: k45
+        label: 686mm (27") — TBC
+        widget: string
+        required: false
+      - name: k46
+        label: Pickups
+        widget: string
+        required: false
+      - name: k47
+        label: Custom HH-8 (on request)
+        widget: string
+        required: false
+      - name: k48
+        label: Body
+        widget: string
+        required: false
+      - name: k49
+        label: Mahogany / Resin Art
+        widget: string
+        required: false
+      - name: k50
+        label: On Request — POA
+        widget: string
+        required: false
+      - name: k51
+        label: Enquire
+        widget: string
+        required: false
+      - name: k52
+        label: 'MODEL: RBBS-4SB'
+        widget: string
+        required: false
+      - name: k53
+        label: 4 String Bass
+        widget: string
+        required: false
+      - name: k54
+        label: Electric Bass
+        widget: string
+        required: false
+      - name: k55
+        label: The bass player doesn't get left out. The RBBS-4SB bri…
+        widget: text
+        required: false
+      - name: k56
+        label: Strings
+        widget: string
+        required: false
+      - name: k57
+        label: 4 String
+        widget: string
+        required: false
+      - name: k58
+        label: Type
+        widget: string
+        required: false
+      - name: k59
+        label: Electric Bass
+        widget: string
+        required: false
+      - name: k60
+        label: Scale
+        widget: string
+        required: false
+      - name: k61
+        label: 864mm (34")
+        widget: string
+        required: false
+      - name: k62
+        label: Pickups
+        widget: string
+        required: false
+      - name: k63
+        label: Custom Split-P / J
+        widget: string
+        required: false
+      - name: k64
+        label: Body
+        widget: string
+        required: false
+      - name: k65
+        label: Blackwood / Resin Art
+        widget: string
+        required: false
+      - name: k66
+        label: Available — POA
+        widget: string
+        required: false
+      - name: k67
+        label: Enquire
+        widget: string
+        required: false
+      - name: k68
+        label: 'MODEL: RBBS-5SB'
+        widget: string
+        required: false
+      - name: k69
+        label: 5 String Bass
+        widget: string
+        required: false
+      - name: k70
+        label: Extended Bass
+        widget: string
+        required: false
+      - name: k71
+        label: Add a low B string and unlock the full extended range …
+        widget: text
+        required: false
+      - name: k72
+        label: Strings
+        widget: string
+        required: false
+      - name: k73
+        label: 5 String
+        widget: string
+        required: false
+      - name: k74
+        label: Type
+        widget: string
+        required: false
+      - name: k75
+        label: Electric Bass
+        widget: string
+        required: false
+      - name: k76
+        label: Scale
+        widget: string
+        required: false
+      - name: k77
+        label: 864mm (34")
+        widget: string
+        required: false
+      - name: k78
+        label: Pickups
+        widget: string
+        required: false
+      - name: k79
+        label: Custom 5-String Set
+        widget: string
+        required: false
+      - name: k80
+        label: Body
+        widget: string
+        required: false
+      - name: k81
+        label: Blackwood / Resin Art
+        widget: string
+        required: false
+      - name: k82
+        label: On Request — POA
+        widget: string
+        required: false
+      - name: k83
+        label: Enquire
+        widget: string
+        required: false
+      - name: k84
+        label: 'MODEL: RBBS-CUSTOM'
+        widget: string
+        required: false
+      - name: k85
+        label: Custom Config
+        widget: string
+        required: false
+      - name: k86
+        label: Your Specs
+        widget: string
+        required: false
+      - name: k87
+        label: Want the Red Belly Black aesthetic in a configuration …
+        widget: text
+        required: false
+      - name: k88
+        label: Strings
+        widget: string
+        required: false
+      - name: k89
+        label: Your choice
+        widget: string
+        required: false
+      - name: k90
+        label: Type
+        widget: string
+        required: false
+      - name: k91
+        label: Electric / Bass
+        widget: string
+        required: false
+      - name: k92
+        label: Scale
+        widget: string
+        required: false
+      - name: k93
+        label: To spec
+        widget: string
+        required: false
+      - name: k94
+        label: Pickups
+        widget: string
+        required: false
+      - name: k95
+        label: To spec
+        widget: string
+        required: false
+      - name: k96
+        label: Body
+        widget: string
+        required: false
+      - name: k97
+        label: To spec
+        widget: string
+        required: false
+      - name: k98
+        label: Commission — POA
+        widget: string
+        required: false
+      - name: k99
+        label: Talk to Us
+        widget: string
+        required: false
+      - name: k100
+        label: Build Philosophy
+        widget: string
+        required: false
+      - name: k101
+        label: Every Detail Is Deliberate
+        widget: text
+        required: false
+      - name: k102
+        label: Is Deliberate
+        widget: string
+        required: false
+      - name: k103
+        label: The Red Belly Black isn't just a colour scheme slapped…
+        widget: text
+        required: false
+      - name: k104
+        label: Style and materials specs are being finalised. We're i…
+        widget: text
+        required: false
+      - name: k105
+        label: Commission an RBBS Guitar
+        widget: string
+        required: false
+      - name: k106
+        label: Construction
+        widget: string
+        required: false
+      - name: k107
+        label: Bolt-On Neck Joint
+        widget: string
+        required: false
+      - name: k108
+        label: Precision bolt-on for easy future maintenance and neck…
+        widget: string
+        required: false
+      - name: k109
+        label: Finish
+        widget: string
+        required: false
+      - name: k110
+        label: Gloss Polyester / Resin Art
+        widget: string
+        required: false
+      - name: k111
+        label: Hard-wearing gloss over resin art bodies. Unique every…
+        widget: string
+        required: false
+      - name: k112
+        label: Setup
+        widget: string
+        required: false
+      - name: k113
+        label: Full Professional Setup
+        widget: string
+        required: false
+      - name: k114
+        label: Every guitar leaves the workshop set up to play proper…
+        widget: string
+        required: false
+    - name: s7
+      label: Section 7 — Get Yours
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Get Yours
+        widget: string
+        required: false
+      - name: k2
+        label: Want a Red Belly Black?
+        widget: string
+        required: false
+      - name: k3
+        label: Red Belly Black?
+        widget: string
+        required: false
+      - name: k4
+        label: All RBBS guitars are built to order. Reach out to disc…
+        widget: text
+        required: false
+      - name: k5
+        label: Commission Your Build
+        widget: string
+        required: false
+      - name: k6
+        label: All Guitar Designs
+        widget: string
+        required: false
+      - name: k7
+        label: Watch Build Videos
+        widget: string
+        required: false
+  - name: our-purpose
+    label: Our Purpose page
+    file: content/our-purpose.json
+    fields:
+    - name: seo
+      label: Search & browser tab (SEO)
+      widget: object
+      collapsed: true
+      fields:
+      - name: title
+        label: Page title
+        widget: string
+      - name: description
+        label: Search description
+        widget: text
+    - name: s1
+      label: Section 1 — Why We Exist
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Why We Exist
+        widget: string
+        required: false
+    - name: s2
+      label: Section 2 — Our Purpose
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Our Purpose
+        widget: string
+        required: false
+    - name: s3
+      label: Section 3 — Music is the blood of life and the soul…
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Music is the blood of life and the soul of the planet.
+        widget: string
+        required: false
+      - name: k2
+        label: Venom Guitars was created to supply high quality custo…
+        widget: text
+        required: false
+    - name: s4
+      label: Section 4 — Music is the blood of life and the soul…
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Music is the blood of life and the soul of the planet.…
+        widget: text
+        required: false
+    - name: s5
+      label: Section 5 — 🌐 Our Vision
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: 🌐 Our Vision
+        widget: string
+        required: false
+      - name: k2
+        label: A Household Name in Music
+        widget: string
+        required: false
+      - name: k3
+        label: Our vision is to see Venom Guitars become a household …
+        widget: text
+        required: false
+      - name: k4
+        label: We have a primary focus on supporting "grass roots" in…
+        widget: text
+        required: false
+      - name: k5
+        label: SYDNEY, NSW, AUSTRALIA → THE WORLD
+        widget: string
+        required: false
+      - name: k6
+        label: 🎯 Our Purpose
+        widget: string
+        required: false
+      - name: k7
+        label: Built for Musicians
+        widget: string
+        required: false
+      - name: k8
+        label: Venom Guitars was created to supply high quality custo…
+        widget: text
+        required: false
+      - name: k9
+        label: Every guitar we build is an act of that purpose made p…
+        widget: text
+        required: false
+      - name: k10
+        label: Commission a Guitar
+        widget: string
+        required: false
+      - name: k11
+        label: '"Music is the universal language. It doesn''t care wher…'
+        widget: text
+        required: false
+      - name: k12
+        label: — Venom Guitars
+        widget: string
+        required: false
+    - name: s6
+      label: Section 6 — What Drives Us
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: What Drives Us
+        widget: string
+        required: false
+      - name: k2
+        label: Our Core Pillars
+        widget: string
+        required: false
+      - name: k3
+        label: Everything we build, every decision we make, comes bac…
+        widget: string
+        required: false
+      - name: k4
+        label: Quality Without Compromise
+        widget: string
+        required: false
+      - name: k5
+        label: Every guitar we build is a premium, handcrafted instru…
+        widget: text
+        required: false
+      - name: k6
+        label: Support Grassroots Music
+        widget: string
+        required: false
+      - name: k7
+        label: We believe the next great Australian musician might be…
+        widget: text
+        required: false
+      - name: k8
+        label: Australian Identity
+        widget: string
+        required: false
+      - name: k9
+        label: We're headquartered in Sydney, NSW. We use Australian …
+        widget: text
+        required: false
+      - name: k10
+        label: Partnership & Community
+        widget: string
+        required: false
+      - name: k11
+        label: We don't build alone. From our business partners at th…
+        widget: text
+        required: false
+      - name: k12
+        label: Global Ambition
+        widget: string
+        required: false
+      - name: k13
+        label: We start in Australia — but we're building for the wor…
+        widget: text
+        required: false
+      - name: k14
+        label: Music as a Force for Good
+        widget: string
+        required: false
+      - name: k15
+        label: Ultimately, we believe music makes the world better. E…
+        widget: text
+        required: false
+    - name: s7
+      label: Section 7 — How We Work
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: How We Work
+        widget: string
+        required: false
+      - name: k2
+        label: Our Values
+        widget: string
+        required: false
+      - name: k3
+        label: Passion First
+        widget: string
+        required: false
+      - name: k4
+        label: We started because we love music and we love building …
+        widget: text
+        required: false
+      - name: k5
+        label: Customer Specs. Always.
+        widget: string
+        required: false
+      - name: k6
+        label: We build to your specifications, not ours. Your playin…
+        widget: text
+        required: false
+      - name: k7
+        label: Honest Craftsmanship
+        widget: string
+        required: false
+      - name: k8
+        label: We don't oversell. We don't badge-engineer. Every Veno…
+        widget: text
+        required: false
+      - name: k9
+        label: Share the Knowledge
+        widget: string
+        required: false
+      - name: k10
+        label: Lutherie shouldn't be a closed club. We publish our bu…
+        widget: text
+        required: false
+      - name: k11
+        label: Responsible Sourcing
+        widget: string
+        required: false
+      - name: k12
+        label: Australian hardwoods are precious. We source responsib…
+        widget: text
+        required: false
+      - name: k13
+        label: Continuous Improvement
+        widget: string
+        required: false
+      - name: k14
+        label: Every build teaches us something. We track what works,…
+        widget: text
+        required: false
+    - name: s8
+      label: Section 8 — Be Part of the Story
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Be Part of the Story
+        widget: string
+        required: false
+      - name: k2
+        label: Ready to Work With Us?
+        widget: string
+        required: false
+      - name: k3
+        label: With Us?
+        widget: string
+        required: false
+      - name: k4
+        label: Whether you're commissioning a custom build, looking f…
+        widget: text
+        required: false
+      - name: k5
+        label: Get in Touch
+        widget: string
+        required: false
+      - name: k6
+        label: Meet the Team
+        widget: string
+        required: false
+  - name: our-staff
+    label: Our Team page
+    file: content/our-staff.json
+    fields:
+    - name: seo
+      label: Search & browser tab (SEO)
+      widget: object
+      collapsed: true
+      fields:
+      - name: title
+        label: Page title
+        widget: string
+      - name: description
+        label: Search description
+        widget: text
+    - name: s1
+      label: Section 1 — The People
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: The People
+        widget: string
+        required: false
+    - name: s2
+      label: Section 2 — Our Staff
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Our Staff
+        widget: string
+        required: false
+    - name: s3
+      label: Section 3 — Two mates. One mission. Deadly guitars.
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Two mates. One mission. Deadly guitars.
+        widget: string
+        required: false
+      - name: k2
+        label: Venom Guitars is headquartered in Sydney, NSW — a comp…
+        widget: text
+        required: false
+    - name: s4
+      label: Section 4 — Co-Founders
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Co-Founders
+        widget: string
+        required: false
+      - name: k2
+        label: The Founding Team
+        widget: string
+        required: false
+      - name: k3
+        label: PLUMMO
+        widget: string
+        required: false
+      - name: k4
+        label: Co-Founder & Director
+        widget: string
+        required: false
+      - name: k5
+        label: Plummo is one half of the founding duo behind Venom Gu…
+        widget: text
+        required: false
+      - name: k6
+        label: As a Co-Founder and Director, Plummo drives the creati…
+        widget: text
+        required: false
+      - name: k7
+        label: Guitar Building
+        widget: string
+        required: false
+      - name: k8
+        label: Woodworking
+        widget: string
+        required: false
+      - name: k9
+        label: Design Direction
+        widget: string
+        required: false
+      - name: k10
+        label: Setup & Intonation
+        widget: string
+        required: false
+      - name: k11
+        label: Business Strategy
+        widget: string
+        required: false
+      - name: k12
+        label: '"A guitar isn''t just a tool. It''s a relationship betwe…'
+        widget: text
+        required: false
+      - name: k13
+        label: HAZY
+        widget: string
+        required: false
+      - name: k14
+        label: Co-Founder & Director
+        widget: string
+        required: false
+      - name: k15
+        label: Hazy is the other half of the equation — and the perso…
+        widget: text
+        required: false
+      - name: k16
+        label: As Co-Founder and Director, Hazy manages the supply ch…
+        widget: text
+        required: false
+      - name: k17
+        label: Timber Sourcing
+        widget: string
+        required: false
+      - name: k18
+        label: Business Operations
+        widget: string
+        required: false
+      - name: k19
+        label: Woodcraft
+        widget: string
+        required: false
+      - name: k20
+        label: Partner Relations
+        widget: string
+        required: false
+      - name: k21
+        label: Music
+        widget: string
+        required: false
+      - name: k22
+        label: '"The timber is the soul of the guitar. Get the wood ri…'
+        widget: text
+        required: false
+      - name: k23
+        label: Origin Story
+        widget: string
+        required: false
+      - name: k24
+        label: Two Old Mates, One New Mission
+        widget: string
+        required: false
+      - name: k25
+        label: Plummo and Hazy are long-time friends who reconnected …
+        widget: text
+        required: false
+      - name: k26
+        label: When they finally sat down together and put the idea o…
+        widget: text
+        required: false
+    - name: s5
+      label: Section 5 — Our Network
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Our Network
+        widget: string
+        required: false
+      - name: k2
+        label: Business Partners
+        widget: string
+        required: false
+      - name: k3
+        label: Venom Guitars is proud to have a number of partner bus…
+        widget: text
+        required: false
+      - name: k4
+        label: OZ SOUNDZ
+        widget: string
+        required: false
+      - name: k5
+        label: GROUP
+        widget: string
+        required: false
+      - name: k6
+        label: The Oz Soundz Group
+        widget: string
+        required: false
+      - name: k7
+        label: The Oz Soundz Group is a key partner in the Venom Guit…
+        widget: text
+        required: false
+      - name: k8
+        label: Visit Website →
+        widget: string
+        required: false
+      - name: k9
+        label: ozsoundzgroup.com.au
+        widget: string
+        required: false
+      - name: k10
+        label: HAZY'S
+        widget: string
+        required: false
+      - name: k11
+        label: WOOD
+        widget: string
+        required: false
+      - name: k12
+        label: Hazy's Wood
+        widget: string
+        required: false
+      - name: k13
+        label: Run by Venom's own Co-Founder, Hazy's Wood is where ou…
+        widget: text
+        required: false
+      - name: k14
+        label: Visit Website →
+        widget: string
+        required: false
+      - name: k15
+        label: hazyswood.com.au
+        widget: string
+        required: false
+      - name: k16
+        label: Become a Partner
+        widget: string
+        required: false
+      - name: k17
+        label: Are you a business in the music, woodworking, or instr…
+        widget: text
+        required: false
+      - name: k18
+        label: Get in Touch
+        widget: string
+        required: false
+    - name: s6
+      label: Section 6 — Work With Us
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Work With Us
+        widget: string
+        required: false
+      - name: k2
+        label: Want to Connect?
+        widget: string
+        required: false
+      - name: k3
+        label: Connect?
+        widget: string
+        required: false
+      - name: k4
+        label: Whether it's a commission, a collab, or a conversation…
+        widget: text
+        required: false
+      - name: k5
+        label: Contact the Team
+        widget: string
+        required: false
+      - name: k6
+        label: Our Purpose
+        widget: string
+        required: false
+  - name: builds
+    label: Build Videos page
+    file: content/builds.json
+    fields:
+    - name: seo
+      label: Search & browser tab (SEO)
+      widget: object
+      collapsed: true
+      fields:
+      - name: title
+        label: Page title
+        widget: string
+      - name: description
+        label: Search description
+        widget: text
+    - name: s1
+      label: Section 1 — Workshop Footage
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Workshop Footage
+        widget: string
+        required: false
+    - name: s2
+      label: Section 2 — Build Videos
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Build Videos
+        widget: string
+        required: false
+    - name: s3
+      label: Section 3 — From raw timber to riffing
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: From raw timber to riffing
+        widget: string
+        required: false
+      - name: k2
+        label: Watch every step of the build process. No clean cuts, …
+        widget: text
+        required: false
+    - name: s4
+      label: Section 4 — Latest Upload
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Latest Upload
+        widget: string
+        required: false
+      - name: k2
+        label: Featured Build
+        widget: string
+        required: false
+      - name: k3
+        label: Click to Watch on YouTube
+        widget: string
+        required: false
+      - name: k4
+        label: Red Belly Black Series — Full Build Documentary
+        widget: string
+        required: false
+      - name: k5
+        label: 'Build 001: Red Belly Black — Complete'
+        widget: string
+        required: false
+      - name: k6
+        label: The full build of our first production Red Belly Black…
+        widget: text
+        required: false
+    - name: s5
+      label: Section 5 — All Videos
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: All Videos
+        widget: string
+        required: false
+      - name: k2
+        label: Build Library
+        widget: string
+        required: false
+      - name: k3
+        label: Red Belly Black Build Series
+        widget: string
+        required: false
+      - name: k4
+        label: Full build documentation — Ep. 1–8
+        widget: string
+        required: false
+      - name: k5
+        label: View on YouTube →
+        widget: string
+        required: false
+      - name: k6
+        label: EP. 01
+        widget: string
+        required: false
+      - name: k7
+        label: Wood Selection & Milling
+        widget: string
+        required: false
+      - name: k8
+        label: Sourcing Australian Blackwood — what to look for
+        widget: string
+        required: false
+      - name: k9
+        label: EP. 02
+        widget: string
+        required: false
+      - name: k10
+        label: Body Routing & Template
+        widget: string
+        required: false
+      - name: k11
+        label: CNC vs hand routing — our approach
+        widget: string
+        required: false
+      - name: k12
+        label: EP. 03
+        widget: string
+        required: false
+      - name: k13
+        label: The Resin Art Pour
+        widget: string
+        required: false
+      - name: k14
+        label: Black and red resin — the Red Belly finish
+        widget: string
+        required: false
+      - name: k15
+        label: EP. 04
+        widget: string
+        required: false
+      - name: k16
+        label: Neck Build & Fretwork
+        widget: string
+        required: false
+      - name: k17
+        label: Slotting, fretting, leveling, crowning
+        widget: string
+        required: false
+      - name: k18
+        label: EP. 05
+        widget: string
+        required: false
+      - name: k19
+        label: Wiring & Electronics
+        widget: string
+        required: false
+      - name: k20
+        label: Pickup install, shielding, soldering
+        widget: string
+        required: false
+      - name: k21
+        label: EP. 06
+        widget: string
+        required: false
+      - name: k22
+        label: Final Setup & Playthrough
+        widget: string
+        required: false
+      - name: k23
+        label: Intonation, action, first riff
+        widget: string
+        required: false
+      - name: k24
+        label: Workshop Shorts
+        widget: string
+        required: false
+      - name: k25
+        label: Quick clips — tips, tricks, and behind-the-scenes
+        widget: string
+        required: false
+      - name: k26
+        label: '#SHORT'
+        widget: string
+        required: false
+      - name: k27
+        label: Fret Leveling in 60s
+        widget: string
+        required: false
+      - name: k28
+        label: Quick tip
+        widget: string
+        required: false
+      - name: k29
+        label: '#SHORT'
+        widget: string
+        required: false
+      - name: k30
+        label: Resin Pour ASMR
+        widget: string
+        required: false
+      - name: k31
+        label: Workshop footage
+        widget: string
+        required: false
+      - name: k32
+        label: '#SHORT'
+        widget: string
+        required: false
+      - name: k33
+        label: Binding Trick
+        widget: string
+        required: false
+      - name: k34
+        label: Neck binding tip
+        widget: string
+        required: false
+      - name: k35
+        label: '#SHORT'
+        widget: string
+        required: false
+      - name: k36
+        label: Nut Slotting Guide
+        widget: string
+        required: false
+      - name: k37
+        label: Setup tip
+        widget: string
+        required: false
+      - name: k38
+        label: Subscribe
+        widget: string
+        required: false
+      - name: k39
+        label: Follow the Workshop
+        widget: string
+        required: false
+      - name: k40
+        label: New build videos, tips, and behind-the-scenes footage …
+        widget: text
+        required: false
+  - name: education
+    label: Education page
+    file: content/education.json
+    fields:
+    - name: seo
+      label: Search & browser tab (SEO)
+      widget: object
+      collapsed: true
+      fields:
+      - name: title
+        label: Page title
+        widget: string
+      - name: description
+        label: Search description
+        widget: text
+    - name: s1
+      label: Section 1 — Learn the Craft
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Learn the Craft
+        widget: string
+        required: false
+    - name: s2
+      label: Section 2 — Education
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Education
+        widget: string
+        required: false
+    - name: s3
+      label: Section 3 — From player to builder — knowledge is f…
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: From player to builder — knowledge is free
+        widget: string
+        required: false
+      - name: k2
+        label: Whether you're setting up your first guitar or routing…
+        widget: text
+        required: false
+    - name: s4
+      label: Section 4 — Topics
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Topics
+        widget: string
+        required: false
+      - name: k2
+        label: Learn by Subject
+        widget: string
+        required: false
+      - name: k3
+        label: ● Beginner
+        widget: string
+        required: false
+      - name: k4
+        label: Understanding Tonewoods
+        widget: string
+        required: false
+      - name: k5
+        label: Why does the timber matter? We break down the acoustic…
+        widget: text
+        required: false
+      - name: k6
+        label: Read Guide →
+        widget: string
+        required: false
+      - name: k7
+        label: ● Beginner
+        widget: string
+        required: false
+      - name: k8
+        label: Guitar Setup 101
+        widget: string
+        required: false
+      - name: k9
+        label: A properly set up guitar plays itself. Learn how to ad…
+        widget: text
+        required: false
+      - name: k10
+        label: Read Guide →
+        widget: string
+        required: false
+      - name: k11
+        label: ● Intermediate
+        widget: string
+        required: false
+      - name: k12
+        label: Pickup Wiring Demystified
+        widget: string
+        required: false
+      - name: k13
+        label: Single coils, humbuckers, series/parallel, coil splits…
+        widget: text
+        required: false
+      - name: k14
+        label: Read Guide →
+        widget: string
+        required: false
+      - name: k15
+        label: ● Intermediate
+        widget: string
+        required: false
+      - name: k16
+        label: Resin Art Guitar Bodies
+        widget: string
+        required: false
+      - name: k17
+        label: Our signature technique. How we design, pour, and fini…
+        widget: text
+        required: false
+      - name: k18
+        label: Read Guide →
+        widget: string
+        required: false
+      - name: k19
+        label: ● Intermediate
+        widget: string
+        required: false
+      - name: k20
+        label: Body Routing Fundamentals
+        widget: string
+        required: false
+      - name: k21
+        label: Template making, router bit selection, climb cuts, and…
+        widget: text
+        required: false
+      - name: k22
+        label: Read Guide →
+        widget: string
+        required: false
+      - name: k23
+        label: ● Advanced
+        widget: string
+        required: false
+      - name: k24
+        label: 'Fretwork: Level, Crown, Polish'
+        widget: string
+        required: false
+      - name: k25
+        label: The dark art of a proper fret job. We cover leveling b…
+        widget: text
+        required: false
+      - name: k26
+        label: Read Guide →
+        widget: string
+        required: false
+      - name: k27
+        label: ● Beginner
+        widget: string
+        required: false
+      - name: k28
+        label: Australian Tonewoods Guide
+        widget: string
+        required: false
+      - name: k29
+        label: A deep dive into native Australian timbers and their g…
+        widget: text
+        required: false
+      - name: k30
+        label: Read Guide →
+        widget: string
+        required: false
+      - name: k31
+        label: ● Intermediate
+        widget: string
+        required: false
+      - name: k32
+        label: Neck Building from Scratch
+        widget: string
+        required: false
+      - name: k33
+        label: Quartersawn vs flatsawn blanks, truss rod channels, he…
+        widget: text
+        required: false
+      - name: k34
+        label: Read Guide →
+        widget: string
+        required: false
+      - name: k35
+        label: ● Advanced
+        widget: string
+        required: false
+      - name: k36
+        label: Nitro vs Poly Finishes
+        widget: string
+        required: false
+      - name: k37
+        label: The never-ending debate — nitrocellulose vs polyester/…
+        widget: text
+        required: false
+      - name: k38
+        label: Read Guide →
+        widget: string
+        required: false
+    - name: s5
+      label: Section 5 — Quick Reference
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Quick Reference
+        widget: string
+        required: false
+      - name: k2
+        label: Setup & Maintenance Guides
+        widget: string
+        required: false
+      - name: k3
+        label: One-page references you can print and pin above your w…
+        widget: string
+        required: false
+      - name: k4
+        label: String Action Reference Chart
+        widget: string
+        required: false
+      - name: k5
+        label: Standard action heights for Fender-style, Gibson-style…
+        widget: string
+        required: false
+      - name: k6
+        label: Truss Rod Adjustment Guide
+        widget: string
+        required: false
+      - name: k7
+        label: How to measure neck relief and when (and when not) to …
+        widget: string
+        required: false
+      - name: k8
+        label: Intonation Step-by-Step
+        widget: string
+        required: false
+      - name: k9
+        label: Getting your guitar to play in tune all the way up the…
+        widget: string
+        required: false
+      - name: k10
+        label: Pickup Height Calculator
+        widget: string
+        required: false
+      - name: k11
+        label: Recommended starting heights for single coils, P90s, a…
+        widget: string
+        required: false
+      - name: k12
+        label: Wiring Diagrams Pack
+        widget: string
+        required: false
+      - name: k13
+        label: SSS, HSS, HH, HHH — common wiring configurations with …
+        widget: string
+        required: false
+      - name: k14
+        label: Tonewood Comparison Chart
+        widget: string
+        required: false
+      - name: k15
+        label: Side-by-side tone, weight, and workability ratings for…
+        widget: string
+        required: false
+    - name: s6
+      label: Section 6 — Common Questions
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Common Questions
+        widget: string
+        required: false
+      - name: k2
+        label: FAQ
+        widget: string
+        required: false
+      - name: k3
+        label: Custom builds typically take 8–16 weeks depending on c…
+        widget: text
+        required: false
+      - name: k4
+        label: We primarily use Australian hardwoods — Blackwood, Que…
+        widget: text
+        required: false
+      - name: k5
+        label: Absolutely. If you want Lollar pickups, Gotoh hardware…
+        widget: text
+        required: false
+      - name: k6
+        label: Yes to both. We ship Australia-wide and can arrange in…
+        widget: text
+        required: false
+      - name: k7
+        label: A resin art finish means the body itself is partially …
+        widget: text
+        required: false
+      - name: k8
+        label: By appointment, yes. We love having players and builde…
+        widget: text
+        required: false
+      - name: k9
+        label: On a case-by-case basis. We primarily focus on new bui…
+        widget: text
+        required: false
+    - name: s7
+      label: Section 7 — Terminology
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Terminology
+        widget: string
+        required: false
+      - name: k2
+        label: Luthier's Glossary
+        widget: string
+        required: false
+      - name: k3
+        label: Don't know your nut from your saddle? Your truss rod f…
+        widget: string
+        required: false
+      - name: k4
+        label: Action
+        widget: string
+        required: false
+      - name: k5
+        label: The height of the strings above the frets. Low action …
+        widget: text
+        required: false
+      - name: k6
+        label: Binding
+        widget: string
+        required: false
+      - name: k7
+        label: A strip of material (plastic, wood, or purfling) inlai…
+        widget: text
+        required: false
+      - name: k8
+        label: Bolt-On
+        widget: string
+        required: false
+      - name: k9
+        label: A neck joint where the neck is bolted (or screwed) to …
+        widget: text
+        required: false
+      - name: k10
+        label: Coil Split
+        widget: string
+        required: false
+      - name: k11
+        label: A mod that bypasses one coil of a humbucker, giving yo…
+        widget: text
+        required: false
+      - name: k12
+        label: Fret Dress
+        widget: string
+        required: false
+      - name: k13
+        label: The process of levelling, re-crowning, and polishing f…
+        widget: text
+        required: false
+      - name: k14
+        label: Humbucker
+        widget: string
+        required: false
+      - name: k15
+        label: A dual-coil pickup that cancels electromagnetic hum. W…
+        widget: text
+        required: false
+      - name: k16
+        label: Intonation
+        widget: string
+        required: false
+      - name: k17
+        label: How accurately a guitar plays in tune up the neck. Set…
+        widget: text
+        required: false
+      - name: k18
+        label: Luthier
+        widget: string
+        required: false
+      - name: k19
+        label: A craftsperson who builds and/or repairs stringed inst…
+        widget: text
+        required: false
+      - name: k20
+        label: Nut
+        widget: string
+        required: false
+      - name: k21
+        label: The slotted piece at the top of the neck (between head…
+        widget: text
+        required: false
+      - name: k22
+        label: Quartersawn
+        widget: string
+        required: false
+      - name: k23
+        label: Timber cut so the growth rings run roughly perpendicul…
+        widget: text
+        required: false
+      - name: k24
+        label: Relief
+        widget: string
+        required: false
+      - name: k25
+        label: The slight forward bow in a guitar neck, controlled by…
+        widget: text
+        required: false
+      - name: k26
+        label: Scale Length
+        widget: string
+        required: false
+      - name: k27
+        label: The vibrating string length from nut to saddle. Fender…
+        widget: text
+        required: false
+      - name: k28
+        label: Truss Rod
+        widget: string
+        required: false
+      - name: k29
+        label: A steel rod running inside the neck that counteracts s…
+        widget: text
+        required: false
+      - name: k30
+        label: Tonewood
+        widget: string
+        required: false
+      - name: k31
+        label: Any timber used in instrument construction chosen for …
+        widget: text
+        required: false
+      - name: k32
+        label: Zero Fret
+        widget: string
+        required: false
+      - name: k33
+        label: A fret installed at the nut position so open strings h…
+        widget: text
+        required: false
+      - name: k34
+        label: Still Got Questions?
+        widget: string
+        required: false
+      - name: k35
+        label: Ask the Team
+        widget: string
+        required: false
+      - name: k36
+        label: Team
+        widget: string
+        required: false
+      - name: k37
+        label: Can't find the answer? Drop us a message and we'll eit…
+        widget: text
+        required: false
+      - name: k38
+        label: Get in Touch
+        widget: string
+        required: false
+  - name: community
+    label: Community page
+    file: content/community.json
+    fields:
+    - name: seo
+      label: Search & browser tab (SEO)
+      widget: object
+      collapsed: true
+      fields:
+      - name: title
+        label: Page title
+        widget: string
+      - name: description
+        label: Search description
+        widget: text
+    - name: s1
+      label: Section 1 — The Pack
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: The Pack
+        widget: string
+        required: false
+    - name: s2
+      label: Section 2 — Our Community
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Our Community
+        widget: string
+        required: false
+    - name: s3
+      label: Section 3 — Grassroots players, builders, and tone …
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Grassroots players, builders, and tone chasers
+        widget: string
+        required: false
+      - name: k2
+        label: Venom Guitars was built for musicians — and we mean th…
+        widget: text
+        required: false
+    - name: s4
+      label: Section 4 — Why Community Matters
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Why Community Matters
+        widget: string
+        required: false
+      - name: k2
+        label: More Than Guitars
+        widget: string
+        required: false
+      - name: k3
+        label: Players First
+        widget: string
+        required: false
+      - name: k4
+        label: We started as players. We know what it's like to deal …
+        widget: text
+        required: false
+      - name: k5
+        label: Builders Welcome
+        widget: string
+        required: false
+      - name: k6
+        label: Want to learn lutherie? We actively encourage it. Shar…
+        widget: text
+        required: false
+      - name: k7
+        label: Proudly Local
+        widget: string
+        required: false
+      - name: k8
+        label: The Australian music scene is world-class and chronica…
+        widget: text
+        required: false
+    - name: s5
+      label: Section 5 — Find Us Online
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Find Us Online
+        widget: string
+        required: false
+      - name: k2
+        label: Social Channels
+        widget: string
+        required: false
+      - name: k3
+        label: YouTube
+        widget: string
+        required: false
+      - name: k4
+        label: '@venomguitars'
+        widget: string
+        required: false
+      - name: k5
+        label: Full build series, playthroughs, setup tutorials, and …
+        widget: string
+        required: false
+      - name: k6
+        label: Instagram
+        widget: string
+        required: false
+      - name: k7
+        label: '@venomguitars'
+        widget: string
+        required: false
+      - name: k8
+        label: Build progress photos, finished guitars, resin pours, …
+        widget: text
+        required: false
+      - name: k9
+        label: TikTok
+        widget: string
+        required: false
+      - name: k10
+        label: '@venomguitars'
+        widget: string
+        required: false
+      - name: k11
+        label: Quick tips, satisfying machining clips, resin art pour…
+        widget: text
+        required: false
+      - name: k12
+        label: Facebook
+        widget: string
+        required: false
+      - name: k13
+        label: Venom Guitars
+        widget: string
+        required: false
+      - name: k14
+        label: Community discussion, announcements, event info, and f…
+        widget: text
+        required: false
+    - name: s6
+      label: Section 6 — Our People
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Our People
+        widget: string
+        required: false
+      - name: k2
+        label: Community Spotlights
+        widget: string
+        required: false
+      - name: k3
+        label: Real players. Real builds. The Venom community is full…
+        widget: text
+        required: false
+      - name: k4
+        label: Jake R.
+        widget: string
+        required: false
+      - name: k5
+        label: Blues & Rock
+        widget: string
+        required: false
+      - name: k6
+        label: '"The Red Belly Black just screams. I''ve played Gibsons…'
+        widget: text
+        required: false
+      - name: k7
+        label: Mel T.
+        widget: string
+        required: false
+      - name: k8
+        label: Hobbyist Builder
+        widget: string
+        required: false
+      - name: k9
+        label: '"I''ve built three guitars now following Venom''s guides…'
+        widget: text
+        required: false
+      - name: k10
+        label: Sam K.
+        widget: string
+        required: false
+      - name: k11
+        label: Session Musician
+        widget: string
+        required: false
+      - name: k12
+        label: '"Had a custom Blackwood build made. It''s been in every…'
+        widget: text
+        required: false
+      - name: k13
+        label: Dan B.
+        widget: string
+        required: false
+      - name: k14
+        label: Metal & Prog
+        widget: string
+        required: false
+      - name: k15
+        label: '"Waiting on a Taipan pre-order. In the meantime I''m de…'
+        widget: text
+        required: false
+    - name: s7
+      label: Section 7 — Stay in the Loop
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Stay in the Loop
+        widget: string
+        required: false
+      - name: k2
+        label: Join the Pack
+        widget: string
+        required: false
+      - name: k3
+        label: Pack
+        widget: string
+        required: false
+      - name: k4
+        label: Get new build drops, education content, community spot…
+        widget: text
+        required: false
+      - name: k5
+        label: Sorry — that didn't go through. Please try again.
+        widget: string
+        required: false
+      - name: k6
+        label: Cheers! You're on the list. 🐍
+        widget: string
+        required: false
+      - name: k7
+        label: By subscribing you agree to receive occasional emails …
+        widget: text
+        required: false
+    - name: s8
+      label: Section 8 — Get Together
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Get Together
+        widget: string
+        required: false
+      - name: k2
+        label: Events & Meetups
+        widget: string
+        required: false
+      - name: k3
+        label: Events Coming Soon
+        widget: string
+        required: false
+      - name: k4
+        label: We're planning workshop open days, guitar meetups, and…
+        widget: text
+        required: false
+      - name: k5
+        label: Express Interest
+        widget: string
+        required: false
+  - name: media
+    label: Media page
+    file: content/media.json
+    fields:
+    - name: seo
+      label: Search & browser tab (SEO)
+      widget: object
+      collapsed: true
+      fields:
+      - name: title
+        label: Page title
+        widget: string
+      - name: description
+        label: Search description
+        widget: text
+    - name: s1
+      label: Section 1 — Press & Blog
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Press & Blog
+        widget: string
+        required: false
+    - name: s2
+      label: Section 2 — Our Media
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Our Media
+        widget: string
+        required: false
+    - name: s3
+      label: Section 3 — Articles, announcements, and press
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Articles, announcements, and press
+        widget: string
+        required: false
+      - name: k2
+        label: The latest from Venom Guitars — build announcements, a…
+        widget: text
+        required: false
+    - name: s4
+      label: Section 4 — Latest
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Latest
+        widget: string
+        required: false
+      - name: k2
+        label: Featured Article
+        widget: string
+        required: false
+      - name: k3
+        label: 📅 June 2025 · Tonewoods
+        widget: string
+        required: false
+      - name: k4
+        label: Why Australian Timber Belongs in Your Electric Guitar
+        widget: string
+        required: false
+      - name: k5
+        label: We've been using native Australian hardwoods since day…
+        widget: text
+        required: false
+      - name: k6
+        label: Read Article
+        widget: string
+        required: false
+    - name: s5
+      label: Section 5 — All Articles
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: All Articles
+        widget: string
+        required: false
+      - name: k2
+        label: Blogs & Articles
+        widget: string
+        required: false
+      - name: k3
+        label: The Story Behind the Snake
+        widget: string
+        required: false
+      - name: k4
+        label: How the Red Belly Black became our flagship and what t…
+        widget: text
+        required: false
+      - name: k5
+        label: Read Article →
+        widget: string
+        required: false
+      - name: k6
+        label: 5 Setup Mistakes Killing Your Tone
+        widget: string
+        required: false
+      - name: k7
+        label: We see these same setup errors on almost every guitar …
+        widget: text
+        required: false
+      - name: k8
+        label: Read Article →
+        widget: string
+        required: false
+      - name: k9
+        label: 'Resin Art Guitar Bodies: Everything You Need to Know'
+        widget: string
+        required: false
+      - name: k10
+        label: The process of making a resin art guitar body is part …
+        widget: text
+        required: false
+      - name: k11
+        label: Read Article →
+        widget: string
+        required: false
+      - name: k12
+        label: 'Custom Wound Pickups: Are They Worth It?'
+        widget: string
+        required: false
+      - name: k13
+        label: We've been experimenting with custom winding specs for…
+        widget: text
+        required: false
+      - name: k14
+        label: Read Article →
+        widget: string
+        required: false
+      - name: k15
+        label: Responsible Timber Sourcing in Australia
+        widget: string
+        required: false
+      - name: k16
+        label: How we source our tonewoods ethically, why certificati…
+        widget: text
+        required: false
+      - name: k17
+        label: Read Article →
+        widget: string
+        required: false
+      - name: k18
+        label: Why Australian Guitar Manufacturing Matters
+        widget: string
+        required: false
+      - name: k19
+        label: The case for building guitars locally — economics, qua…
+        widget: text
+        required: false
+      - name: k20
+        label: Read Article →
+        widget: string
+        required: false
+    - name: s6
+      label: Section 6 — Coverage
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Coverage
+        widget: string
+        required: false
+      - name: k2
+        label: Press & Features
+        widget: string
+        required: false
+      - name: k3
+        label: Australian Guitar Magazine
+        widget: string
+        required: false
+      - name: k4
+        label: '"Venom Guitars is building something genuinely excitin…'
+        widget: text
+        required: false
+      - name: k5
+        label: 2025 · Feature
+        widget: string
+        required: false
+      - name: k6
+        label: Music Industry Edge
+        widget: string
+        required: false
+      - name: k7
+        label: '"The Red Belly Black Series is a statement guitar — th…'
+        widget: text
+        required: false
+      - name: k8
+        label: 2025 · Review
+        widget: string
+        required: false
+      - name: k9
+        label: Tone Report Weekly
+        widget: string
+        required: false
+      - name: k10
+        label: '"Venom is what happens when genuine craft and strong b…'
+        widget: text
+        required: false
+      - name: k11
+        label: 2024 · Brand Spotlight
+        widget: string
+        required: false
+      - name: k12
+        label: Press Enquiries
+        widget: string
+        required: false
+      - name: k13
+        label: For media kit, hi-res images, interview requests, or r…
+        widget: text
+        required: false
+      - name: k14
+        label: Contact Press Team
+        widget: string
+        required: false
+    - name: s7
+      label: Section 7 — Social Media
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Social Media
+        widget: string
+        required: false
+      - name: k2
+        label: Follow Along
+        widget: string
+        required: false
+      - name: k3
+        label: The freshest content lives on our socials — build clip…
+        widget: text
+        required: false
+      - name: k4
+        label: YouTube
+        widget: string
+        required: false
+      - name: k5
+        label: Full build series & tutorials
+        widget: string
+        required: false
+      - name: k6
+        label: Instagram
+        widget: string
+        required: false
+      - name: k7
+        label: Build photos & Reels
+        widget: string
+        required: false
+      - name: k8
+        label: TikTok
+        widget: string
+        required: false
+      - name: k9
+        label: Quick clips & viral content
+        widget: string
+        required: false
+      - name: k10
+        label: Facebook
+        widget: string
+        required: false
+      - name: k11
+        label: Community & announcements
+        widget: string
+        required: false
+  - name: blogs-articles
+    label: Blogs & Articles page
+    file: content/blogs-articles.json
+    fields:
+    - name: seo
+      label: Search & browser tab (SEO)
+      widget: object
+      collapsed: true
+      fields:
+      - name: title
+        label: Page title
+        widget: string
+      - name: description
+        label: Search description
+        widget: text
+    - name: s1
+      label: Section 1 — Blog & Articles
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Blog & Articles
+        widget: string
+        required: false
+    - name: s2
+      label: Section 2 — Blogs & Articles
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Blogs & Articles
+        widget: string
+        required: false
+    - name: s3
+      label: Section 3 — Notes from the workshop
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Notes from the workshop
+        widget: string
+        required: false
+      - name: k2
+        label: Build notes, tonewood talk and guitar tech from the Ve…
+        widget: text
+        required: false
+    - name: s4
+      label: Section 4 — Coming Up
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Coming Up
+        widget: string
+        required: false
+      - name: k2
+        label: On the Bench
+        widget: string
+        required: false
+      - name: k3
+        label: These articles are being written now. Subscribe to the…
+        widget: text
+        required: false
+      - name: k4
+        label: Brand
+        widget: string
+        required: false
+      - name: k5
+        label: The Story Behind the Snake
+        widget: string
+        required: false
+      - name: k6
+        label: How the Red Belly Black became our flagship and what t…
+        widget: text
+        required: false
+      - name: k7
+        label: Guitar Tech
+        widget: string
+        required: false
+      - name: k8
+        label: 5 Setup Mistakes Killing Your Tone
+        widget: string
+        required: false
+      - name: k9
+        label: The same setup errors show up on almost every guitar t…
+        widget: text
+        required: false
+      - name: k10
+        label: Craft
+        widget: string
+        required: false
+      - name: k11
+        label: 'Resin Art Guitar Bodies: Everything You Need to Know'
+        widget: string
+        required: false
+      - name: k12
+        label: From colour theory to structural considerations — how …
+        widget: text
+        required: false
+      - name: k13
+        label: Electronics
+        widget: string
+        required: false
+      - name: k14
+        label: 'Custom Wound Pickups: Are They Worth It?'
+        widget: string
+        required: false
+      - name: k15
+        label: What we are learning about DCR, magnet choice and cust…
+        widget: text
+        required: false
+      - name: k16
+        label: Sustainability
+        widget: string
+        required: false
+      - name: k17
+        label: Responsible Timber Sourcing in Australia
+        widget: string
+        required: false
+      - name: k18
+        label: How we source tonewoods ethically, why certification m…
+        widget: text
+        required: false
+      - name: k19
+        label: Industry
+        widget: string
+        required: false
+      - name: k20
+        label: Why Australian Guitar Manufacturing Matters
+        widget: string
+        required: false
+      - name: k21
+        label: The case for building guitars locally — quality contro…
+        widget: text
+        required: false
+    - name: s5
+      label: Section 5 — Stay in the Loop
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Stay in the Loop
+        widget: string
+        required: false
+      - name: k2
+        label: Get New Articles First
+        widget: string
+        required: false
+      - name: k3
+        label: Join the newsletter for new articles, build updates an…
+        widget: string
+        required: false
+      - name: k4
+        label: Join the Newsletter
+        widget: string
+        required: false
+      - name: k5
+        label: Back to Media
+        widget: string
+        required: false
+  - name: social-media
+    label: Social Media page
+    file: content/social-media.json
+    fields:
+    - name: seo
+      label: Search & browser tab (SEO)
+      widget: object
+      collapsed: true
+      fields:
+      - name: title
+        label: Page title
+        widget: string
+      - name: description
+        label: Search description
+        widget: text
+    - name: s1
+      label: Section 1 — Social Media
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Social Media
+        widget: string
+        required: false
+    - name: s2
+      label: Section 2 — Follow Along
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Follow Along
+        widget: string
+        required: false
+    - name: s3
+      label: Section 3 — Where the freshest content lives
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Where the freshest content lives
+        widget: string
+        required: false
+      - name: k2
+        label: Build clips, resin pours, playthroughs and behind-the-…
+        widget: text
+        required: false
+    - name: s4
+      label: Section 4 — Our Channels
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Our Channels
+        widget: string
+        required: false
+      - name: k2
+        label: Find Venom Online
+        widget: string
+        required: false
+      - name: k3
+        label: YouTube
+        widget: string
+        required: false
+      - name: k4
+        label: '@venomguitars'
+        widget: string
+        required: false
+      - name: k5
+        label: Full build series, resin pours and tutorials.
+        widget: string
+        required: false
+      - name: k6
+        label: Instagram
+        widget: string
+        required: false
+      - name: k7
+        label: '@venomguitars'
+        widget: string
+        required: false
+      - name: k8
+        label: Build photos, finished guitars and Reels from the benc…
+        widget: string
+        required: false
+      - name: k9
+        label: TikTok
+        widget: string
+        required: false
+      - name: k10
+        label: '@venomguitars'
+        widget: string
+        required: false
+      - name: k11
+        label: Quick clips, sparks and short-form workshop moments.
+        widget: string
+        required: false
+      - name: k12
+        label: Facebook
+        widget: string
+        required: false
+      - name: k13
+        label: venomguitars
+        widget: string
+        required: false
+      - name: k14
+        label: Community chat, announcements and event updates.
+        widget: string
+        required: false
+    - name: s5
+      label: Section 5 — Share Your Venom
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Share Your Venom
+        widget: string
+        required: false
+      - name: k2
+        label: Own a Venom Guitar?
+        widget: string
+        required: false
+      - name: k3
+        label: Get in Touch
+        widget: string
+        required: false
+      - name: k4
+        label: Back to Media
+        widget: string
+        required: false
+  - name: contact
+    label: Contact page
+    file: content/contact.json
+    fields:
+    - name: seo
+      label: Search & browser tab (SEO)
+      widget: object
+      collapsed: true
+      fields:
+      - name: title
+        label: Page title
+        widget: string
+      - name: description
+        label: Search description
+        widget: text
+    - name: s1
+      label: Section 1 — Reach Out
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Reach Out
+        widget: string
+        required: false
+    - name: s2
+      label: Section 2 — Get In Touch
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Get In Touch
+        widget: string
+        required: false
+    - name: s3
+      label: Section 3 — Let's talk guitars
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Let's talk guitars
+        widget: string
+        required: false
+      - name: k2
+        label: Whether you're ready to commission a custom build, hav…
+        widget: text
+        required: false
+    - name: s4
+      label: Section 4 — Details
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Details
+        widget: string
+        required: false
+      - name: k2
+        label: Find Us
+        widget: string
+        required: false
+      - name: k3
+        label: Email
+        widget: string
+        required: false
+      - name: k4
+        label: We reply within 48 business hours
+        widget: string
+        required: false
+      - name: k5
+        label: Location
+        widget: string
+        required: false
+      - name: k6
+        label: Australia
+        widget: string
+        required: false
+      - name: k7
+        label: Workshop visits by appointment only
+        widget: string
+        required: false
+      - name: k8
+        label: Build Lead Time
+        widget: string
+        required: false
+      - name: k9
+        label: 8 – 16 Weeks
+        widget: string
+        required: false
+      - name: k10
+        label: Depending on complexity and current queue
+        widget: string
+        required: false
+      - name: k11
+        label: Social / YouTube
+        widget: string
+        required: false
+      - name: k12
+        label: '@venomguitars'
+        widget: string
+        required: false
+      - name: k13
+        label: All platforms — YouTube, Instagram, TikTok, Facebook
+        widget: string
+        required: false
+      - name: k14
+        label: Socials
+        widget: string
+        required: false
+      - name: k15
+        label: ▶ YouTube
+        widget: string
+        required: false
+      - name: k16
+        label: 📷 Instagram
+        widget: string
+        required: false
+      - name: k17
+        label: ♪ TikTok
+        widget: string
+        required: false
+      - name: k18
+        label: f Facebook
+        widget: string
+        required: false
+      - name: k19
+        label: Australia
+        widget: string
+        required: false
+      - name: k20
+        label: Workshop Location — By Appointment
+        widget: string
+        required: false
+      - name: k21
+        label: Send a Message
+        widget: string
+        required: false
+      - name: k22
+        label: Tell us what you're after and we'll come back to you w…
+        widget: string
+        required: false
+      - name: k23
+        label: 'I''m enquiring about:'
+        widget: string
+        required: false
+      - name: k24
+        label: Message Sent!
+        widget: string
+        required: false
+      - name: k25
+        label: Cheers — we've received your message and will get back…
+        widget: string
+        required: false
+    - name: s5
+      label: Section 5 — Before You Message
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: Before You Message
+        widget: string
+        required: false
+      - name: k2
+        label: Check the FAQ
+        widget: string
+        required: false
+      - name: k3
+        label: We've answered the most common questions about custom …
+        widget: text
+        required: false
+      - name: k4
+        label: View FAQ
+        widget: string
+        required: false
+  - name: not-found
+    label: 404 page page
+    file: content/not-found.json
+    fields:
+    - name: seo
+      label: Search & browser tab (SEO)
+      widget: object
+      collapsed: true
+      fields:
+      - name: title
+        label: Page title
+        widget: string
+      - name: description
+        label: Search description
+        widget: text
+    - name: s1
+      label: Section 1 — String Not Found
+      widget: object
+      collapsed: true
+      hint: 'Tip: put [[words]] around text to colour it red, **words** for bold. Pressing Enter in a long box starts a new line.'
+      fields:
+      - name: k1
+        label: String Not Found
+        widget: string
+        required: false
+      - name: k2
+        label: Looks like this page got routed out. It might have bee…
+        widget: text
+        required: false
+      - name: k3
+        label: Back to Home
+        widget: string
+        required: false
+      - name: k4
+        label: View Guitars
+        widget: string
+        required: false
