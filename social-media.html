@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media — Venom Guitars</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <style>
+
+    .hub-card{display:flex;flex-direction:column;gap:.75rem;padding:2rem;border:1px solid rgba(255,255,255,.07);background:var(--charcoal);transition:all .3s;position:relative;overflow:hidden}
+    .hub-card:hover{border-color:rgba(192,0,12,.6);transform:translateY(-4px)}
+    .hub-icon{font-size:2.5rem}
+    .hub-name{font-family:var(--font-display);font-size:1.4rem;letter-spacing:.1em;color:var(--cream)}
+    .hub-handle{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--red)}
+    .hub-desc{font-size:.85rem;color:var(--grey);line-height:1.65;flex:1}
+    .topic-card{padding:1.5rem;border:1px solid rgba(255,255,255,.07);background:var(--charcoal);position:relative}
+    .topic-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--red),transparent)}
+    .topic-cat{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem}
+    .topic-title{font-family:var(--font-display);font-size:1.15rem;letter-spacing:.06em;color:var(--cream);margin-bottom:.6rem}
+    .topic-desc{font-size:.82rem;color:var(--grey);line-height:1.65}
+    .topic-status{display:inline-block;margin-top:1rem;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);border:1px solid rgba(255,255,255,.15);padding:.25rem .6rem}
+
+  </style>dy>
+
+<nav class="nav" id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" alt="Venom Guitars">
+    <div class="nav-logo-text"><span>VENOM</span> GUITARS</div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown"><a href="about.html">About ▾</a>
+      <div class="nav-dropdown-menu"><a href="about.html">Our Story</a><a href="about.html#purpose">Our Purpose</a><a href="about.html#team">Our Team</a></div>
+    </div>
+    <div class="nav-dropdown"><a href="designs.html">Designs ▾</a>
+      <div class="nav-dropdown-menu"><a href="designs.html">All Models</a><a href="designs.html#red-belly">Red Belly Black</a><a href="designs.html#taipan">Taipan Series</a><a href="designs.html#death-adder">Death Adder Series</a><a href="designs.html#red-back">Red Back Series</a><a href="designs.html#funnel-web">Funnel Web Series</a><a href="designs.html#custom">Custom Builds</a></div>
+    </div>
+    <a href="builds.html">Build Videos</a>
+    <a href="education.html">Education</a>
+    <a href="community.html">Community</a>
+    <a href="media.html" class="active">Media</a>
+    <a href="contact.html" class="btn-cta nav-cta">Contact</a>
+  </div>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mobile" id="mobile-menu">
+  <a href="index.html">Home</a><a href="about.html">About Us</a>
+  <a href="designs.html">Our Designs</a><a href="builds.html">Build Videos</a>
+  <a href="education.html">Education</a><a href="community.html">Community</a>
+  <a href="media.html" class="active">Media</a><a href="contact.html">Contact Us</a>
+</div>
+
+<div class="page-hero">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 40% 60%,rgba(192,0,12,0.06),transparent 60%);pointer-events:none;"></div>
+  <div class="container">
+    <div class="section-label">Social Media</div>
+    <div class="page-hero-title">Follow <span style="color:var(--red);">Along</span></div>
+    <div class="page-hero-sub">Where the freshest content lives</div>
+    <p style="max-width:560px;margin-top:1rem;color:var(--grey);">Build clips, resin pours, playthroughs and behind-the-scenes from the workshop — find us on every channel.</p>
+  </div>
+</div>
+
+<section class="section section-darker">
+  <div class="container">
+    <div class="section-label">Our Channels</div>
+    <h2 class="display-md mb-6">Find Venom Online</h2>
+    <div class="grid-4">
+      <a href="https://www.youtube.com/@venomguitars" target="_blank" rel="noopener" class="hub-card reveal animate-up">
+        <div class="hub-icon">▶</div>
+        <div class="hub-name">YouTube</div>
+        <div class="hub-handle">@venomguitars</div>
+        <p class="hub-desc">Full build series, resin pours and tutorials.</p>
+        <span class="btn btn-red-outline" style="font-size:.75rem;padding:.4rem 1rem;align-self:flex-start;">Follow →</span>
+      </a>
+      <a href="https://www.instagram.com/venomguitars" target="_blank" rel="noopener" class="hub-card reveal animate-up">
+        <div class="hub-icon">📷</div>
+        <div class="hub-name">Instagram</div>
+        <div class="hub-handle">@venomguitars</div>
+        <p class="hub-desc">Build photos, finished guitars and Reels from the bench.</p>
+        <span class="btn btn-red-outline" style="font-size:.75rem;padding:.4rem 1rem;align-self:flex-start;">Follow →</span>
+      </a>
+      <a href="https://www.tiktok.com/@venomguitars" target="_blank" rel="noopener" class="hub-card reveal animate-up">
+        <div class="hub-icon">♪</div>
+        <div class="hub-name">TikTok</div>
+        <div class="hub-handle">@venomguitars</div>
+        <p class="hub-desc">Quick clips, sparks and short-form workshop moments.</p>
+        <span class="btn btn-red-outline" style="font-size:.75rem;padding:.4rem 1rem;align-self:flex-start;">Follow →</span>
+      </a>
+      <a href="https://www.facebook.com/venomguitars" target="_blank" rel="noopener" class="hub-card reveal animate-up">
+        <div class="hub-icon">f</div>
+        <div class="hub-name">Facebook</div>
+        <div class="hub-handle">venomguitars</div>
+        <p class="hub-desc">Community chat, announcements and event updates.</p>
+        <span class="btn btn-red-outline" style="font-size:.75rem;padding:.4rem 1rem;align-self:flex-start;">Follow →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="container" style="text-align:center;">
+    <div class="section-label" style="justify-content:center;">Share Your Venom</div>
+    <h2 class="display-md mb-3">Own a Venom Guitar?</h2>
+    <p style="max-width:520px;margin:0 auto 2rem;color:var(--grey);">Tag <strong style="color:var(--cream);">@venomguitars</strong> in your photos and clips — we love seeing them out in the wild.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+      <a href="media.html" class="btn btn-red-outline">Back to Media</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <img src="images/logo.png" alt="Venom Guitars" class="footer-brand-logo">
+      <div class="footer-tagline">Handcrafted. Australian. Deadly.</div>
+      <p class="footer-desc">Building boutique-quality custom electric guitars from the heart of Australia.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/venomguitars">f</a><a href="https://www.instagram.com/venomguitars">in</a>
+        <a href="https://www.tiktok.com/@venomguitars">tt</a><a href="https://www.youtube.com/@venomguitars">▶</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a><a href="about.html">About Us</a>
+        <a href="designs.html">Our Designs</a><a href="builds.html">Build Videos</a>
+        <a href="education.html">Education</a><a href="community.html">Community</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Guitar Series</div>
+      <div class="footer-links">
+        <a href="designs.html#red-belly">Red Belly Black</a>
+        <a href="designs.html#taipan">Taipan Series</a>
+        <a href="designs.html#death-adder">Death Adder Series</a>
+        <a href="designs.html#red-back">Red Back Series</a>
+        <a href="designs.html#funnel-web">Funnel Web Series</a>
+        <a href="designs.html#custom">Custom Builds</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Connect</div>
+      <div class="footer-links">
+        <a href="contact.html">Contact Us</a><a href="media.html">Media</a>
+        <a href="community.html">Community</a>
+      </div>
+      <div style="margin-top:1.5rem;font-size:0.8rem;color:var(--grey);">📧 <a href="mailto:venomguitarsaus@gmail.com" style="color:var(--red);">venomguitarsaus@gmail.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 <span class="footer-bottom-brand">Venom Guitars</span>. All rights reserved.</div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

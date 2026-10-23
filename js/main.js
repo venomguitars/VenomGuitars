@@ -69,18 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ── Contact form ──
-  const contactForm = document.querySelector('#contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const btn = contactForm.querySelector('[type=submit]');
-      btn.textContent = 'SENT — CHEERS MATE!';
-      btn.style.background = '#1a6b1a';
-      btn.disabled = true;
-    });
-  }
-
   // ── Cursor glow ──
   const cursor = document.createElement('div');
   cursor.id = 'cursor-glow';

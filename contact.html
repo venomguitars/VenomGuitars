@@ -170,10 +170,10 @@
         <div style="margin-top:2rem;">
           <div class="section-label" style="margin-bottom:1rem;">Socials</div>
           <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-            <a href="https://youtube.com/@venomguitars" target="_blank" class="btn btn-red-outline" style="font-size:0.7rem;padding:0.4rem 1rem;">▶ YouTube</a>
-            <a href="https://instagram.com/@venomguitars" target="_blank" class="btn btn-outline" style="font-size:0.7rem;padding:0.4rem 1rem;">📷 Instagram</a>
-            <a href="https://tiktok.com/@venomguitars" target="_blank" class="btn btn-outline" style="font-size:0.7rem;padding:0.4rem 1rem;">♪ TikTok</a>
-            <a href="https://facebook.com/venomguitars" target="_blank" class="btn btn-outline" style="font-size:0.7rem;padding:0.4rem 1rem;">f Facebook</a>
+            <a href="https://www.youtube.com/@venomguitars" target="_blank" class="btn btn-red-outline" style="font-size:0.7rem;padding:0.4rem 1rem;">▶ YouTube</a>
+            <a href="https://www.instagram.com/venomguitars" target="_blank" class="btn btn-outline" style="font-size:0.7rem;padding:0.4rem 1rem;">📷 Instagram</a>
+            <a href="https://www.tiktok.com/@venomguitars" target="_blank" class="btn btn-outline" style="font-size:0.7rem;padding:0.4rem 1rem;">♪ TikTok</a>
+            <a href="https://www.facebook.com/venomguitars" target="_blank" class="btn btn-outline" style="font-size:0.7rem;padding:0.4rem 1rem;">f Facebook</a>
           </div>
         </div>
 
@@ -202,27 +202,28 @@
           </div>
 
           <form id="contact-form">
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label">First Name *</label>
-                <input type="text" class="form-input" placeholder="Jake" required>
+                <input type="text" class="form-input" name="first_name" placeholder="Jake" required>
               </div>
               <div class="form-group">
                 <label class="form-label">Last Name</label>
-                <input type="text" class="form-input" placeholder="Roberts">
+                <input type="text" class="form-input" name="last_name" placeholder="Roberts">
               </div>
             </div>
             <div class="form-group">
               <label class="form-label">Email Address *</label>
-              <input type="email" class="form-input" placeholder="you@email.com" required>
+              <input type="email" class="form-input" name="email" placeholder="you@email.com" required>
             </div>
             <div class="form-group">
               <label class="form-label">Phone (optional)</label>
-              <input type="tel" class="form-input" placeholder="+61 4xx xxx xxx">
+              <input type="tel" class="form-input" name="phone" placeholder="+61 4xx xxx xxx">
             </div>
             <div class="form-group">
               <label class="form-label">Your State / Country</label>
-              <select class="form-select form-input">
+              <select class="form-select form-input" name="state_country">
                 <option value="">Select...</option>
                 <option>NSW</option><option>VIC</option><option>QLD</option>
                 <option>WA</option><option>SA</option><option>TAS</option>
@@ -232,12 +233,13 @@
             </div>
             <div class="form-group">
               <label class="form-label">Message *</label>
-              <textarea class="form-textarea form-input" placeholder="Tell us about your dream guitar — body shape, tonewoods, pickups, budget, timeline, anything relevant..." required style="min-height:160px;"></textarea>
+              <textarea class="form-textarea form-input" name="message" placeholder="Tell us about your dream guitar — body shape, tonewoods, pickups, budget, timeline, anything relevant..." required style="min-height:160px;"></textarea>
             </div>
             <div class="form-group" style="display:flex;align-items:flex-start;gap:0.75rem;">
-              <input type="checkbox" id="consent" style="margin-top:3px;accent-color:var(--red);" required>
+              <input type="checkbox" id="consent" name="consent" value="yes" style="margin-top:3px;accent-color:var(--red);" required>
               <label for="consent" style="font-size:0.75rem;color:var(--grey);cursor:pointer;">I agree to be contacted by Venom Guitars regarding my enquiry. We don't sell your data or spam you.</label>
             </div>
+            <div id="form-error" style="display:none;margin-bottom:1rem;font-size:0.85rem;color:var(--red);">Sorry — that didn't send. Please try again or email us directly at venomguitarsaus@gmail.com.</div>
             <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
           </form>
           <div class="form-success" id="form-success">
@@ -268,8 +270,8 @@
       <div class="footer-tagline">Handcrafted. Australian. Deadly.</div>
       <p class="footer-desc">Building boutique-quality custom electric guitars from the heart of Australia.</p>
       <div class="footer-social">
-        <a href="http://facebook.com/venomguitars">f</a><a href="http://instagram.com/@venomguitars">in</a>
-        <a href="http://tiktok.com/@venomguitars">tt</a><a href="http://youtube.com/@venomguitars">▶</a>
+        <a href="https://www.facebook.com/venomguitars">f</a><a href="https://www.instagram.com/venomguitars">in</a>
+        <a href="https://www.tiktok.com/@venomguitars">tt</a><a href="https://www.youtube.com/@venomguitars">▶</a>
       </div>
     </div>
     <div>
@@ -306,16 +308,12 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/forms.js"></script>
 <script>
   function selectEnquiry(btn) {
     document.querySelectorAll('.enquiry-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   }
-  document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    this.style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
-  });
 </script>
 </body>
 </html>

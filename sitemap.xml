@@ -48,4 +48,10 @@
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://venomguitars.com.au/blogs-articles.html</loc>
+  </url>
+  <url>
+    <loc>https://venomguitars.com.au/social-media.html</loc>
+  </url>
 </urlset>

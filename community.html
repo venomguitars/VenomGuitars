@@ -161,7 +161,7 @@
     <div class="section-label">Find Us Online</div>
     <h2 class="display-md mb-6">Social Channels</h2>
     <div style="display:flex;flex-direction:column;gap:0.75rem;max-width:700px;">
-      <a href="https://youtube.com/@venomguitars" target="_blank" class="social-platform">
+      <a href="https://www.youtube.com/@venomguitars" target="_blank" class="social-platform">
         <div class="social-logo" style="background:#c4302b;">▶</div>
         <div>
           <div class="social-name">YouTube</div>
@@ -170,7 +170,7 @@
         </div>
         <div class="social-arrow">→</div>
       </a>
-      <a href="https://instagram.com/@venomguitars" target="_blank" class="social-platform">
+      <a href="https://www.instagram.com/venomguitars" target="_blank" class="social-platform">
         <div class="social-logo" style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);">📷</div>
         <div>
           <div class="social-name">Instagram</div>
@@ -179,7 +179,7 @@
         </div>
         <div class="social-arrow">→</div>
       </a>
-      <a href="https://tiktok.com/@venomguitars" target="_blank" class="social-platform">
+      <a href="https://www.tiktok.com/@venomguitars" target="_blank" class="social-platform">
         <div class="social-logo" style="background:#010101; border:1px solid rgba(255,255,255,0.1);">♪</div>
         <div>
           <div class="social-name">TikTok</div>
@@ -188,7 +188,7 @@
         </div>
         <div class="social-arrow">→</div>
       </a>
-      <a href="https://facebook.com/venomguitars" target="_blank" class="social-platform">
+      <a href="https://www.facebook.com/venomguitars" target="_blank" class="social-platform">
         <div class="social-logo" style="background:#1877f2;">f</div>
         <div>
           <div class="social-name">Facebook</div>
@@ -237,7 +237,7 @@
 </section>
 
 <!-- JOIN / NEWSLETTER -->
-<section class="section section-dark">
+<section class="section section-dark" id="join">
   <div class="container">
     <div class="join-band">
       <div style="position:relative;z-index:2;">
@@ -248,6 +248,7 @@
           <input type="email" placeholder="your@email.com" id="newsletter-email">
           <button class="btn btn-primary" onclick="subscribeNewsletter()">Subscribe</button>
         </div>
+        <div id="newsletter-error" style="margin-top:1rem;font-size:0.85rem;color:var(--red);display:none;">Sorry — that didn't go through. Please try again.</div>
         <div id="newsletter-msg" style="margin-top:1rem;font-size:0.85rem;color:var(--red);display:none;">Cheers! You're on the list. 🐍</div>
         <p style="font-size:0.72rem;color:var(--grey);margin-top:1rem;max-width:400px;">By subscribing you agree to receive occasional emails from Venom Guitars. Unsubscribe any time.</p>
       </div>
@@ -276,8 +277,8 @@
       <div class="footer-tagline">Handcrafted. Australian. Deadly.</div>
       <p class="footer-desc">Building boutique-quality custom electric guitars from the heart of Australia.</p>
       <div class="footer-social">
-        <a href="http://facebook.com/venomguitars">f</a><a href="http://instagram.com/@venomguitars">in</a>
-        <a href="http://tiktok.com/@venomguitars">tt</a><a href="http://youtube.com/@venomguitars">▶</a>
+        <a href="https://www.facebook.com/venomguitars">f</a><a href="https://www.instagram.com/venomguitars">in</a>
+        <a href="https://www.tiktok.com/@venomguitars">tt</a><a href="https://www.youtube.com/@venomguitars">▶</a>
       </div>
     </div>
     <div>
@@ -313,14 +314,6 @@
 </footer>
 
 <script src="js/main.js"></script>
-<script>
-  function subscribeNewsletter() {
-    const email = document.getElementById('newsletter-email').value;
-    if (email && email.includes('@')) {
-      document.getElementById('newsletter-form').style.display = 'none';
-      document.getElementById('newsletter-msg').style.display = 'block';
-    }
-  }
-</script>
+<script src="js/forms.js"></script>
 </body>
 </html>
