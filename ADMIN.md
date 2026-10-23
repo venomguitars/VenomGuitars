@@ -10,7 +10,7 @@ so any edit can be rolled back.
 * **Every page's text** – headings, paragraphs, buttons, spec tables, team bios, FAQ etc., grouped by section.
 * **Search settings (SEO)** – the browser-tab title and search description for each page.
 * Colour text red with `[[words]]`, bold with `**words**`.
-* Images: upload from the editor (saved to `/images`).
+* **Photos** – on Home, Designs and the Red Belly Black page, each photo has a picker under "Photos on this page" (upload new ones or choose from the library, saved to `/images`).
 
 ## Logging in (two layers)
 1. **Cloudflare Access** (put in front of `/admin*`) – you must pass an email one-time-code before the

@@ -56,6 +56,57 @@ collections:
       - name: description
         label: Search description
         widget: text
+    - name: images
+      label: Photos on this page
+      widget: object
+      collapsed: true
+      hint: Click a photo to replace it, or choose one from the media library. The picture keeps the same framing as the original, so use a similar shape.
+      fields:
+      - name: i1
+        label: Photo 1 — currently series-red-belly-black.jpg
+        widget: image
+        required: false
+        choose_url: false
+      - name: i1_alt
+        label: Photo 1 description (for search engines & accessibility)
+        widget: string
+        required: false
+      - name: i2
+        label: Photo 2 — currently series-taipan.jpg
+        widget: image
+        required: false
+        choose_url: false
+      - name: i2_alt
+        label: Photo 2 description (for search engines & accessibility)
+        widget: string
+        required: false
+      - name: i3
+        label: Photo 3 — currently series-death-adder.jpg
+        widget: image
+        required: false
+        choose_url: false
+      - name: i3_alt
+        label: Photo 3 description (for search engines & accessibility)
+        widget: string
+        required: false
+      - name: i4
+        label: Photo 4 — currently product-red-back-1.jpg
+        widget: image
+        required: false
+        choose_url: false
+      - name: i4_alt
+        label: Photo 4 description (for search engines & accessibility)
+        widget: string
+        required: false
+      - name: i5
+        label: Photo 5 — currently product-funnel-web-1.png
+        widget: image
+        required: false
+        choose_url: false
+      - name: i5_alt
+        label: Photo 5 description (for search engines & accessibility)
+        widget: string
+        required: false
     - name: s3
       label: Section 3 — VENOM
       widget: object
@@ -688,6 +739,120 @@ collections:
       - name: description
         label: Search description
         widget: text
+    - name: images
+      label: Photos on this page
+      widget: object
+      collapsed: true
+      hint: Click a photo to replace it, or choose one from the media library. The picture keeps the same framing as the original, so use a similar shape.
+      fields:
+      - name: i1
+        label: Photo 1 — currently series-red-belly-black.jpg
+        widget: image
+        required: false
+        choose_url: false
+      - name: i1_alt
+        label: Photo 1 description (for search engines & accessibility)
+        widget: string
+        required: false
+      - name: i2
+        label: Photo 2 — currently product-red-belly-black-1.jpg
+        widget: image
+        required: false
+        choose_url: false
+      - name: i2_alt
+        label: Photo 2 description (for search engines & accessibility)
+        widget: string
+        required: false
+      - name: i3
+        label: Photo 3 — currently product-red-belly-black-1.jpg
+        widget: image
+        required: false
+        choose_url: false
+      - name: i3_alt
+        label: Photo 3 description (for search engines & accessibility)
+        widget: string
+        required: false
+      - name: i4
+        label: Photo 4 — currently product-red-belly-black-2.jpg
+        widget: image
+        required: false
+        choose_url: false
+      - name: i4_alt
+        label: Photo 4 description (for search engines & accessibility)
+        widget: string
+        required: false
+      - name: i5
+        label: Photo 5 — currently series-taipan.jpg
+        widget: image
+        required: false
+        choose_url: false
+      - name: i5_alt
+        label: Photo 5 description (for search engines & accessibility)
+        widget: string
+        required: false
+      - name: i6
+        label: Photo 6 — currently product-taipan-1.png
+        widget: image
+        required: false
+        choose_url: false
+      - name: i6_alt
+        label: Photo 6 description (for search engines & accessibility)
+        widget: string
+        required: false
+      - name: i7
+        label: Photo 7 — currently series-death-adder.jpg
+        widget: image
+        required: false
+        choose_url: false
+      - name: i7_alt
+        label: Photo 7 description (for search engines & accessibility)
+        widget: string
+        required: false
+      - name: i8
+        label: Photo 8 — currently product-death-adder-1.png
+        widget: image
+        required: false
+        choose_url: false
+      - name: i8_alt
+        label: Photo 8 description (for search engines & accessibility)
+        widget: string
+        required: false
+      - name: i9
+        label: Photo 9 — currently series-red-back.jpg
+        widget: image
+        required: false
+        choose_url: false
+      - name: i9_alt
+        label: Photo 9 description (for search engines & accessibility)
+        widget: string
+        required: false
+      - name: i10
+        label: Photo 10 — currently product-red-back-1.jpg
+        widget: image
+        required: false
+        choose_url: false
+      - name: i10_alt
+        label: Photo 10 description (for search engines & accessibility)
+        widget: string
+        required: false
+      - name: i11
+        label: Photo 11 — currently series-funnel-web.jpg
+        widget: image
+        required: false
+        choose_url: false
+      - name: i11_alt
+        label: Photo 11 description (for search engines & accessibility)
+        widget: string
+        required: false
+      - name: i12
+        label: Photo 12 — currently product-funnel-web-1.png
+        widget: image
+        required: false
+        choose_url: false
+      - name: i12_alt
+        label: Photo 12 description (for search engines & accessibility)
+        widget: string
+        required: false
     - name: s1
       label: Section 1 — Instruments
       widget: object
@@ -1261,6 +1426,21 @@ collections:
       - name: description
         label: Search description
         widget: text
+    - name: images
+      label: Photos on this page
+      widget: object
+      collapsed: true
+      hint: Click a photo to replace it, or choose one from the media library. The picture keeps the same framing as the original, so use a similar shape.
+      fields:
+      - name: i1
+        label: Photo 1 — currently series-red-belly-black.jpg
+        widget: image
+        required: false
+        choose_url: false
+      - name: i1_alt
+        label: Photo 1 description (for search engines & accessibility)
+        widget: string
+        required: false
     - name: s4
       label: Section 4 — 🐍 Flagship Series · Available Now
       widget: object

@@ -32,6 +32,11 @@
         var v = data[p[0]] && data[p[0]][p[1]];
         if (typeof v === 'string' && v.length) el.innerHTML = render(v);
       });
+      document.querySelectorAll('[data-cms-img]').forEach(function (el) {
+        var k = el.getAttribute('data-cms-img'), im = data.images || {};
+        if (im[k]) el.setAttribute('src', String(im[k]).replace(/^\//, ''));
+        if (typeof im[k + '_alt'] === 'string') el.setAttribute('alt', im[k + '_alt']);
+      });
     }
     if (site) {
       document.querySelectorAll('[data-site-href]').forEach(function (el) {

@@ -91,5 +91,17 @@
   },
   "s13": {
     "k1": "— Venom Guitars Team"
+  },
+  "images": {
+    "i1": "/images/series-red-belly-black.jpg",
+    "i1_alt": "Red-bellied Black Snake",
+    "i2": "/images/series-taipan.jpg",
+    "i2_alt": "Taipan Snake",
+    "i3": "/images/series-death-adder.jpg",
+    "i3_alt": "Death Adder Snake",
+    "i4": "/images/product-red-back-1.jpg",
+    "i4_alt": "Red Back Spider Guitar",
+    "i5": "/images/product-funnel-web-1.png",
+    "i5_alt": "Funnel Web Series concept guitar"
   }
 }

@@ -152,5 +152,9 @@
     "k5": "Commission Your Build",
     "k6": "All Guitar Designs",
     "k7": "Watch Build Videos"
+  },
+  "images": {
+    "i1": "/images/series-red-belly-black.jpg",
+    "i1_alt": "Red-bellied Black Snake"
   }
 }

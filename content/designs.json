@@ -146,5 +146,31 @@
     "k33": "Resin Art Body",
     "k34": "Custom colour pour. Completely one-of-a-kind.",
     "k35": "Signature"
+  },
+  "images": {
+    "i1": "/images/series-red-belly-black.jpg",
+    "i1_alt": "Red-bellied Black Snake",
+    "i2": "/images/product-red-belly-black-1.jpg",
+    "i2_alt": "Red Belly Black RBBS-6SE",
+    "i3": "/images/product-red-belly-black-1.jpg",
+    "i3_alt": "Red Belly Black — sunburst finish",
+    "i4": "/images/product-red-belly-black-2.jpg",
+    "i4_alt": "Red Belly Black — burl finish",
+    "i5": "/images/series-taipan.jpg",
+    "i5_alt": "Taipan Snake",
+    "i6": "/images/product-taipan-1.png",
+    "i6_alt": "Taipan Series concept guitar",
+    "i7": "/images/series-death-adder.jpg",
+    "i7_alt": "Death Adder Snake",
+    "i8": "/images/product-death-adder-1.png",
+    "i8_alt": "Death Adder Series concept guitar",
+    "i9": "/images/series-red-back.jpg",
+    "i9_alt": "Redback Spider",
+    "i10": "/images/product-red-back-1.jpg",
+    "i10_alt": "Red Back RBS-6SE",
+    "i11": "/images/series-funnel-web.jpg",
+    "i11_alt": "Sydney Funnel-Web Spider",
+    "i12": "/images/product-funnel-web-1.png",
+    "i12_alt": "Funnel Web Series concept guitar"
   }
 }
